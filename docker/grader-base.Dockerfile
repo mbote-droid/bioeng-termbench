@@ -9,7 +9,7 @@
 #
 # Build from the repository root:
 #   docker build -f docker/grader-base.Dockerfile -t ghcr.io/mbote-droid/bioengbench-grader-base:0.2.0 .
-FROM python:3.12.11-slim-bookworm
+FROM python:3.14.8-slim-bookworm
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONHASHSEED=0 \
