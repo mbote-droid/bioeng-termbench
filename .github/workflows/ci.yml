@@ -45,7 +45,7 @@ jobs:
         run: sudo -E "$(command -v uv)" run --frozen pytest -q tests/unit/test_runner.py tests/unit/test_cli_isolation.py
       - name: red team
         run: sudo -E "$(command -v uv)" run --frozen python validation/campaign.py redteam --out redteam.json
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         if: always()
         with:
           name: redteam
@@ -120,7 +120,7 @@ jobs:
       - run: uv sync --frozen
       - name: campaign (without the red team, which runs in the sandbox job)
         run: make validate-quick JOBS=4
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: validation
           path: |
