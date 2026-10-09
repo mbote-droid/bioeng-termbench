@@ -1,0 +1,128 @@
+name: ci
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "17 3 * * *"  # nightly: flakiness, dependency drift, full validation campaign
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - name: Octave (cross-language references)
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends octave
+      - run: uv sync --frozen
+      - run: make lint
+      - run: make typecheck
+      - run: make test
+
+  sandbox:
+    # The verifier's configuration: grader as root, submission as `sandbox`,
+    # interpreter with exactly the agent image's packages. Runs the
+    # privilege-dropping tests and the red team.
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - run: uv sync --frozen
+      - name: sandbox user and agent interpreter
+        run: |
+          sudo useradd --system --no-create-home --shell /usr/sbin/nologin sandbox
+          sudo "$(command -v uv)" venv /opt/agent-python --python 3.12
+          sudo "$(command -v uv)" pip install --python /opt/agent-python/bin/python \
+            --require-hashes -r docker/agent-requirements.txt
+          sudo chmod -R a+rX /opt/agent-python
+      - name: runner tests as root
+        run: sudo -E "$(command -v uv)" run --frozen pytest -q tests/unit/test_runner.py tests/unit/test_cli_isolation.py
+      - name: red team
+        run: sudo -E "$(command -v uv)" run --frozen python validation/campaign.py redteam --out redteam.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: redteam
+          path: redteam.json
+
+  reproducibility:
+    # Grade the same submission twice in separate processes; verdicts must be
+    # byte-identical. Proves determinism instead of asserting it.
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        include:
+          - task: t01-ecg-denoise-rpeaks
+            submission: tasks/t01-ecg-denoise-rpeaks/solution/pipeline.py
+          - task: t03-glucose-closed-loop
+            submission: tasks/t03-glucose-closed-loop/solution/controller.py
+          - task: t05-pk-debug
+            submission: tasks/t05-pk-debug/solution/pkmodel
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - run: uv sync --frozen
+      - name: grade twice
+        run: |
+          for run in 1 2; do
+            uv run --frozen bioeng grade ${{ matrix.task }} \
+              --submission ${{ matrix.submission }} \
+              --seeds tasks/${{ matrix.task }}/tests/dev_seeds.txt \
+              --verdict "verdict-${run}.json"
+          done
+          sha256sum verdict-1.json verdict-2.json
+          cmp verdict-1.json verdict-2.json
+
+  julia:
+    # Third-language reference for t02, graded through `bioeng check-outputs`.
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - uses: julia-actions/setup-julia@v2
+        with:
+          version: "1.11"
+      - run: uv sync --frozen
+      - name: instantiate
+        run: julia --project=tasks/t02-pk-fit-dose/references/julia -e 'using Pkg; Pkg.instantiate()'
+      - name: grade the Julia reference on the dev seeds
+        run: |
+          set -euo pipefail
+          grep -v '^#' tasks/t02-pk-fit-dose/tests/dev_seeds.txt | while read -r seed; do
+            [ -z "$seed" ] && continue
+            uv run --frozen bioeng make-inputs t02-pk-fit-dose --seed "$seed" --outdir "in-$seed"
+            julia --project=tasks/t02-pk-fit-dose/references/julia \
+              tasks/t02-pk-fit-dose/references/julia/pk_pipeline.jl "in-$seed" "out-$seed"
+            uv run --frozen bioeng check-outputs t02-pk-fit-dose --seed "$seed" --outdir "out-$seed"
+          done
+
+  validation:
+    # Full grader validation campaign, nightly (about two hours on two cores).
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update && sudo apt-get install -y --no-install-recommends octave
+      - run: uv sync --frozen
+      - name: campaign (without the red team, which runs in the sandbox job)
+        run: make validate-quick JOBS=4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: validation
+          path: |
+            results/validation
+            docs/VALIDATION_REPORT.md

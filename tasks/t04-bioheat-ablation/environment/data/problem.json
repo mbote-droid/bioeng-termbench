@@ -1,0 +1,34 @@
+{
+  "tissue": {
+    "conductivity_W_per_m_K": 0.52,
+    "density_kg_per_m3": 1060.0,
+    "specific_heat_J_per_kg_K": 3600.0,
+    "blood_volumetric_heat_capacity_J_per_m3_K": 3858400.0,
+    "perfusion_range_per_s": [
+      0.0041977522427094505,
+      0.006296628364064175
+    ],
+    "stasis_temperature_C": 60.0,
+    "stasis_width_K": 3.0
+  },
+  "arrhenius": {
+    "A_per_s": 3.1e+98,
+    "Ea_J_per_mol": 628000.0,
+    "R_J_per_mol_K": 8.314
+  },
+  "body_temperature_C": 37.0,
+  "domain_radius_m": 0.06,
+  "source_sigma_m": 0.008826628296412151,
+  "tumour_radius_mm": 4.993366994871716,
+  "margin_mm": 5.0,
+  "peak_limit_C": 100.0,
+  "heating_times_s": [
+    180.0,
+    300.0,
+    420.0,
+    600.0,
+    900.0,
+    1200.0
+  ],
+  "cooling_time_s": 300.0
+}

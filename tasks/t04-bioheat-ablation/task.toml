@@ -1,0 +1,35 @@
+schema_version = "1.3"
+source = "https://github.com/mbote-droid/bioeng-termbench"
+artifacts = ["/app/ablation.py"]
+
+[task]
+name = "bioeng-termbench/t04-bioheat-ablation"
+authors = [{ name = "Samuel Ngigi Mbote", email = "mbotesamuel9@gmail.com" }]
+description = "Write a verified second-order bioheat solver (Pennes, nonlinear perfusion, Arrhenius damage) and use it to plan a robust, energy-efficient thermal ablation; graded by a convergence study and against hidden tumours."
+keywords = ["pde", "finite-volume", "crank-nicolson", "verification", "thermal-ablation", "robust-design", "biomedical-engineering"]
+
+[metadata]
+task_version = "1.0.0"
+domain = "thermal therapy planning"
+discipline = "biomedical engineering"
+skills = ["PDE discretisation", "order-of-accuracy verification", "conservation", "nonlinear coupling", "robust optimisation under uncertainty"]
+numerical_methods = ["finite volumes or finite elements in spherical coordinates", "Crank-Nicolson with fixed-point iteration", "root finding"]
+difficulty = "hard"
+difficulty_explanation = "Second order must be demonstrated, not claimed: lagging the nonlinear perfusion silently drops the scheme to first order. The plan must hold over the whole perfusion range and pick the right heating time from a menu where the shortest is often too hot."
+expected_expert_minutes = 150
+reward = "binary: 1 only if every check passes on every hidden case"
+
+[agent]
+timeout_sec = 3600.0
+network_mode = "no-network"
+
+[verifier]
+timeout_sec = 2700.0
+environment_mode = "separate"
+network_mode = "no-network"
+
+[environment]
+cpus = 1
+memory_mb = 4096
+storage_mb = 4096
+workdir = "/app"

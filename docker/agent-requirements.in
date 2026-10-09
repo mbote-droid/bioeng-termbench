@@ -1,0 +1,4 @@
+numpy==2.5.3
+scipy==1.18.1
+# t05 is a debugging task: agents run the package tests
+pytest==8.4.2

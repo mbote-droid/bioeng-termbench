@@ -1,0 +1,35 @@
+schema_version = "1.3"
+source = "https://github.com/mbote-droid/bioeng-termbench"
+artifacts = ["/app/pk_pipeline.py"]
+
+[task]
+name = "bioeng-termbench/t02-pk-fit-dose"
+authors = [{ name = "Samuel Ngigi Mbote", email = "mbotesamuel9@gmail.com" }]
+description = "Fit a two-compartment pharmacokinetic model to noisy plasma data, quantify uncertainty, and design a safe, efficient maintenance regimen; graded against hidden patients."
+keywords = ["pharmacokinetics", "ode", "parameter-estimation", "fisher-information", "dose-optimisation", "biomedical-engineering"]
+
+[metadata]
+task_version = "1.0.0"
+domain = "clinical pharmacology"
+discipline = "biomedical engineering"
+skills = ["linear ODE systems", "matrix exponential", "maximum likelihood", "Fisher information", "constrained optimisation", "units"]
+numerical_methods = ["exact LTI solution or accurate ODE integration", "nonlinear least squares", "multi-start optimisation"]
+difficulty = "hard"
+difficulty_explanation = "Requires a correct error model, an accurate solver across infusion discontinuities, honest uncertainty, and a regimen that stays safe for the true patient rather than the fitted one."
+expected_expert_minutes = 90
+reward = "binary: 1 only if every check passes on every hidden patient"
+
+[agent]
+timeout_sec = 3600.0
+network_mode = "no-network"
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+network_mode = "no-network"
+
+[environment]
+cpus = 1
+memory_mb = 4096
+storage_mb = 4096
+workdir = "/app"

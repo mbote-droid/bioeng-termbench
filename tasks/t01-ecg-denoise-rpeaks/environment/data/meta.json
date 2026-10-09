@@ -1,0 +1,8 @@
+{
+  "fs_hz": 360.0,
+  "duration_s": 60.0,
+  "units": {
+    "time": "s",
+    "voltage": "mV"
+  }
+}

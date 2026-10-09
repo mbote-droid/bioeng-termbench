@@ -1,0 +1,35 @@
+schema_version = "1.3"
+source = "https://github.com/mbote-droid/bioeng-termbench"
+artifacts = ["/app/pkmodel"]
+
+[task]
+name = "bioeng-termbench/t05-pk-debug"
+authors = [{ name = "Samuel Ngigi Mbote", email = "mbotesamuel9@gmail.com" }]
+description = "Find and fix every defect in a pharmacokinetics package against its specification: units, an integrator that steps over short infusions, skipped boluses, float32 time grids and a data-model bug; graded on hidden regimens."
+keywords = ["debugging", "pharmacokinetics", "numerical-ode", "units", "floating-point", "biomedical-engineering"]
+
+[metadata]
+task_version = "1.0.0"
+domain = "clinical pharmacology software"
+discipline = "biomedical engineering"
+skills = ["reading a specification", "debugging numerical code", "ODEs with discontinuous inputs", "floating point", "writing regression tests"]
+numerical_methods = ["exact LTI solution or ODE integration with breakpoints"]
+difficulty = "medium"
+difficulty_explanation = "Two defects are reported; three are silent and appear only on inputs the reports never mention. Each needs a different kind of reasoning: units, integrator behaviour at discontinuities, precision, and data structures."
+expected_expert_minutes = 60
+reward = "binary: 1 only if every scenario is correct on every hidden case"
+
+[agent]
+timeout_sec = 3600.0
+network_mode = "no-network"
+
+[verifier]
+timeout_sec = 900.0
+environment_mode = "separate"
+network_mode = "no-network"
+
+[environment]
+cpus = 1
+memory_mb = 4096
+storage_mb = 4096
+workdir = "/app"

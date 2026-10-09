@@ -1,0 +1,37 @@
+schema_version = "1.3"
+source = "https://github.com/mbote-droid/bioeng-termbench"
+
+# The agent's script is the only thing the verifier needs from the agent sandbox.
+artifacts = ["/app/pipeline.py"]
+
+[task]
+name = "bioeng-termbench/t01-ecg-denoise-rpeaks"
+authors = [{ name = "Samuel Ngigi Mbote", email = "mbotesamuel9@gmail.com" }]
+description = "Denoise a 360 Hz ambulatory ECG, detect R peaks and compute HRV; graded by physics-aware checks on hidden recordings."
+keywords = ["biomedical-engineering", "signal-processing", "ecg", "filter-design", "hrv", "scientific-computing"]
+
+[metadata]
+task_version = "2.0.0"
+domain = "biomedical signal processing"
+discipline = "biomedical engineering"
+skills = ["IIR or FIR filter design", "zero-phase filtering", "QRS detection", "HRV statistics", "units"]
+numerical_methods = ["digital filtering", "peak detection"]
+difficulty = "medium"
+difficulty_explanation = "Standard methods exist, but the grader rejects filters that distort T waves, peaks taken from a delayed detection signal, 1-based indices and unit slips, on recordings the agent never sees."
+expected_expert_minutes = 45
+reward = "binary: 1 only if every check passes on every hidden recording"
+
+[agent]
+timeout_sec = 1800.0
+network_mode = "no-network"
+
+[verifier]
+timeout_sec = 900.0
+environment_mode = "separate"
+network_mode = "no-network"
+
+[environment]
+cpus = 1
+memory_mb = 4096
+storage_mb = 4096
+workdir = "/app"

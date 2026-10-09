@@ -1,0 +1,19 @@
+{
+  "doses": [
+    {
+      "start_h": 0.0,
+      "duration_h": 0.0,
+      "amount_mg": 433.8816487644897
+    },
+    {
+      "start_h": 5.564084890804367,
+      "duration_h": 1.0,
+      "amount_mg": 597.1824223453078
+    }
+  ],
+  "output": {
+    "start_h": 0.0,
+    "stop_h": 24.0,
+    "step_h": 0.5
+  }
+}

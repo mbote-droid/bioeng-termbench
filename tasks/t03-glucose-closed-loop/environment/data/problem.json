@@ -1,0 +1,10 @@
+{
+  "sample_period_min": 5.0,
+  "basal_rate_mU_per_min": 19.440873878482524,
+  "pump_max_mU_per_min": 120.0,
+  "units": {
+    "glucose": "mg/dL",
+    "insulin_rate": "mU/min",
+    "time": "min"
+  }
+}

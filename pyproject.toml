@@ -1,0 +1,72 @@
+[project]
+name = "bioengbench"
+version = "0.2.0"
+description = "Terminal-based biomedical engineering tasks with physics-aware graders for training and evaluating AI agents."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Samuel Ngigi Mbote", email = "mbotesamuel9@gmail.com" }]
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.1",
+    "scipy>=1.14",
+    "pint>=0.24",
+]
+
+[project.scripts]
+bioeng = "bioengbench.tooling.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "hypothesis>=6.120",
+    "ruff>=0.8",
+    "mypy>=1.13",
+    "shellcheck-py>=0.10",
+]
+
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/bioengbench"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+markers = [
+    "octave: needs GNU Octave on PATH",
+    "slow: runs a task end to end on several hidden cases",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = ["tasks/*/tests/lib", "*.ipynb"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "C90", "N", "SIM", "RUF", "PL"]
+ignore = ["PLR2004", "PLR0913"]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.ruff.lint.per-file-ignores]
+# pytest fixtures are positional by design
+"tests/**" = ["PLR0917", "PLC0415", "N812", "B905", "RUF007", "E501"]
+# reference solutions mimic what an agent writes: standalone scripts, not library code
+"tasks/**" = ["N806", "PLR0914", "PLR0917", "E501", "C901", "PLR0912", "RUF046",
+             "B905", "RUF007", "PLW3301", "SIM115", "E731", "PLR0915", "N803"]
+# benchmark scripts: long kernel argument lists, optional imports inside functions
+"agent_eval/**" = ["E501", "PLR0917", "PLC0415"]
+"validation/**" = ["E402", "N812", "PLR0911", "RUF005", "SIM105", "E501", "PLR0917", "PLR0913", "PLC0415", "BLE001", "PLR0912", "C901", "PLR0915", "PLR0914", "S"]
+"gpu/**" = ["PLR0914", "PLR0915", "PLR0917", "PLR0912", "C901", "PLC0415", "E501", "PLR1714"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+files = ["src/bioengbench"]
+
+[[tool.mypy.overrides]]
+module = ["scipy.*", "pint.*"]
+ignore_missing_imports = true

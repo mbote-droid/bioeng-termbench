@@ -1,0 +1,95 @@
+# Grader validation campaign as a reproducible workflow.
+#
+#   uvx --from snakemake==9.11.6 snakemake -s workflow/Snakefile -c 4
+#   (or: make validate)
+#
+# One job per probe (see validation/probes.py), one per task for grader
+# mutation testing, one red-team job (needs root and a `sandbox` user, as in
+# the verifier image), then the report. Snakemake reruns a job only when its
+# inputs change: editing a grader module invalidates that task's results,
+# editing a reference invalidates its probe. Every result file carries its
+# provenance; the report hashes them all into MANIFEST.sha256.
+
+import subprocess
+from pathlib import Path
+
+ROOT = Path(workflow.basedir).parent
+RUN = "uv run --frozen python"
+PROBES = subprocess.run(
+    ["uv", "run", "--frozen", "python", "validation/campaign.py", "list"],
+    cwd=ROOT, capture_output=True, text=True, check=True,
+).stdout.split()
+TASKS = sorted({p.split("/")[0] for p in PROBES})
+MODULES = {
+    "t01-ecg-denoise-rpeaks": "t01_ecg.py",
+    "t02-pk-fit-dose": "t02_pk.py",
+    "t03-glucose-closed-loop": "t03_glucose.py",
+    "t04-bioheat-ablation": "t04_ablation.py",
+    "t05-pk-debug": "t05_pk_debug.py",
+}
+REDTEAM = config.get("redteam", True)
+
+workdir: ROOT
+
+
+wildcard_constraints:
+    task="t0[0-9]-[a-z0-9-]+",
+
+
+rule all:
+    input:
+        "docs/VALIDATION_REPORT.md",
+
+
+rule probe:
+    input:
+        "validation/probes.py",
+        "validation/campaign.py",
+        grader=lambda w: f"src/bioengbench/tasks/{MODULES[w.task]}",
+        task_dir=lambda w: f"tasks/{w.task}",
+    output:
+        "results/validation/{task}/{probe}.json",
+    log:
+        "results/validation/logs/{task}/{probe}.log",
+    shell:
+        "{RUN} validation/campaign.py probe {wildcards.task}/{wildcards.probe} --out {output} > {log} 2>&1"
+
+
+rule mutation:
+    input:
+        grader=lambda w: f"src/bioengbench/tasks/{MODULES[w.task]}",
+        tool="validation/grader_mutation.py",
+        tests=lambda w: sorted(str(p) for p in (ROOT / "tests/tasks").glob(f"test_{w.task[:3]}*.py")),
+    output:
+        "results/validation/mutation/{task}.json",
+    log:
+        "results/validation/logs/mutation/{task}.log",
+    shell:
+        "{RUN} validation/grader_mutation.py {wildcards.task} {output} > {log} 2>&1"
+
+
+rule redteam:
+    input:
+        "validation/redteam_runner.py",
+        "src/bioengbench/core/runner.py",
+        "src/bioengbench/core/task.py",
+        Path("validation/redteam").glob("*.py"),
+    output:
+        "results/validation/redteam.json",
+    log:
+        "results/validation/logs/redteam.log",
+    shell:
+        "{RUN} validation/campaign.py redteam --out {output} > {log} 2>&1"
+
+
+rule report:
+    input:
+        probes=expand("results/validation/{p}.json", p=PROBES),
+        mutation=expand("results/validation/mutation/{t}.json", t=TASKS),
+        redteam=["results/validation/redteam.json"] if REDTEAM else [],
+        tool="validation/report.py",
+    output:
+        report="docs/VALIDATION_REPORT.md",
+        manifest="results/validation/MANIFEST.sha256",
+    shell:
+        "{RUN} validation/campaign.py reassess && {RUN} validation/campaign.py report --out {output.report}"

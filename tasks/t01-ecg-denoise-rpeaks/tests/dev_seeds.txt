@@ -1,0 +1,10 @@
+# Public development split for t01. Results on these seeds are NOT a held-out score.
+# Private evaluation seeds are generated per deployment: bioeng seeds new 16 --out private_seeds.txt
+50645f25c7cabc3eb79b1d0dc1a74d07
+ba380f7e5b8d9a07d93b4633fe184641
+209e6d7dd056e14ed88c0c65d861b378
+cf02aec016c7bb554fdf7ab0ae6aa672
+79822726028a7f1ba7302c4a19ae6b09
+6dee1b438c00026115294e28c6622643
+865d704858b3de38e83a3e0a4280085d
+51624049144c58646cac3a8844f0f244
