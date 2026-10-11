@@ -1,0 +1,355 @@
+{
+  "module": "t04_ablation.py",
+  "mutants": [
+    {
+      "description": "COOLING_S 300.0 -> 150.0",
+      "killed": false,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 102.0,
+      "target": "COOLING_S"
+    },
+    {
+      "description": "COOLING_S 300.0 -> 600.0",
+      "killed": false,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 152.8,
+      "target": "COOLING_S"
+    },
+    {
+      "description": "MARGIN_MM 5.0 -> 2.5",
+      "killed": true,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 12.0,
+      "target": "MARGIN_MM"
+    },
+    {
+      "description": "MARGIN_MM 5.0 -> 10.0",
+      "killed": true,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 530.3,
+      "target": "MARGIN_MM"
+    },
+    {
+      "description": "PEAK_LIMIT_C 100.0 -> 50.0",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 530.3,
+      "target": "PEAK_LIMIT_C"
+    },
+    {
+      "description": "PEAK_LIMIT_C 100.0 -> 200.0",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 10.5,
+      "target": "PEAK_LIMIT_C"
+    },
+    {
+      "description": "PERFUSION_SPREAD 0.2 -> 0.1",
+      "killed": true,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 48.5,
+      "target": "PERFUSION_SPREAD"
+    },
+    {
+      "description": "PERFUSION_SPREAD 0.2 -> 0.4",
+      "killed": false,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 155.8,
+      "target": "PERFUSION_SPREAD"
+    },
+    {
+      "description": "EFFICIENCY_LIMIT 1.1 -> 0.55",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 26.9,
+      "target": "EFFICIENCY_LIMIT"
+    },
+    {
+      "description": "EFFICIENCY_LIMIT 1.1 -> 2.2",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 27.6,
+      "target": "EFFICIENCY_LIMIT"
+    },
+    {
+      "description": "MIN_WINDOW 0.05 -> 0.025",
+      "killed": false,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 87.3,
+      "target": "MIN_WINDOW"
+    },
+    {
+      "description": "MIN_WINDOW 0.05 -> 0.1",
+      "killed": false,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 163.4,
+      "target": "MIN_WINDOW"
+    },
+    {
+      "description": "ORDER_MIN 1.6 -> 0.8",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 23.8,
+      "target": "ORDER_MIN"
+    },
+    {
+      "description": "ORDER_MIN 1.6 -> 3.2",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 24.0,
+      "target": "ORDER_MIN"
+    },
+    {
+      "description": "TOL_PEAK_C 0.05 -> 0.025",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 23.8,
+      "target": "TOL_PEAK_C"
+    },
+    {
+      "description": "TOL_PEAK_C 0.05 -> 0.1",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 24.1,
+      "target": "TOL_PEAK_C"
+    },
+    {
+      "description": "TOL_ENERGY_REL 0.002 -> 0.001",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 24.3,
+      "target": "TOL_ENERGY_REL"
+    },
+    {
+      "description": "TOL_ENERGY_REL 0.002 -> 0.004",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 23.5,
+      "target": "TOL_ENERGY_REL"
+    },
+    {
+      "description": "TOL_RADIUS_MM 0.1 -> 0.05",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 24.6,
+      "target": "TOL_RADIUS_MM"
+    },
+    {
+      "description": "TOL_RADIUS_MM 0.1 -> 0.2",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 25.7,
+      "target": "TOL_RADIUS_MM"
+    },
+    {
+      "description": "TOL_BUDGET_REL 0.01 -> 0.005",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 25.2,
+      "target": "TOL_BUDGET_REL"
+    },
+    {
+      "description": "TOL_BUDGET_REL 0.01 -> 0.02",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 25.4,
+      "target": "TOL_BUDGET_REL"
+    },
+    {
+      "description": "CLOSURE_REL 0.001 -> 0.0005",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 25.2,
+      "target": "CLOSURE_REL"
+    },
+    {
+      "description": "CLOSURE_REL 0.001 -> 0.002",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 25.3,
+      "target": "CLOSURE_REL"
+    },
+    {
+      "description": "TOL_PLAN_RADIUS_MM 0.15 -> 0.075",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 25.7,
+      "target": "TOL_PLAN_RADIUS_MM"
+    },
+    {
+      "description": "TOL_PLAN_RADIUS_MM 0.15 -> 0.3",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 25.2,
+      "target": "TOL_PLAN_RADIUS_MM"
+    },
+    {
+      "description": "TOL_PLAN_PEAK_C 0.15 -> 0.075",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 26.0,
+      "target": "TOL_PLAN_PEAK_C"
+    },
+    {
+      "description": "TOL_PLAN_PEAK_C 0.15 -> 0.3",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 25.7,
+      "target": "TOL_PLAN_PEAK_C"
+    },
+    {
+      "description": "PLAN_FORMAT never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 29.8,
+      "target": "PLAN_FORMAT"
+    },
+    {
+      "description": "SIM_FORMAT never fails",
+      "killed": false,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 116.1,
+      "target": "SIM_FORMAT"
+    },
+    {
+      "description": "CONVERGENCE_SPACE never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 26.2,
+      "target": "CONVERGENCE_SPACE"
+    },
+    {
+      "description": "CONVERGENCE_TIME never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 26.7,
+      "target": "CONVERGENCE_TIME"
+    },
+    {
+      "description": "ACCURACY never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 25.9,
+      "target": "ACCURACY"
+    },
+    {
+      "description": "ENERGY_BUDGET never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 25.7,
+      "target": "ENERGY_BUDGET"
+    },
+    {
+      "description": "PLAN_CONSISTENT never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 27.1,
+      "target": "PLAN_CONSISTENT"
+    },
+    {
+      "description": "COVERAGE never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 27.2,
+      "target": "COVERAGE"
+    },
+    {
+      "description": "SAFETY never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 28.7,
+      "target": "SAFETY"
+    },
+    {
+      "description": "EFFICIENCY never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 27.3,
+      "target": "EFFICIENCY"
+    }
+  ],
+  "provenance": {
+    "agent_requirements_sha256": "ace07613cd4fffa8bd902a9082886ec4530b04aa6ae2029cad4de7b67a252293",
+    "argv": [
+      "validation/grader_mutation.py",
+      "t04-bioheat-ablation",
+      "results/validation/mutation/t04-bioheat-ablation.json",
+      "--only",
+      "check_off"
+    ],
+    "git": {
+      "commit": null,
+      "dirty": true
+    },
+    "octave": "GNU Octave, version 8.4.0",
+    "packages": {
+      "bioengbench": "0.2.0",
+      "numpy": "2.5.3",
+      "pint": "0.26.1",
+      "scipy": "1.18.1"
+    },
+    "platform": "Linux-6.18.44-fc-v80-x86_64-with-glibc2.39",
+    "python": "3.13.16",
+    "utc": "2026-10-08T23:10:49Z",
+    "uv_lock_sha256": "ac81a7188c90c087f9d95ec9d39ea72daf63149aebd8007d31caaccf44813090"
+  },
+  "summary": {
+    "check_off": {
+      "killed": 9,
+      "total": 10
+    },
+    "threshold_acceptance": {
+      "killed": 20,
+      "total": 20
+    },
+    "threshold_configuration": {
+      "killed": 3,
+      "total": 8
+    }
+  },
+  "task": "t04-bioheat-ablation",
+  "tests": [
+    "tests/tasks/test_t04_thresholds.py",
+    "tests/tasks/test_t04.py",
+    "-k",
+    "threshold or boundary or accuracy or mutant or inputs or order or robust or contract"
+  ]
+}

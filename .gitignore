@@ -8,7 +8,9 @@ __pycache__/
 dist/
 build/
 *.egg-info/
-/results/
+/results/*
+!/results/validation/
+/results/validation/logs/
 private_seeds.txt
 .envrc
 octave-workspace

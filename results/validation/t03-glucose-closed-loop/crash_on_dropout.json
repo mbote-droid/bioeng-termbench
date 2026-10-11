@@ -1,0 +1,77 @@
+{
+  "assessment": {
+    "expected_codes_fired": true,
+    "ok": true,
+    "per_case_accept": 0.0,
+    "per_case_accept_95ci": [
+      0.0,
+      0.16112515805281938
+    ],
+    "reward_probability_8_cases_upper": 4.5426246267755465e-07
+  },
+  "case_verdicts_sha256": "7ac34dd3b0d5aa9fd3c9483358d9f860df494f6a61e199bda660e4ee1fc297f3",
+  "expected_codes": [
+    "RUN"
+  ],
+  "fail_codes": {
+    "RUN": 20
+  },
+  "kind": "negative",
+  "lang": "python",
+  "margins": {},
+  "n_cases": 20,
+  "n_passed": 0,
+  "note": "None arithmetic on dropout",
+  "probe": "t03-glucose-closed-loop/crash_on_dropout",
+  "provenance": {
+    "agent_requirements_sha256": "ace07613cd4fffa8bd902a9082886ec4530b04aa6ae2029cad4de7b67a252293",
+    "argv": [
+      "validation/campaign.py",
+      "probe",
+      "t03-glucose-closed-loop/crash_on_dropout",
+      "--out",
+      "results/validation/t03-glucose-closed-loop/crash_on_dropout.json"
+    ],
+    "git": {
+      "commit": null,
+      "dirty": true
+    },
+    "octave": "GNU Octave, version 8.4.0",
+    "packages": {
+      "bioengbench": "0.2.0",
+      "numpy": "2.5.3",
+      "pint": "0.26.1",
+      "scipy": "1.18.1"
+    },
+    "platform": "Linux-6.18.44-fc-v80-x86_64-with-glibc2.39",
+    "python": "3.13.16",
+    "submission_python": "/opt/agent-python/bin/python",
+    "utc": "2026-10-08T13:55:46Z",
+    "uv_lock_sha256": "ac81a7188c90c087f9d95ec9d39ea72daf63149aebd8007d31caaccf44813090"
+  },
+  "seconds": 1.3,
+  "seeds": [
+    "dfd5452c9b4e9447bafb75146ee32e13",
+    "47e75289589cdae7b9f96655b7a477e8",
+    "83989719af2b5a1053ecf22b5adb0991",
+    "4616b2e0fabff563e0f48e5bfd618b13",
+    "9136976fc41d98d41f91b51cde7bb04f",
+    "2ed99751914aad14b79880370ca9e3f9",
+    "ae3b5ad025bb7149e2a9d2017516a243",
+    "e7ee9deb4e497baa757d9afae1b1619e",
+    "52c8d0d87086120fbc269e0f435bd595",
+    "e19d1119aa169a723094a6a34f8d65ad",
+    "448f6710a8079f73a2a31b2ef3f0d1d2",
+    "ba1d785020cd4a7ff663612b2989fb46",
+    "3ab7c7022958ccfae4b1e2495ae0ea92",
+    "802158354229303aad924350a3d8e210",
+    "ca941d563cf7bf9a2063bff80ad9304b",
+    "4091a6ac2c7993c09f07533fecec720c",
+    "7fbc6bdb819f3180ec5bf47b94f21b49",
+    "77c293680ab8a6a16f31a6bef45d8c6e",
+    "58a56e2f174882d4647d1e46aaa3d4e8",
+    "276947b3f413d225be16b3e9b10934b6"
+  ],
+  "task": "t03-glucose-closed-loop",
+  "task_version": "1.0.0"
+}

@@ -1,0 +1,307 @@
+{
+  "module": "t02_pk.py",
+  "mutants": [
+    {
+      "description": "SIGMA_LOG 0.1 -> 0.05",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 2.9,
+      "target": "SIGMA_LOG"
+    },
+    {
+      "description": "SIGMA_LOG 0.1 -> 0.2",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 3.3,
+      "target": "SIGMA_LOG"
+    },
+    {
+      "description": "INFUSION_H 1.0 -> 0.5",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 7.0,
+      "target": "INFUSION_H"
+    },
+    {
+      "description": "INFUSION_H 1.0 -> 2.0",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 12.4,
+      "target": "INFUSION_H"
+    },
+    {
+      "description": "LR_LIMIT 18.47 -> 9.235",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 16.8,
+      "target": "LR_LIMIT"
+    },
+    {
+      "description": "LR_LIMIT 18.47 -> 36.94",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 9.7,
+      "target": "LR_LIMIT"
+    },
+    {
+      "description": "SE_REL_TOL 0.2 -> 0.1",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 12.4,
+      "target": "SE_REL_TOL"
+    },
+    {
+      "description": "SE_REL_TOL 0.2 -> 0.4",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 10.0,
+      "target": "SE_REL_TOL"
+    },
+    {
+      "description": "SE_UNIDENTIFIED 1.0 -> 0.5",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 10.6,
+      "target": "SE_UNIDENTIFIED"
+    },
+    {
+      "description": "SE_UNIDENTIFIED 1.0 -> 2.0",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 5.0,
+      "target": "SE_UNIDENTIFIED"
+    },
+    {
+      "description": "HALF_LIFE_REL_TOL 0.005 -> 0.0025",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 7.1,
+      "target": "HALF_LIFE_REL_TOL"
+    },
+    {
+      "description": "HALF_LIFE_REL_TOL 0.005 -> 0.01",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 6.7,
+      "target": "HALF_LIFE_REL_TOL"
+    },
+    {
+      "description": "PRED_REL_TOL 0.01 -> 0.005",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 7.0,
+      "target": "PRED_REL_TOL"
+    },
+    {
+      "description": "PRED_REL_TOL 0.01 -> 0.02",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 7.6,
+      "target": "PRED_REL_TOL"
+    },
+    {
+      "description": "SS_REL_TOL 0.01 -> 0.005",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 8.4,
+      "target": "SS_REL_TOL"
+    },
+    {
+      "description": "SS_REL_TOL 0.01 -> 0.02",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 9.0,
+      "target": "SS_REL_TOL"
+    },
+    {
+      "description": "EFFICIENCY_LIMIT 1.2 -> 0.6",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 70.1,
+      "target": "EFFICIENCY_LIMIT"
+    },
+    {
+      "description": "EFFICIENCY_LIMIT 1.2 -> 2.4",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 30.4,
+      "target": "EFFICIENCY_LIMIT"
+    },
+    {
+      "description": "FEASIBILITY_MARGIN 0.85 -> 0.425",
+      "killed": true,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 120.1,
+      "target": "FEASIBILITY_MARGIN"
+    },
+    {
+      "description": "FEASIBILITY_MARGIN 0.85 -> 1.7",
+      "killed": true,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 2.1,
+      "target": "FEASIBILITY_MARGIN"
+    },
+    {
+      "description": "FILES never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 4.2,
+      "target": "FILES"
+    },
+    {
+      "description": "SCHEMA never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 4.1,
+      "target": "SCHEMA"
+    },
+    {
+      "description": "PARAMS_LR never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 1.9,
+      "target": "PARAMS_LR"
+    },
+    {
+      "description": "SE_CONSISTENT never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 2.3,
+      "target": "SE_CONSISTENT"
+    },
+    {
+      "description": "HALF_LIVES never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 3.5,
+      "target": "HALF_LIVES"
+    },
+    {
+      "description": "PRED_GRID never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 6.6,
+      "target": "PRED_GRID"
+    },
+    {
+      "description": "PRED_ACCURACY never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 3.4,
+      "target": "PRED_ACCURACY"
+    },
+    {
+      "description": "REGIMEN_FORMAT never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 5.7,
+      "target": "REGIMEN_FORMAT"
+    },
+    {
+      "description": "REGIMEN_SELF never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 3.8,
+      "target": "REGIMEN_SELF"
+    },
+    {
+      "description": "REGIMEN_TARGETS never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 4.4,
+      "target": "REGIMEN_TARGETS"
+    },
+    {
+      "description": "REGIMEN_SAFE never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 6.0,
+      "target": "REGIMEN_SAFE"
+    },
+    {
+      "description": "REGIMEN_EFFICIENT never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 3.8,
+      "target": "REGIMEN_EFFICIENT"
+    }
+  ],
+  "provenance": {
+    "agent_requirements_sha256": "ace07613cd4fffa8bd902a9082886ec4530b04aa6ae2029cad4de7b67a252293",
+    "argv": [
+      "validation/grader_mutation.py",
+      "t02-pk-fit-dose",
+      "results/validation/mutation/t02-pk-fit-dose.json",
+      "--only",
+      "check_off"
+    ],
+    "git": {
+      "commit": null,
+      "dirty": true
+    },
+    "octave": "GNU Octave, version 8.4.0",
+    "packages": {
+      "bioengbench": "0.2.0",
+      "numpy": "2.5.3",
+      "pint": "0.26.1",
+      "scipy": "1.18.1"
+    },
+    "platform": "Linux-6.18.44-fc-v80-x86_64-with-glibc2.39",
+    "python": "3.13.16",
+    "utc": "2026-10-08T23:12:46Z",
+    "uv_lock_sha256": "ac81a7188c90c087f9d95ec9d39ea72daf63149aebd8007d31caaccf44813090"
+  },
+  "summary": {
+    "check_off": {
+      "killed": 12,
+      "total": 12
+    },
+    "threshold_acceptance": {
+      "killed": 18,
+      "total": 18
+    },
+    "threshold_configuration": {
+      "killed": 2,
+      "total": 2
+    }
+  },
+  "task": "t02-pk-fit-dose",
+  "tests": [
+    "tests/tasks/test_t02_thresholds.py",
+    "tests/tasks/test_t02.py",
+    "-m",
+    "not slow"
+  ]
+}

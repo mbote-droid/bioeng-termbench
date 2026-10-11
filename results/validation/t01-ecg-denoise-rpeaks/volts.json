@@ -1,0 +1,224 @@
+{
+  "assessment": {
+    "expected_codes_fired": true,
+    "ok": true,
+    "per_case_accept": 0.0,
+    "per_case_accept_95ci": [
+      3.469446951953614e-18,
+      0.03699349820698568
+    ],
+    "reward_probability_8_cases_upper": 3.507544670458385e-12
+  },
+  "case_verdicts_sha256": "a2bc66ae2c24fbd8b12b948184d8fc4cef8e9043739f5888c636e3abb19ea328",
+  "expected_codes": [
+    "AMPLITUDE"
+  ],
+  "fail_codes": {
+    "AMPLITUDE": 100,
+    "FIDELITY": 100
+  },
+  "kind": "negative",
+  "lang": "python",
+  "margins": {
+    "AMPLITUDE": {
+      "max": 0.9990230697411718,
+      "min": 0.9989697128119271,
+      "threshold": 0.15
+    },
+    "BASELINE": {
+      "max": 2.5172359074966446e-08,
+      "min": 8.687305816271216e-13,
+      "threshold": 0.1
+    },
+    "FIDELITY": {
+      "max": 0.3908156062994217,
+      "min": 0.15594272583953564,
+      "threshold": 0.05
+    },
+    "HR": {
+      "max": 0.009079041016121892,
+      "min": 0.0,
+      "threshold": 1.0
+    },
+    "HRV_CONSISTENT": {
+      "max": 0.0,
+      "min": 0.0,
+      "threshold": 1.0
+    },
+    "NBEATS": {
+      "max": 0.0,
+      "min": 0.0,
+      "threshold": 2
+    },
+    "PEAK_FORMAT": {
+      "max": 4.444444456908059e-07,
+      "min": 4.444444456908059e-07,
+      "threshold": 0.0001
+    },
+    "PEAK_PREC": {
+      "max": 1.0,
+      "min": 1.0,
+      "threshold": 0.98
+    },
+    "PEAK_SENS": {
+      "max": 1.0,
+      "min": 1.0,
+      "threshold": 0.98
+    },
+    "POWERLINE": {
+      "max": 2.233985710483872e-10,
+      "min": 5.682028682811711e-12,
+      "threshold": 0.05
+    },
+    "RMSSD": {
+      "max": 1.8771325179357774,
+      "min": 1.7763568394002505e-15,
+      "threshold": 5.102394817178534
+    },
+    "SDNN": {
+      "max": 0.941090180935106,
+      "min": 0.009297399343370927,
+      "threshold": 3.9380790386252613
+    },
+    "TIME_AXIS": {
+      "max": 4.4444445279623324e-07,
+      "min": 4.4444445279623324e-07,
+      "threshold": 1e-05
+    }
+  },
+  "n_cases": 100,
+  "n_passed": 0,
+  "note": "filtered ECG written in volts",
+  "probe": "t01-ecg-denoise-rpeaks/volts",
+  "provenance": {
+    "agent_requirements_sha256": "ace07613cd4fffa8bd902a9082886ec4530b04aa6ae2029cad4de7b67a252293",
+    "argv": [
+      "validation/campaign.py",
+      "probe",
+      "t01-ecg-denoise-rpeaks/volts",
+      "--out",
+      "results/validation/t01-ecg-denoise-rpeaks/volts.json"
+    ],
+    "git": {
+      "commit": null,
+      "dirty": true
+    },
+    "octave": "GNU Octave, version 8.4.0",
+    "packages": {
+      "bioengbench": "0.2.0",
+      "numpy": "2.5.3",
+      "pint": "0.26.1",
+      "scipy": "1.18.1"
+    },
+    "platform": "Linux-6.18.44-fc-v80-x86_64-with-glibc2.39",
+    "python": "3.13.16",
+    "submission_python": "/opt/agent-python/bin/python",
+    "utc": "2026-10-08T14:36:11Z",
+    "uv_lock_sha256": "ac81a7188c90c087f9d95ec9d39ea72daf63149aebd8007d31caaccf44813090"
+  },
+  "seconds": 251.8,
+  "seeds": [
+    "8b66a962ec58d1560eb8399fd94cd6db",
+    "1bd9d890f31352cc6e2a313fb3da5628",
+    "25a155cd6a0e8e913887d867c323b698",
+    "e5e206f948079067cabe911c66f722cf",
+    "0797c51d8ad04e02aba404a8894338e9",
+    "3c925dbfecd7e02d1881f89b02bb05c1",
+    "472032d808d0290529e7ca2e06d72eb2",
+    "29e52c6b392bf64c834e19bee82a30b5",
+    "195c28e9dd42a7b4390e79ec9fa6c3ea",
+    "33e50c4ac3c10f2963d41ea4336a2110",
+    "dc052b3fe66bd730030fb2de392eb612",
+    "b0d2fb0afd826955b90b31a40b872f78",
+    "ff3b93119d66690f47ab185219d40ca7",
+    "68ed68be0d4872466b70de076e6391cd",
+    "bb80f39d296e2087854ba9fb0f10dc2d",
+    "2a6de19fbc3541e30ed9008a9316dd3c",
+    "4915b75745d1bd239cb0d51946da304e",
+    "b40b1ac46df3c2cf691d15efa4ac126e",
+    "ccc4997b691cc01d2027f2218e04672c",
+    "1b38344791d5d04ee1e4126bbd61c697",
+    "b1937be0cd32987d676b177bf4f0fd30",
+    "f57114c714d5aba770d3c3c00ab28984",
+    "fc979801876e8421f8ad7dc8ecc4c87f",
+    "1069008e55e5562b876d81119b395b60",
+    "6b97de5a9eb9fbc69f9cd5f79bce8c9d",
+    "79e9e76a3b990df365f058bc3b1ceed5",
+    "9f408abba74ed9aa2dbbf5f870c9486e",
+    "e857375433591e2e63da8e23ec02efe8",
+    "88146da0d610b9008569c745ca187d48",
+    "769b33127d7298be1215777ab0a34ab2",
+    "7b426dd99337afa7438854645084d80f",
+    "2dcb36058796a8fcca933834b94ee897",
+    "0b4727be46cf9c00d56e1854801bb2a5",
+    "07ff2930391f2aabf6706cbde99b2de3",
+    "8119d2bd10fca311a5221a22cc54faf4",
+    "ef0bbc88bbc303f2e8ea5e47d3bb380e",
+    "e491d82caaba5600bf1328bd9497282c",
+    "7b31f811b9c2c52bf62d0aa8ca2b876f",
+    "112cbedd1f16eae82616e74ad65bb6b5",
+    "240e7c71032c32c707c7cb0d6f436b86",
+    "4706568b9803b69ce8403680ba4ce34f",
+    "838b3be4a41330097cf77258c0d19c2e",
+    "a65c2fe57d563afaab13f863fb14baf9",
+    "62e8f099794c312fd00703ee45ed2555",
+    "fdd24d14a7cf3890f96f7a5acbab20ed",
+    "99c56b0037a1464b0ccd057327b05511",
+    "46c2ff65e3391faa64e5207fa76e6083",
+    "d740ed00ee4d117c6870e0cc348c1abe",
+    "b03d9821d5a57e61a49a8c3a77ba71e8",
+    "c9fc59af749827068184efbce1199aff",
+    "b832d80c868a714043d9d3846e5e8bee",
+    "aeb0faff2e7e355a0c2fb46d98d41a78",
+    "ec5c1c70282179cac61512a31992ac04",
+    "2cb35614af21b62cb87085049bf92453",
+    "ec87d8a3ff0917a094bd7b7a0af7bb02",
+    "d160eb05d9c3837d5e155803bedb6aa3",
+    "8778b9a8e1df0e13d07313eb78bfcdea",
+    "58218dfac2db182d8385b3ef17435340",
+    "c96c6a6a7d18f45f4f9d6db0564c5927",
+    "15e053c843d5ac211e166cbb67bfd993",
+    "8bdf233af008fc8be0516d2e697f81fa",
+    "ae7d9ca52c8007f94ebd4e8d9bb36a49",
+    "0792c04173c1356da4584850cc19b1e9",
+    "64ed14f78b38a855283c64f39b607004",
+    "daf70332a08d79ed09065f21ec3d2f29",
+    "f7d725a0695b9d7a5114d33ee7f698ad",
+    "bea92bd9723d0d277083beb2dc0bbeff",
+    "e0117fbd377d6c5e9aba4857489788bf",
+    "5c40761bae127083602c4cfaf82be007",
+    "417636548953750dfcb50909ae4f68f8",
+    "9a01a8c42cac8e6b85c3fd3e3568dc3b",
+    "4fc64e6eb908bbeed65156dee6eba6de",
+    "59423a7811d1977d62a1ed2c5a1d24f5",
+    "ba83c8b68f4da9f98727f7e266066dc7",
+    "0904afcb2a467f42c11af58bd5ae6085",
+    "49faf323aa6963137e1e04189269d351",
+    "a3300cf8f4b5befa77d522249ca291d8",
+    "83857bb42db86b629a9a9176c26ce357",
+    "f8b80c31c6e7e292ee2ae33dc72f571b",
+    "4ac28608770c51201ac2fabf482d853f",
+    "1b9f641c453112bee26095cb810cec91",
+    "e038539672a0ecc829c9479194d3a0fc",
+    "e9ca9bbf3f557477bf5500269a43380e",
+    "9b69ecdf9057e3722115d41e15b5b0b1",
+    "04bbdbc28cef4514858ec90d7ec0b1e4",
+    "adf95573d1966ed4efd5f07c29e92e23",
+    "945a90294c11e05f09d5d03e5155120d",
+    "421fa3f3bf4dc8b46ba19ff845504a0e",
+    "8acc6aa126f51ef2b191e38daf2561ee",
+    "a8b7737948d93046f68a74e0a33a1d0f",
+    "dc4d03f2cf0be85b724b61c3f4010a7f",
+    "69d0f1afd4fde86054d880593d9e2707",
+    "72fdb5c12931aa3fb99532f04c2b88c4",
+    "76146dededa3839116d88f86ac5c1db7",
+    "cacda14bf5f35b6b71d53767da7f3168",
+    "eb402522b46cf0841472736306ecdc64",
+    "7dcff2468c42ca2ba0cce0064bf1a387",
+    "8519ef04f9ff43e14e8b574d8c5b5631",
+    "25c21459178d7adfcda07c89427b3472",
+    "ab5f0d23e042f248e6535ed9353819ed"
+  ],
+  "task": "t01-ecg-denoise-rpeaks",
+  "task_version": "2.0.0"
+}

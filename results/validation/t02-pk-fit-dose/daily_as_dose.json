@@ -1,0 +1,96 @@
+{
+  "assessment": {
+    "expected_codes_fired": true,
+    "ok": true,
+    "per_case_accept": 0.0,
+    "per_case_accept_95ci": [
+      2.7755575615628914e-17,
+      0.3903342879021653
+    ],
+    "reward_probability_8_cases_upper": 0.0005388819281612516
+  },
+  "case_verdicts_sha256": "da64f6031fe1406734cf85de3ba0a0c32bc1c73f2e0e1c31a76acee94a53c8f5",
+  "expected_codes": [
+    "REGIMEN_SELF"
+  ],
+  "fail_codes": {
+    "REGIMEN_EFFICIENT": 6,
+    "REGIMEN_SAFE": 6,
+    "REGIMEN_SELF": 6
+  },
+  "kind": "negative",
+  "lang": "python",
+  "margins": {
+    "HALF_LIVES": {
+      "max": 8.881784197001252e-16,
+      "min": 0.0,
+      "threshold": 0.005
+    },
+    "PARAMS_LR": {
+      "max": 4.429318023468908e-09,
+      "min": -1.9650309157626107e-09,
+      "threshold": 18.47
+    },
+    "PRED_ACCURACY": {
+      "max": 1.2523297949221658e-08,
+      "min": 7.775697531118792e-09,
+      "threshold": 0.01
+    },
+    "REGIMEN_EFFICIENT": {
+      "max": 4.335287241925172,
+      "min": 3.8849823020041496,
+      "threshold": 1.2
+    },
+    "REGIMEN_SELF": {
+      "max": 0.75,
+      "min": 0.7499999999999998,
+      "threshold": 0.01
+    },
+    "SE_CONSISTENT": {
+      "max": 2.0013235513260952e-10,
+      "min": 0.0,
+      "threshold": 0.2
+    }
+  },
+  "n_cases": 6,
+  "n_passed": 0,
+  "note": "daily dose reported per infusion",
+  "probe": "t02-pk-fit-dose/daily_as_dose",
+  "provenance": {
+    "agent_requirements_sha256": "ace07613cd4fffa8bd902a9082886ec4530b04aa6ae2029cad4de7b67a252293",
+    "argv": [
+      "validation/campaign.py",
+      "probe",
+      "t02-pk-fit-dose/daily_as_dose",
+      "--out",
+      "results/validation/t02-pk-fit-dose/daily_as_dose.json"
+    ],
+    "git": {
+      "commit": null,
+      "dirty": true
+    },
+    "octave": "GNU Octave, version 8.4.0",
+    "packages": {
+      "bioengbench": "0.2.0",
+      "numpy": "2.5.3",
+      "pint": "0.26.1",
+      "scipy": "1.18.1"
+    },
+    "platform": "Linux-6.18.44-fc-v80-x86_64-with-glibc2.39",
+    "python": "3.13.16",
+    "submission_python": "/opt/agent-python/bin/python",
+    "utc": "2026-10-08T22:37:31Z",
+    "uv_lock_sha256": "ac81a7188c90c087f9d95ec9d39ea72daf63149aebd8007d31caaccf44813090"
+  },
+  "seconds": 50.5,
+  "seeds": [
+    "55b05c023284db20115876fc24d6e3e3",
+    "0d84163d72d1e51134c4af2dd542d529",
+    "2d9b42b9396b92efdc8559c38e50a339",
+    "d336ba9150ce6481ff617b8d414a0d19",
+    "7d54eb384a6f3cd3b9df8af16e573876",
+    "c8a6f44399dbd91cd53eb91e711b7886"
+  ],
+  "task": "t02-pk-fit-dose",
+  "task_version": "1.0.0"
+}

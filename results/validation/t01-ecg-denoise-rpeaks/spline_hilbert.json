@@ -1,0 +1,218 @@
+{
+  "assessment": {
+    "false_reject_95ci": [
+      3.469446951953614e-18,
+      0.03699349820698568
+    ],
+    "false_reject_rate": 0.0,
+    "false_reject_upper_95": 0.029513049607039932,
+    "ok": true
+  },
+  "case_verdicts_sha256": "7d82df63f6d4ba2898d9b3a6027aee0b966d992acf841f7de4df35791a50305d",
+  "expected_codes": [],
+  "fail_codes": {},
+  "kind": "reference",
+  "lang": "python",
+  "margins": {
+    "AMPLITUDE": {
+      "max": 0.02702195749740195,
+      "min": 8.08757795285803e-05,
+      "threshold": 0.15
+    },
+    "BASELINE": {
+      "max": 0.008414262309748058,
+      "min": 7.581079001827241e-05,
+      "threshold": 0.1
+    },
+    "FIDELITY": {
+      "max": 0.015407272575796297,
+      "min": 0.006622762970214033,
+      "threshold": 0.05
+    },
+    "HR": {
+      "max": 0.056491660702718605,
+      "min": 0.0,
+      "threshold": 1.0
+    },
+    "HRV_CONSISTENT": {
+      "max": 0.0,
+      "min": 0.0,
+      "threshold": 1.0
+    },
+    "NBEATS": {
+      "max": 1.0,
+      "min": 0.0,
+      "threshold": 2
+    },
+    "PEAK_FORMAT": {
+      "max": 4.444444456908059e-07,
+      "min": 4.444444456908059e-07,
+      "threshold": 0.0001
+    },
+    "PEAK_PREC": {
+      "max": 1.0,
+      "min": 1.0,
+      "threshold": 0.98
+    },
+    "PEAK_SENS": {
+      "max": 1.0,
+      "min": 1.0,
+      "threshold": 0.98
+    },
+    "POWERLINE": {
+      "max": 0.0026201492801465917,
+      "min": 0.00010597603858261512,
+      "threshold": 0.05
+    },
+    "RMSSD": {
+      "max": 1.7688360192654038,
+      "min": 0.013617409454184326,
+      "threshold": 7.78102938170739
+    },
+    "SDNN": {
+      "max": 0.7375313633349165,
+      "min": 0.00258471962300888,
+      "threshold": 3.772208868611025
+    },
+    "TIME_AXIS": {
+      "max": 4.4444445279623324e-07,
+      "min": 4.4444445279623324e-07,
+      "threshold": 1e-05
+    }
+  },
+  "n_cases": 100,
+  "n_passed": 100,
+  "note": "least-squares mains, spline baseline, Hilbert detector",
+  "probe": "t01-ecg-denoise-rpeaks/spline_hilbert",
+  "provenance": {
+    "agent_requirements_sha256": "ace07613cd4fffa8bd902a9082886ec4530b04aa6ae2029cad4de7b67a252293",
+    "argv": [
+      "validation/campaign.py",
+      "probe",
+      "t01-ecg-denoise-rpeaks/spline_hilbert",
+      "--out",
+      "results/validation/t01-ecg-denoise-rpeaks/spline_hilbert.json"
+    ],
+    "git": {
+      "commit": null,
+      "dirty": true
+    },
+    "octave": "GNU Octave, version 8.4.0",
+    "packages": {
+      "bioengbench": "0.2.0",
+      "numpy": "2.5.3",
+      "pint": "0.26.1",
+      "scipy": "1.18.1"
+    },
+    "platform": "Linux-6.18.44-fc-v80-x86_64-with-glibc2.39",
+    "python": "3.13.16",
+    "submission_python": "/opt/agent-python/bin/python",
+    "utc": "2026-10-08T21:41:31Z",
+    "uv_lock_sha256": "ac81a7188c90c087f9d95ec9d39ea72daf63149aebd8007d31caaccf44813090"
+  },
+  "seconds": 225.6,
+  "seeds": [
+    "520ed9ae98d4efbdd275703e480b86cd",
+    "83f710ba7a8eabf023948759403f8462",
+    "25418921fc325dc56ace5486be4de59d",
+    "0fd0f49391d0ddcfb992e34145495fb1",
+    "eaad2f37da1ca2755b47e76bbd9c9ecf",
+    "e96c021d9d5ff04c753ead8d7d2be7d8",
+    "0e98873c7cb7b59719496020db5cd9f3",
+    "716d49cb09c4dd97d8e2f84a0ffb7627",
+    "f61d75443aa368ca37554e033ffa9157",
+    "128130ee5ed6f54000009938afb7b066",
+    "1a01094bcaf8eb3abdda0bc3597f4b32",
+    "185b7d4f3fce552a58d4c517a1b3e19b",
+    "7a9217b0d30feff3550115a0cce8f18c",
+    "3c393a62972b6f2c1708f943d6cf77e0",
+    "4f2dfdcc13f1d45c1998f2f0665e7d92",
+    "98fd7097781b1f62306d557a34a43297",
+    "f718aae2fd14100f95b56749face4e3b",
+    "f445b68a3f5c97455d58990e35253bb0",
+    "61e27795d84e8654f1fb720973f48165",
+    "2e02bfdd92db2d3b0bbf49dcaaad6ff8",
+    "51b49caffb845a022128616feabf5fd4",
+    "0a7687a88f0995923149174e98678349",
+    "a678f1a68bb7f974d824ba294546b05a",
+    "724a3a3dbf420e8aa6f67462ccb9a399",
+    "18d809214f0f611004d29c158465e0b1",
+    "4ce51f1e6c370d7bd478bfbcf1b6f5c6",
+    "fda3c530c494e64375ffb7783b29edd4",
+    "0ed81ee3b26d9a4e550a2c738300452d",
+    "32958b1dea8a3a304c2d7e91b34c99f3",
+    "a6a0bcfd089222d1ec9c91771c0c4202",
+    "0af66c45dd703cb757d8d03c2f49c3a9",
+    "d3e83b2e301381333925f05b1a32b752",
+    "0a5c7db94c31940e9fc89c4ec146a179",
+    "9f2399543d8d7c2a740b6f2e926793b6",
+    "0b8e19b6250038feef34dfdcb9f7cfee",
+    "4c836dd8cc5fc7733828eced02fef685",
+    "147e0a5702485d0bde2ff34df4480ae4",
+    "9dccfd88fe2105eca32e93c32a06fe13",
+    "beebfb1ed41b119713f11e0527f1844c",
+    "2e751fea1e39f8ea986b0b6d4a05b781",
+    "fe597708fe046bf8cd97885438ad4045",
+    "81790af6a8ade85156e37960df3a2ad4",
+    "d03acf4f888d1b42f105297d35427d8e",
+    "11df30f2231ef0459b2039a93e64b4a7",
+    "2f8895369ed86520b0561babb1c234a5",
+    "1ac7e85ee1766ae7bce36a89660539df",
+    "6604552b30f4ec8e0ea586ab18bdc81f",
+    "1e2afe0e8c03badf93630d0c3ee88603",
+    "df150ca510d20009577b6a43fc3a87bf",
+    "53c138fa34b4fbf4645bf71b6d9c1b1b",
+    "cd7c4aeaf311da1dcd728ba700d3be68",
+    "633596da0b57317e4da0df6e81785bb5",
+    "012a74e22df77d13bcd89dd25e09f15e",
+    "0dc4c4f365cede476ff1d47d3c7e424b",
+    "5fde61be69157801cc6fb2143eedd2fb",
+    "34417e4829a0bb749311d4005b82f551",
+    "1c5b3b57fa0ff8c436c6a8336a654193",
+    "95d8aa1b5e2fcfe3dcc124279f57da2f",
+    "5e6bedd562674e11d5fbd46e63be86e2",
+    "b0947888d55d46bc7804a23e88af6502",
+    "05c01379798ac77ee318c053b9b49d60",
+    "e86d1ef94e6474790e2b29d3669964a8",
+    "fa73ea78597d7a9b827a242ac7c892c1",
+    "a17d97dfdb5db84f6bbd4b761324cb47",
+    "8c5221e355ec5842d7c1e55a8724df11",
+    "91974a503e92ffa6e0456bbb648867d8",
+    "1964b3f0307f578c9c588a61ee6c2489",
+    "7426d76e60034437c13c90395bbcb413",
+    "dfcafc6940723c88bff2c7e01301d62a",
+    "7c7fa19d8cf332bc286ae30ea2ffe949",
+    "743a908b4b11c68ed45af4ffe39bfbc3",
+    "3359feb6d56e9cfb600c9557a49c72d8",
+    "39e5a2af6bb7e51632214c941ce8fac9",
+    "a4eac423cb432b62f00959016e7c7144",
+    "89a6b4d9ac1e24277c26ca177ec6d8f4",
+    "61f78b724479fd6caa2f5552f9d68965",
+    "586e5eca61817f3fee294cd08927ba16",
+    "d607d8cace98d6bb7635e681ef9cbc0c",
+    "02daf2a7fba6f6a005d4e4bf50c99391",
+    "48331461a87dc1de6896b863f6b96b32",
+    "1fd8bee39bd3acc5573aaf7dc0908d5a",
+    "cf6c32ca84363e0401d8169891ee177b",
+    "903739ee574955e08b951deae7a4ec98",
+    "c1385446915da96b5515642fb3246561",
+    "f70b33beb77ae098ccc5b01242132746",
+    "8a126d889d4483ff1159c990a9480642",
+    "2081c3aa429d04d43d87bc90873e1edd",
+    "097fde3705078959a9f90168d65a6ac5",
+    "6860fa192ec8a146e5734e3fcc73d753",
+    "cf2d6a7b8dd8835408a5ecb4ebc57e91",
+    "3873eb04516b120c5d85577547d4ddfd",
+    "144629718016709e5ea6f2bf6e54c074",
+    "169d599a3b4874b715d18f8cc91e6b6f",
+    "975a5117efc6099bad674a053235ccf5",
+    "7b0613687c1770e5af7733e9e8f1ffa7",
+    "160e79a4d9370d52f59d32acc2d4c46b",
+    "4d11e28478a7e7c3806d9bb364f4c8f1",
+    "d8c5db84491ba266f5e689ec497fd10c",
+    "785fa7bcbddaf3b3c834fed52a1ebeae",
+    "c004c83ce742e8d1ac257b7b7e427166"
+  ],
+  "task": "t01-ecg-denoise-rpeaks",
+  "task_version": "2.0.0"
+}

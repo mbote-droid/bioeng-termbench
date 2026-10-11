@@ -1,0 +1,226 @@
+{
+  "assessment": {
+    "expected_codes_fired": true,
+    "ok": true,
+    "per_case_accept": 0.0,
+    "per_case_accept_95ci": [
+      3.469446951953614e-18,
+      0.03699349820698568
+    ],
+    "reward_probability_8_cases_upper": 3.507544670458385e-12
+  },
+  "case_verdicts_sha256": "82780bd8028da7fa1dc194ef55cbaa7faa5fdf9833a0557e65498a3e7a41fb60",
+  "expected_codes": [
+    "BASELINE"
+  ],
+  "fail_codes": {
+    "BASELINE": 100,
+    "HR": 1,
+    "RMSSD": 1,
+    "SDNN": 1
+  },
+  "kind": "negative",
+  "lang": "python",
+  "margins": {
+    "AMPLITUDE": {
+      "max": 0.13678720552338533,
+      "min": 1.0770760100776398e-05,
+      "threshold": 0.15
+    },
+    "BASELINE": {
+      "max": 1.000007813600392,
+      "min": 0.9999681408024609,
+      "threshold": 0.1
+    },
+    "FIDELITY": {
+      "max": 0.015362718737774839,
+      "min": 0.00667118263255628,
+      "threshold": 0.05
+    },
+    "HR": {
+      "max": 1.0099878142128347,
+      "min": 0.0,
+      "threshold": 1.0
+    },
+    "HRV_CONSISTENT": {
+      "max": 0.0,
+      "min": 0.0,
+      "threshold": 1.0
+    },
+    "NBEATS": {
+      "max": 1.0,
+      "min": 0.0,
+      "threshold": 2
+    },
+    "PEAK_FORMAT": {
+      "max": 4.444444456908059e-07,
+      "min": 4.444444456908059e-07,
+      "threshold": 0.0001
+    },
+    "PEAK_PREC": {
+      "max": 1.0,
+      "min": 1.0,
+      "threshold": 0.98
+    },
+    "PEAK_SENS": {
+      "max": 1.0,
+      "min": 0.9886363636363636,
+      "threshold": 0.98
+    },
+    "POWERLINE": {
+      "max": 0.0001822513571226451,
+      "min": 4.758337940157637e-06,
+      "threshold": 0.05
+    },
+    "RMSSD": {
+      "max": 63.77960275024857,
+      "min": 0.00339577322364093,
+      "threshold": 5.570659787745954
+    },
+    "SDNN": {
+      "max": 31.191688146944674,
+      "min": 0.0017826087804699853,
+      "threshold": 3.313694369935966
+    },
+    "TIME_AXIS": {
+      "max": 4.4444445279623324e-07,
+      "min": 4.4444445279623324e-07,
+      "threshold": 1e-05
+    }
+  },
+  "n_cases": 100,
+  "n_passed": 0,
+  "note": "baseline wander left in",
+  "probe": "t01-ecg-denoise-rpeaks/no_highpass",
+  "provenance": {
+    "agent_requirements_sha256": "ace07613cd4fffa8bd902a9082886ec4530b04aa6ae2029cad4de7b67a252293",
+    "argv": [
+      "validation/campaign.py",
+      "probe",
+      "t01-ecg-denoise-rpeaks/no_highpass",
+      "--out",
+      "results/validation/t01-ecg-denoise-rpeaks/no_highpass.json"
+    ],
+    "git": {
+      "commit": null,
+      "dirty": true
+    },
+    "octave": "GNU Octave, version 8.4.0",
+    "packages": {
+      "bioengbench": "0.2.0",
+      "numpy": "2.5.3",
+      "pint": "0.26.1",
+      "scipy": "1.18.1"
+    },
+    "platform": "Linux-6.18.44-fc-v80-x86_64-with-glibc2.39",
+    "python": "3.13.16",
+    "submission_python": "/opt/agent-python/bin/python",
+    "utc": "2026-10-08T15:05:58Z",
+    "uv_lock_sha256": "ac81a7188c90c087f9d95ec9d39ea72daf63149aebd8007d31caaccf44813090"
+  },
+  "seconds": 248.6,
+  "seeds": [
+    "63cb06350d979dfe11d069968fd472b3",
+    "40f1b39780dbc51c8d6c62e907377652",
+    "6b6186c8cd401cdf1b998559ae3cf61f",
+    "5fb5ec1bb9bf70091cd12e3fdb59c5c0",
+    "47ce4e8ad5dc1c749c33420f4bc4289f",
+    "9a75a08d6f698529d3cf7be1e090404b",
+    "b4543722b8f4a8d449e7092e84efedc1",
+    "a774c9dcd6cc797f976c0dfc99f4b2a2",
+    "5aeb16660a9f93f631c0cd86df790b4c",
+    "66e7c9948ce6dfa83c1a6baa2e20f419",
+    "6bcc48c363aa6069e41d42c9eda4a381",
+    "1a550308ac6f5a03e50ac76912e7e851",
+    "b9f1c4d43a8dfed94c9f390e2c6f4524",
+    "b0530bcf65b3b10c0540545bbceeda59",
+    "46bab8af29913da4911b37cb40ee497c",
+    "2363aa2e7b796f6091b915a6407fc6d4",
+    "fcf33c64b517be6c79ca918bb17a6817",
+    "bd64a083e9c49a7ddc099c3f9d6e4ee3",
+    "ba1a3700a3ee9cdbb0c8c2a2f5371f77",
+    "97298fde5d7744276b561848bd10dddd",
+    "44aa26e541d0654e480db29dbb38df7f",
+    "3fef2857bd1b7ee344e5511a6791153e",
+    "6be614831daa1679fec65313a05d9cee",
+    "2a1445182d922fda3d9f3debc4f80729",
+    "592a3a32cf0595b20b1006ef359b4779",
+    "5aa119b2e0418bc57603b80745ab7a0a",
+    "8d63f29d7536f0c9476b94a4fd6e7c02",
+    "4e4317d0bbc3ea606fab07b2d77e5e5b",
+    "0f5d15237094bb0e6a39ac386529b9a1",
+    "ba085dae37f57947fc035888d66cde0c",
+    "ed9173c5daae3071515925fd4a8cf8bf",
+    "3d47be2682fd70ddc779d83ac326dbbc",
+    "1bc0f85c1ffc27abeea84ebe06834e44",
+    "5b25e4052f5447ba6707d7b1722dba6d",
+    "614c2b22372f8469fe91e0b1398521d4",
+    "b4c78ad4aa4c7da9dc7873403b5e12f2",
+    "e70cd4e94fc10482b8ef837567515a32",
+    "e1d34385271be9de8b5c7ae9341f09fb",
+    "8508a99166396f4d5907c813138cf8c9",
+    "57a7e33b1e3e2e3d7e0143f75a6fbaba",
+    "fda7da22e06d3839dcf56515bfef4b34",
+    "31c19f4d15085c6c2b73bd50d381a519",
+    "ea32c6ceb88262458d84e074845a2dd7",
+    "a2afe17ea6e629dd61a7a86eaf75de6a",
+    "d976bd0aab233fbbbc478f291387c758",
+    "31d517f53d4f2b0ea715c2977654a484",
+    "2e5e49356e3cd9e61f31dd9f09835597",
+    "55d2a260e074233084ed4c9944675c6d",
+    "acadb00bc044c23e661d6b9d09f21d78",
+    "16cf2bb8344a8a5acc21b529499627e9",
+    "7c993841455c3d2867fe4ef34a5105e6",
+    "9143ba94b731fbbbc3066308e1cca919",
+    "d80b05c97e941178fcb3462160648fbb",
+    "91c411b6e212331b261b2137bb9a44a8",
+    "37b18abb9852e56e30b7e35c7ceefe02",
+    "f9445ddad2272c5b3aa6c6acd88c087b",
+    "412d18a808c996c2b4c82f2024a589e9",
+    "ea5f7f7fae405404ee169b10b10ebfac",
+    "076a0616c4374759d7381665940b9731",
+    "b50654dc44331391d4712e6c6c43f6f6",
+    "c2c4c0d98e81cfedc14da61602869a73",
+    "f99d8517c0233256dd41c181c0f3408a",
+    "c1a9d10e0ef88e96a7889390424c054d",
+    "fee5c65d2b4f9f0d80c9fea2367793c8",
+    "cd162db63d2af59c887910928c8ee89a",
+    "306cdbc3470a0ed7cacbdf55f5145637",
+    "d0c646b3bb40cf93f0e88c319f4aca9e",
+    "80e73ccef3d346df82e00f5d22c651c6",
+    "ca7b98e430a9b92c85864abc4765d1e2",
+    "5b46557f1ec75ed0fbc8decc7056fdca",
+    "cc36469ba4255f125f1facd70bad14bf",
+    "35e3db1047b32f8fc89fa8e49f543b2a",
+    "e3ac36a3bf4bafa5e0b40509e28a748a",
+    "93d80005d25bdf7a45e05a05da69500b",
+    "6ba0c5da12ed55f738750454bb35ff59",
+    "4abfcef64286777bda42a1e8bb3a40ed",
+    "569fc33858bd4fda542116b8e0caed63",
+    "0fa40eba2cfde1990abda4e9cbcc7986",
+    "8cdfe5c6f423281d6196feeddb7e8c11",
+    "f52edf0bea68cc5b0090fefdbe1dfb8e",
+    "e1da9829097565ca61ea91f004df9ad2",
+    "badd09b93525c1e71356ca1e6df85f8c",
+    "d32a13e728fc3fb56657cec0a046399b",
+    "70d5fdd999d6458707f1139604c6f10b",
+    "09740cf5e67be89989f05bffe4b0282d",
+    "673521bc1bd7fb03db777b5e33ee67cb",
+    "83564d15b0502b98fa5878d7dbc7ca57",
+    "0d4b88693430f38630f62a97f326fe81",
+    "97d5674db6c2f694ff2daec1e9547b3e",
+    "52bbee230dcf839bfab52c737173380d",
+    "a6992ab924e02c7f358760ff1c30f01e",
+    "13ddbb3a04f81d715d53316a4c4a710b",
+    "f249a21a74b49663385d95d8cc657245",
+    "da2a34c3441286174b2cf60695212fcb",
+    "ff8ba2c375b22dd087b9e987b4293835",
+    "57bf99df976d12005480d5c1323d3726",
+    "6f08557173d94c252e3e5b80dbebe046",
+    "80910dd47c3aecae7c94faf6a0c916a2",
+    "d7534898b5c18ea80c1a6bdb7538ca52",
+    "4651792b9831d212f085dabb6cf4158e"
+  ],
+  "task": "t01-ecg-denoise-rpeaks",
+  "task_version": "2.0.0"
+}

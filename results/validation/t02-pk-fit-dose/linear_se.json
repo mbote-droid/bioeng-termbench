@@ -1,0 +1,94 @@
+{
+  "assessment": {
+    "expected_codes_fired": true,
+    "ok": true,
+    "per_case_accept": 0.0,
+    "per_case_accept_95ci": [
+      2.7755575615628914e-17,
+      0.3903342879021653
+    ],
+    "reward_probability_8_cases_upper": 0.0005388819281612516
+  },
+  "case_verdicts_sha256": "506bec273da362d918848f30f5c76c2a8d16f144709b7b29e978d669189b8011",
+  "expected_codes": [
+    "SE_CONSISTENT"
+  ],
+  "fail_codes": {
+    "SE_CONSISTENT": 6
+  },
+  "kind": "negative",
+  "lang": "python",
+  "margins": {
+    "HALF_LIVES": {
+      "max": 1.2212453270876722e-15,
+      "min": 0.0,
+      "threshold": 0.005
+    },
+    "PARAMS_LR": {
+      "max": 3.4577674057345567e-09,
+      "min": -3.788988567343664e-09,
+      "threshold": 18.47
+    },
+    "PRED_ACCURACY": {
+      "max": 1.1959535711539803e-08,
+      "min": 8.040146279122133e-09,
+      "threshold": 0.01
+    },
+    "REGIMEN_EFFICIENT": {
+      "max": 1.0392625185538955,
+      "min": 0.9395201509227691,
+      "threshold": 1.2
+    },
+    "REGIMEN_SELF": {
+      "max": 1.1102230246251565e-15,
+      "min": 0.0,
+      "threshold": 0.01
+    },
+    "SE_CONSISTENT": {
+      "max": 37.067658306631756,
+      "min": 22.663673270441752,
+      "threshold": 0.2
+    }
+  },
+  "n_cases": 6,
+  "n_passed": 0,
+  "note": "standard errors of parameters, not of their logs",
+  "probe": "t02-pk-fit-dose/linear_se",
+  "provenance": {
+    "agent_requirements_sha256": "ace07613cd4fffa8bd902a9082886ec4530b04aa6ae2029cad4de7b67a252293",
+    "argv": [
+      "validation/campaign.py",
+      "probe",
+      "t02-pk-fit-dose/linear_se",
+      "--out",
+      "results/validation/t02-pk-fit-dose/linear_se.json"
+    ],
+    "git": {
+      "commit": null,
+      "dirty": true
+    },
+    "octave": "GNU Octave, version 8.4.0",
+    "packages": {
+      "bioengbench": "0.2.0",
+      "numpy": "2.5.3",
+      "pint": "0.26.1",
+      "scipy": "1.18.1"
+    },
+    "platform": "Linux-6.18.44-fc-v80-x86_64-with-glibc2.39",
+    "python": "3.13.16",
+    "submission_python": "/opt/agent-python/bin/python",
+    "utc": "2026-10-08T22:34:31Z",
+    "uv_lock_sha256": "ac81a7188c90c087f9d95ec9d39ea72daf63149aebd8007d31caaccf44813090"
+  },
+  "seconds": 486.8,
+  "seeds": [
+    "6773910a24b4eb8763a6d6c375bad178",
+    "ae485372c16e769cc4ba8a593e2d77f0",
+    "1918ac99c7f85009e404ed927dc3b050",
+    "bb4890c21bebc5e22b66f4538695eb0c",
+    "b4f0706903f3964cba301cee968e35f9",
+    "9f091cb1012e873b735c06bd297dcfaa"
+  ],
+  "task": "t02-pk-fit-dose",
+  "task_version": "1.0.0"
+}

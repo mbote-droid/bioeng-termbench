@@ -1,0 +1,123 @@
+{
+  "module": "t05_pk_debug.py",
+  "mutants": [
+    {
+      "description": "GRID_TOL_H 1e-09 -> 5e-10",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 26.3,
+      "target": "GRID_TOL_H"
+    },
+    {
+      "description": "GRID_TOL_H 1e-09 -> 2e-09",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 27.9,
+      "target": "GRID_TOL_H"
+    },
+    {
+      "description": "CONC_TOL_REL 1e-05 -> 5e-06",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 26.4,
+      "target": "CONC_TOL_REL"
+    },
+    {
+      "description": "CONC_TOL_REL 1e-05 -> 2e-05",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 17.4,
+      "target": "CONC_TOL_REL"
+    },
+    {
+      "description": "STANDARD never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 1.5,
+      "target": "STANDARD"
+    },
+    {
+      "description": "SHORT_INFUSION never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 4.1,
+      "target": "SHORT_INFUSION"
+    },
+    {
+      "description": "BOLUS never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 3.9,
+      "target": "BOLUS"
+    },
+    {
+      "description": "LONG_HORIZON never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 1.5,
+      "target": "LONG_HORIZON"
+    },
+    {
+      "description": "COINCIDENT_DOSES never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 6.7,
+      "target": "COINCIDENT_DOSES"
+    }
+  ],
+  "provenance": {
+    "agent_requirements_sha256": "ace07613cd4fffa8bd902a9082886ec4530b04aa6ae2029cad4de7b67a252293",
+    "argv": [
+      "validation/grader_mutation.py",
+      "t05-pk-debug",
+      "results/validation/mutation/t05-pk-debug.json",
+      "--only",
+      "check_off"
+    ],
+    "git": {
+      "commit": null,
+      "dirty": true
+    },
+    "octave": "GNU Octave, version 8.4.0",
+    "packages": {
+      "bioengbench": "0.2.0",
+      "numpy": "2.5.3",
+      "pint": "0.26.1",
+      "scipy": "1.18.1"
+    },
+    "platform": "Linux-6.18.44-fc-v80-x86_64-with-glibc2.39",
+    "python": "3.13.16",
+    "utc": "2026-10-08T23:13:42Z",
+    "uv_lock_sha256": "ac81a7188c90c087f9d95ec9d39ea72daf63149aebd8007d31caaccf44813090"
+  },
+  "summary": {
+    "check_off": {
+      "killed": 5,
+      "total": 5
+    },
+    "threshold_acceptance": {
+      "killed": 4,
+      "total": 4
+    },
+    "threshold_configuration": {
+      "killed": 0,
+      "total": 0
+    }
+  },
+  "task": "t05-pk-debug",
+  "tests": [
+    "tests/tasks/test_t05_thresholds.py",
+    "tests/tasks/test_t05.py",
+    "-m",
+    "not slow"
+  ]
+}

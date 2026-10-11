@@ -1,0 +1,323 @@
+{
+  "module": "t03_glucose.py",
+  "mutants": [
+    {
+      "description": "U_MAX 120.0 -> 60.0",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 1.5,
+      "target": "U_MAX"
+    },
+    {
+      "description": "U_MAX 120.0 -> 240.0",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 1.5,
+      "target": "U_MAX"
+    },
+    {
+      "description": "FIRST_STEP_TIMEOUT_S 30.0 -> 15.0",
+      "killed": false,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 11.1,
+      "target": "FIRST_STEP_TIMEOUT_S"
+    },
+    {
+      "description": "FIRST_STEP_TIMEOUT_S 30.0 -> 60.0",
+      "killed": false,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 11.7,
+      "target": "FIRST_STEP_TIMEOUT_S"
+    },
+    {
+      "description": "STEP_TIMEOUT_S 2.0 -> 1.0",
+      "killed": false,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 10.5,
+      "target": "STEP_TIMEOUT_S"
+    },
+    {
+      "description": "STEP_TIMEOUT_S 2.0 -> 4.0",
+      "killed": false,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 13.4,
+      "target": "STEP_TIMEOUT_S"
+    },
+    {
+      "description": "DAY_MIN 1440.0 -> 720.0",
+      "killed": false,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 14.0,
+      "target": "DAY_MIN"
+    },
+    {
+      "description": "DAY_MIN 1440.0 -> 2880.0",
+      "killed": false,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 23.7,
+      "target": "DAY_MIN"
+    },
+    {
+      "description": "CORRECTION_MIN 360.0 -> 180.0",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 3.3,
+      "target": "CORRECTION_MIN"
+    },
+    {
+      "description": "CORRECTION_MIN 360.0 -> 720.0",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 2.8,
+      "target": "CORRECTION_MIN"
+    },
+    {
+      "description": "CORRECTION_START 250.0 -> 125.0",
+      "killed": true,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 4.7,
+      "target": "CORRECTION_START"
+    },
+    {
+      "description": "CORRECTION_START 250.0 -> 500.0",
+      "killed": true,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 16.0,
+      "target": "CORRECTION_START"
+    },
+    {
+      "description": "HYPO_LIMIT 70.0 -> 35.0",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 2.5,
+      "target": "HYPO_LIMIT"
+    },
+    {
+      "description": "HYPO_LIMIT 70.0 -> 140.0",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 3.1,
+      "target": "HYPO_LIMIT"
+    },
+    {
+      "description": "TIR_MIN 0.7 -> 0.35",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 3.2,
+      "target": "TIR_MIN"
+    },
+    {
+      "description": "TIR_MIN 0.7 -> 1.4",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 2.8,
+      "target": "TIR_MIN"
+    },
+    {
+      "description": "TAR250_MAX 0.05 -> 0.025",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 3.1,
+      "target": "TAR250_MAX"
+    },
+    {
+      "description": "TAR250_MAX 0.05 -> 0.1",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 3.1,
+      "target": "TAR250_MAX"
+    },
+    {
+      "description": "CORRECTION_LIMIT_MIN 120.0 -> 60.0",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 3.1,
+      "target": "CORRECTION_LIMIT_MIN"
+    },
+    {
+      "description": "CORRECTION_LIMIT_MIN 120.0 -> 240.0",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 3.2,
+      "target": "CORRECTION_LIMIT_MIN"
+    },
+    {
+      "description": "SETTLE_WINDOW_MIN 120.0 -> 60.0",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 3.4,
+      "target": "SETTLE_WINDOW_MIN"
+    },
+    {
+      "description": "SETTLE_WINDOW_MIN 120.0 -> 240.0",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 3.3,
+      "target": "SETTLE_WINDOW_MIN"
+    },
+    {
+      "description": "SETTLE_P2P_MAX 50.0 -> 25.0",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 2.9,
+      "target": "SETTLE_P2P_MAX"
+    },
+    {
+      "description": "SETTLE_P2P_MAX 50.0 -> 100.0",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 2.8,
+      "target": "SETTLE_P2P_MAX"
+    },
+    {
+      "description": "EXERCISE_MIN 45.0 -> 22.5",
+      "killed": false,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 17.1,
+      "target": "EXERCISE_MIN"
+    },
+    {
+      "description": "EXERCISE_MIN 45.0 -> 90.0",
+      "killed": false,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 17.5,
+      "target": "EXERCISE_MIN"
+    },
+    {
+      "description": "ANNOUNCE_LEAD_MIN 60.0 -> 30.0",
+      "killed": false,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 17.6,
+      "target": "ANNOUNCE_LEAD_MIN"
+    },
+    {
+      "description": "ANNOUNCE_LEAD_MIN 60.0 -> 120.0",
+      "killed": true,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 16.5,
+      "target": "ANNOUNCE_LEAD_MIN"
+    },
+    {
+      "description": "ACTUATOR never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 1.6,
+      "target": "ACTUATOR"
+    },
+    {
+      "description": "HYPO never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 1.4,
+      "target": "HYPO"
+    },
+    {
+      "description": "TIME_IN_RANGE never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 1.6,
+      "target": "TIME_IN_RANGE"
+    },
+    {
+      "description": "TIME_ABOVE_250 never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 1.6,
+      "target": "TIME_ABOVE_250"
+    },
+    {
+      "description": "CORRECTION_TIME never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 1.7,
+      "target": "CORRECTION_TIME"
+    },
+    {
+      "description": "SETTLING never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 1.6,
+      "target": "SETTLING"
+    }
+  ],
+  "provenance": {
+    "agent_requirements_sha256": "ace07613cd4fffa8bd902a9082886ec4530b04aa6ae2029cad4de7b67a252293",
+    "argv": [
+      "validation/grader_mutation.py",
+      "t03-glucose-closed-loop",
+      "results/validation/mutation/t03-glucose-closed-loop.json",
+      "--only",
+      "check_off"
+    ],
+    "git": {
+      "commit": null,
+      "dirty": true
+    },
+    "octave": "GNU Octave, version 8.4.0",
+    "packages": {
+      "bioengbench": "0.2.0",
+      "numpy": "2.5.3",
+      "pint": "0.26.1",
+      "scipy": "1.18.1"
+    },
+    "platform": "Linux-6.18.44-fc-v80-x86_64-with-glibc2.39",
+    "python": "3.13.16",
+    "utc": "2026-10-08T23:13:09Z",
+    "uv_lock_sha256": "ac81a7188c90c087f9d95ec9d39ea72daf63149aebd8007d31caaccf44813090"
+  },
+  "summary": {
+    "check_off": {
+      "killed": 6,
+      "total": 6
+    },
+    "threshold_acceptance": {
+      "killed": 16,
+      "total": 16
+    },
+    "threshold_configuration": {
+      "killed": 3,
+      "total": 12
+    }
+  },
+  "task": "t03-glucose-closed-loop",
+  "tests": [
+    "tests/tasks/test_t03_thresholds.py",
+    "tests/tasks/test_t03.py",
+    "-m",
+    "not octave"
+  ]
+}

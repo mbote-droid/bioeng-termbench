@@ -1,0 +1,97 @@
+{
+  "assessment": {
+    "expected_codes_fired": true,
+    "ok": true,
+    "per_case_accept": 0.0,
+    "per_case_accept_95ci": [
+      0.0,
+      0.4898908364545973
+    ],
+    "reward_probability_8_cases_upper": 0.0033173746944675855
+  },
+  "case_verdicts_sha256": "768bf7adeeb4342ad907422b39b4d660f819fb1936395b38c1bc669a97bc52d4",
+  "expected_codes": [
+    "EFFICIENCY"
+  ],
+  "fail_codes": {
+    "EFFICIENCY": 4
+  },
+  "kind": "negative",
+  "lang": "python",
+  "margins": {
+    "CONVERGENCE_SPACE": {
+      "max": 2.0013387107557183,
+      "min": 1.9911995191240763,
+      "threshold": 1.6
+    },
+    "CONVERGENCE_TIME": {
+      "max": 1.9995232016649827,
+      "min": 1.9954562824748474,
+      "threshold": 1.6
+    },
+    "COVERAGE": {
+      "max": 9.857068559519979,
+      "min": 9.71497537207468,
+      "threshold": 9.628337865054231
+    },
+    "EFFICIENCY": {
+      "max": 3.8733555166694997,
+      "min": 2.7911180989922695,
+      "threshold": 1.1
+    },
+    "ENERGY_BUDGET": {
+      "max": 5.512768148558811e-08,
+      "min": 1.3884583702293287e-08,
+      "threshold": 0.01
+    },
+    "PLAN_CONSISTENT": {
+      "max": 0.0013842390628724388,
+      "min": 0.0005977562709489348,
+      "threshold": 0.15
+    },
+    "SAFETY": {
+      "max": 87.20287083981582,
+      "min": 69.64104295859319,
+      "threshold": 100.0
+    }
+  },
+  "n_cases": 4,
+  "n_passed": 0,
+  "note": "always the longest heating",
+  "probe": "t04-bioheat-ablation/longest_time",
+  "provenance": {
+    "agent_requirements_sha256": "ace07613cd4fffa8bd902a9082886ec4530b04aa6ae2029cad4de7b67a252293",
+    "argv": [
+      "validation/campaign.py",
+      "probe",
+      "t04-bioheat-ablation/longest_time",
+      "--out",
+      "results/validation/t04-bioheat-ablation/longest_time.json"
+    ],
+    "git": {
+      "commit": null,
+      "dirty": true
+    },
+    "octave": "GNU Octave, version 8.4.0",
+    "packages": {
+      "bioengbench": "0.2.0",
+      "numpy": "2.5.3",
+      "pint": "0.26.1",
+      "scipy": "1.18.1"
+    },
+    "platform": "Linux-6.18.44-fc-v80-x86_64-with-glibc2.39",
+    "python": "3.13.16",
+    "submission_python": "/opt/agent-python/bin/python",
+    "utc": "2026-10-08T22:02:04Z",
+    "uv_lock_sha256": "ac81a7188c90c087f9d95ec9d39ea72daf63149aebd8007d31caaccf44813090"
+  },
+  "seconds": 138.7,
+  "seeds": [
+    "6c9800427fc82f472589658db5c0b82a",
+    "1636412f1f0970b864d93d38bfb8b2a1",
+    "8dea21301375c00841d6ccc476e9e895",
+    "b560ec0f0760bfc6555738db9bd07f9c"
+  ],
+  "task": "t04-bioheat-ablation",
+  "task_version": "1.0.0"
+}

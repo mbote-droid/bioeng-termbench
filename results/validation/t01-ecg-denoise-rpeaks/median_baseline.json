@@ -1,0 +1,222 @@
+{
+  "assessment": {
+    "fails_only_on_expected_codes": true,
+    "ok": true,
+    "per_case_accept": 0.51,
+    "per_case_accept_95ci": [
+      0.4134801193402717,
+      0.6057800106955886
+    ]
+  },
+  "case_verdicts_sha256": "37b2d02ab25158f236eae555cf9ac7b1444d9ff20b90b858d5290db6a7aaa36e",
+  "expected_codes": [
+    "FIDELITY"
+  ],
+  "fail_codes": {
+    "FIDELITY": 49
+  },
+  "kind": "boundary",
+  "lang": "python",
+  "margins": {
+    "AMPLITUDE": {
+      "max": 0.11169957619460989,
+      "min": 0.00016335000189406516,
+      "threshold": 0.15
+    },
+    "BASELINE": {
+      "max": 0.004911506609779912,
+      "min": 8.148139444292474e-05,
+      "threshold": 0.1
+    },
+    "FIDELITY": {
+      "max": 0.08766573830346365,
+      "min": 0.0276336670055634,
+      "threshold": 0.05
+    },
+    "HR": {
+      "max": 0.08042994285044358,
+      "min": 0.0,
+      "threshold": 1.0
+    },
+    "HRV_CONSISTENT": {
+      "max": 0.0,
+      "min": 0.0,
+      "threshold": 1.0
+    },
+    "NBEATS": {
+      "max": 1.0,
+      "min": 0.0,
+      "threshold": 2
+    },
+    "PEAK_FORMAT": {
+      "max": 4.444444456908059e-07,
+      "min": 4.444444456908059e-07,
+      "threshold": 0.0001
+    },
+    "PEAK_PREC": {
+      "max": 1.0,
+      "min": 1.0,
+      "threshold": 0.98
+    },
+    "PEAK_SENS": {
+      "max": 1.0,
+      "min": 1.0,
+      "threshold": 0.98
+    },
+    "POWERLINE": {
+      "max": 0.002339289955859582,
+      "min": 0.00012006806666837151,
+      "threshold": 0.05
+    },
+    "RMSSD": {
+      "max": 1.207933628447389,
+      "min": 7.105427357601002e-15,
+      "threshold": 4.104493952338339
+    },
+    "SDNN": {
+      "max": 0.6841718002751236,
+      "min": 0.000990295752195891,
+      "threshold": 3.0
+    },
+    "TIME_AXIS": {
+      "max": 4.4444445279623324e-07,
+      "min": 4.4444445279623324e-07,
+      "threshold": 1e-05
+    }
+  },
+  "n_cases": 100,
+  "n_passed": 51,
+  "note": "median-filter baseline: T-wave distortion near the 0.05 mV limit",
+  "probe": "t01-ecg-denoise-rpeaks/median_baseline",
+  "provenance": {
+    "agent_requirements_sha256": "ace07613cd4fffa8bd902a9082886ec4530b04aa6ae2029cad4de7b67a252293",
+    "argv": [
+      "validation/campaign.py",
+      "probe",
+      "t01-ecg-denoise-rpeaks/median_baseline",
+      "--out",
+      "results/validation/t01-ecg-denoise-rpeaks/median_baseline.json"
+    ],
+    "git": {
+      "commit": null,
+      "dirty": true
+    },
+    "octave": "GNU Octave, version 8.4.0",
+    "packages": {
+      "bioengbench": "0.2.0",
+      "numpy": "2.5.3",
+      "pint": "0.26.1",
+      "scipy": "1.18.1"
+    },
+    "platform": "Linux-6.18.44-fc-v80-x86_64-with-glibc2.39",
+    "python": "3.13.16",
+    "submission_python": "/opt/agent-python/bin/python",
+    "utc": "2026-10-08T15:23:31Z",
+    "uv_lock_sha256": "ac81a7188c90c087f9d95ec9d39ea72daf63149aebd8007d31caaccf44813090"
+  },
+  "seconds": 256.9,
+  "seeds": [
+    "07dd1d910f4a27bfe2510cb5af373413",
+    "3a4e57dfec121965fa5bcc2801ae25e1",
+    "480feb2b9d7292c5c12cf44a7589e237",
+    "21b994ba93f223fc03b4aed8fd687b2f",
+    "fd94517e97624e5e9e5a3eb442386d61",
+    "25dc43b1b6c7a7d39aa963699d1cebf9",
+    "2f57bc4fe0589ce4b3d7b2ac25232cba",
+    "792bdecd3c771bec4a737755247aafb8",
+    "864a6e2fb30238cf857989618a03b110",
+    "231a3df5f48204ccd1766f001a8e7931",
+    "bb15edaf114cebf7084baa2947feb2d1",
+    "6f3e74d62694396c7614e4c5842cf74e",
+    "16f8db9213f300fb2ca02837b581be67",
+    "6440317b308c08ab62e4a749d3b8ce05",
+    "f44150bc217d1c3ccab6593c1f033fbd",
+    "5dafa13de0a899d4b282bb836bf4f979",
+    "92007f826f5b66882f55590aae21ed66",
+    "2cd722d8bb22676736b128359b911cb6",
+    "913afb1554607e4175b4f4907409e436",
+    "cb83431c68a36d273cfbc78b1ae6fa2d",
+    "c8c15fea6aad7f4a6d625308c11357ce",
+    "dfadbaa3219822f40e47a2b27b5eea26",
+    "0169668734e71d4c9cb1773211ed5cc3",
+    "17ddd53ac141ee6524111c6305a7ec7d",
+    "fec0668d83d3511479474362ab82e7b4",
+    "4b09861269c016a88224dc6e35b0a03a",
+    "cf5ca28f49b8e7b7b32ab21b556d6bc2",
+    "9803303da3bf0234c475e88e07aeb621",
+    "a47948a5d6eb5b297f6c50ef4e70205d",
+    "473893d9c059a573bfe8470d8503e9ff",
+    "af3e7dcd4ee7da80819d18d73b5a7c54",
+    "60e014a67ffa7c76eed75866eff43642",
+    "7ee0e5017e58c47fc68694821bc14e20",
+    "8617bad8ce111adf3cfc161440fb7220",
+    "1780032c4d64d652f6f0057abd98affb",
+    "c281da6a20b8b9a9ae2bcdf95c45b274",
+    "61c927d461dbcbc0f43025a0d1ce5370",
+    "63e1ba41c0628e7337ca192961671700",
+    "6668670193ab75f3081074823a18041b",
+    "5067c938a5c644ad707d4529185add48",
+    "f9934b1e36a667c6e9aed4f8b82d1b5b",
+    "ad92b3bd282149d990a8d7c903515ea1",
+    "1f905ae190fad6ed4397c41d57a157fb",
+    "c673098a2ae3e7f050f7022ce1d23447",
+    "5d39ec47b3e987dab4978617382c6a5d",
+    "c2ba7d1f85ad8818ff61df7d026e7122",
+    "11cec6e9eef20f700de6f52afec7641f",
+    "aa88df083c93c883ab4684f427c93a08",
+    "5ebdacc9b65d860f82a3974925a20315",
+    "331f49840af6df52be3136f33906d6f3",
+    "ae99d8efa9f56e9dd8cd5fb6bcb244bf",
+    "a46c6e63227c18be8dd63c9abf6d68d6",
+    "73b65202b414d7dc2886e8dedc2c0349",
+    "745b507cf370d695610b51a14fbb09fc",
+    "c74a4c164bb89c70f956bdab977c317c",
+    "49d03a65212bf3bbb8c88d2c277b90b6",
+    "37e74f571a39c61acd2e2a4c57d07128",
+    "47a83eab255ce9ccc9ffcd5f96c5be2b",
+    "1306e2281f03306d600364f4e8e73009",
+    "4176061ee270633ab5e71a301f52be6d",
+    "5aab63ee79a80dd81dbea4379a24743e",
+    "2a71cd990918f8c16ced8a635ff9fee6",
+    "bb724b393c456b03cd50cd362e40e7d3",
+    "a6355eef155879f2609d2b985d17092e",
+    "89efba9ae55e3780a902111fd437f794",
+    "9e2e6539e2708b412fc02070b619b7df",
+    "071399830bb7fdcca74272e58df66aa1",
+    "dc2cee0837f597856ba419d780aee763",
+    "45145557854af4bba2397b59c955dc54",
+    "481064b23578b05f41744dfe067042c4",
+    "c0828267d2deae8120f7efd5fe835485",
+    "0e7d01156ec7344f0459d71cec51e81b",
+    "798013bafa31e4b765d0be4756e0301b",
+    "e8aa811f31abfbb6be7176ae4631f6a7",
+    "ede3675cd27cf29e71f7b814ef289f8c",
+    "001088a433ca9793300d091da181315c",
+    "15066f9e7fdb502cd0b389547e05284a",
+    "ec294120bf1e0b66c8ac4c8e9b88e4d6",
+    "9f240f4534d69388fe8702ea0a28874a",
+    "b765da0faec0b2cbcf1a385ddcf30bd2",
+    "5846dacd57cd275aa6f62a365677a737",
+    "7fb83fdead70cb9aea03348da0f09b17",
+    "f433ec5629751ce8edb71c0a8ca46d6a",
+    "5514509a4a62106f3f577d4ec3c37108",
+    "90f18740073a3be042a1f300fab19a16",
+    "8544abaee54b2cab8945b15e59558735",
+    "b49bcd807646ff6201be0c5769b9d04c",
+    "0bdcd078bbb9c2a7468c15ab03048aad",
+    "ffe0bb4dd3a3c0dd30e17aefb4f63e48",
+    "2fabbbdd7885c9bd2baa069e3fc11dcb",
+    "4de1c42ef5ec5e2b378ca76a5d516042",
+    "810cb43ed069deccb81be2e44ad53e0f",
+    "aaf4e0d0b43c2e5bb19f9c40c45fb200",
+    "b9237092ebfbb0ea99252e69842d163b",
+    "1f0ffc714e649b9e5052067a19c47820",
+    "ff4a941864a0f629a02de633382684fb",
+    "78a08bf12ac5db0d5803deff9628b063",
+    "ba483dd55cd9b5196afb6053f556b01b",
+    "48ee55ad17a5b7589d54fc0be816faf0",
+    "7377e1b3284a7a01d9ba906ac5eca57a"
+  ],
+  "task": "t01-ecg-denoise-rpeaks",
+  "task_version": "2.0.0"
+}

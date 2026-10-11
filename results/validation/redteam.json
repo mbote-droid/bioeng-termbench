@@ -1,0 +1,472 @@
+{
+  "all_sandboxed_contained": true,
+  "provenance": {
+    "agent_requirements_sha256": "ace07613cd4fffa8bd902a9082886ec4530b04aa6ae2029cad4de7b67a252293",
+    "argv": [
+      "validation/campaign.py",
+      "redteam",
+      "--out",
+      "results/validation/redteam.json"
+    ],
+    "git": {
+      "commit": null,
+      "dirty": true
+    },
+    "octave": "GNU Octave, version 8.4.0",
+    "packages": {
+      "bioengbench": "0.2.0",
+      "numpy": "2.5.3",
+      "pint": "0.26.1",
+      "scipy": "1.18.1"
+    },
+    "platform": "Linux-6.18.44-fc-v80-x86_64-with-glibc2.39",
+    "python": "3.13.16",
+    "submission_python": "/opt/agent-python/bin/python",
+    "utc": "2026-10-08T15:06:45Z",
+    "uv_lock_sha256": "ac81a7188c90c087f9d95ec9d39ea72daf63149aebd8007d31caaccf44813090"
+  },
+  "results": [
+    {
+      "attack": "t01_escape",
+      "attempts": {
+        "import_grader": {
+          "detail": "ModuleNotFoundError: No module named 'bioengbench'",
+          "succeeded": false
+        },
+        "overwrite_input": {
+          "detail": "PermissionError: [Errno 13] Permission denied: '../input/ecg_raw.csv'",
+          "succeeded": false
+        },
+        "read_grader_env": {
+          "detail": "PermissionError: [Errno 13] Permission denied: '/proc/1/environ'",
+          "succeeded": false
+        },
+        "read_root_canary": {
+          "detail": "PermissionError: [Errno 13] Permission denied: '/root/redteam_canary.txt'",
+          "succeeded": false
+        },
+        "read_seeds": {
+          "detail": "PermissionError: [Errno 13] Permission denied: '/tests/dev_seeds.txt'",
+          "succeeded": false
+        },
+        "write_case_dir": {
+          "detail": "PermissionError: [Errno 13] Permission denied: '../pwned.txt'",
+          "succeeded": false
+        },
+        "write_submission": {
+          "detail": "PermissionError: [Errno 13] Permission denied: '/tmp/redteam-t01_escape-7qgzsy34/cases/case-084f0c2ec990/submission/t01_escape.py'",
+          "succeeded": false
+        }
+      },
+      "case_dir_files": [
+        "input",
+        "output",
+        "output.log",
+        "submission"
+      ],
+      "contained": true,
+      "failed_codes": [
+        "RUN"
+      ],
+      "largest_output_mb": 0.0,
+      "late_file": false,
+      "passed": false,
+      "run_message": "main: exit code 1",
+      "sandboxed": true,
+      "seconds": 0.1,
+      "survivors": 0,
+      "task": "t01-ecg-denoise-rpeaks",
+      "verdict": "contained"
+    },
+    {
+      "attack": "t01_escape",
+      "attempts": {
+        "import_grader": {
+          "detail": "ModuleNotFoundError: No module named 'bioengbench'",
+          "succeeded": false
+        },
+        "overwrite_input": {
+          "detail": "../input/ecg_raw.csv",
+          "succeeded": true
+        },
+        "read_grader_env": {
+          "detail": "PermissionError: [Errno 13] Permission denied: '/proc/1/environ'",
+          "succeeded": false
+        },
+        "read_root_canary": {
+          "detail": "secret\n",
+          "succeeded": true
+        },
+        "read_seeds": {
+          "detail": "deadbeef\n",
+          "succeeded": true
+        },
+        "write_case_dir": {
+          "detail": "../pwned.txt",
+          "succeeded": true
+        },
+        "write_submission": {
+          "detail": "/tmp/redteam-t01_escape-tpxopk7k/cases/case-084f0c2ec990/submission/t01_escape.py",
+          "succeeded": true
+        }
+      },
+      "case_dir_files": [
+        "input",
+        "output",
+        "output.log",
+        "pwned.txt",
+        "submission"
+      ],
+      "contained": false,
+      "failed_codes": [
+        "RUN"
+      ],
+      "largest_output_mb": 0.0,
+      "late_file": false,
+      "passed": false,
+      "run_message": "main: exit code 1",
+      "sandboxed": false,
+      "seconds": 0.1,
+      "survivors": 0,
+      "task": "t01-ecg-denoise-rpeaks",
+      "verdict": "succeeded: ['overwrite_input', 'read_root_canary', 'read_seeds', 'write_case_dir', 'write_submission']"
+    },
+    {
+      "attack": "t01_symlink",
+      "attempts": {},
+      "case_dir_files": [
+        "input",
+        "output",
+        "output.log",
+        "submission"
+      ],
+      "contained": true,
+      "failed_codes": [
+        "RUN"
+      ],
+      "largest_output_mb": 0.0,
+      "late_file": false,
+      "passed": false,
+      "run_message": "main: symbolic link in outputs: ecg_filtered.csv",
+      "sandboxed": true,
+      "seconds": 0.1,
+      "survivors": 0,
+      "task": "t01-ecg-denoise-rpeaks",
+      "verdict": "contained"
+    },
+    {
+      "attack": "t01_symlink",
+      "attempts": {},
+      "case_dir_files": [
+        "input",
+        "output",
+        "output.log",
+        "submission"
+      ],
+      "contained": true,
+      "failed_codes": [
+        "RUN"
+      ],
+      "largest_output_mb": 0.0,
+      "late_file": false,
+      "passed": false,
+      "run_message": "main: symbolic link in outputs: ecg_filtered.csv",
+      "sandboxed": false,
+      "seconds": 0.1,
+      "survivors": 0,
+      "task": "t01-ecg-denoise-rpeaks",
+      "verdict": "contained"
+    },
+    {
+      "attack": "t01_fork_bomb",
+      "attempts": {
+        "children_spawned": {
+          "detail": "127",
+          "succeeded": false
+        },
+        "fork_stopped": {
+          "detail": "after 127: [Errno 11] Resource temporarily unavailable",
+          "succeeded": false
+        }
+      },
+      "case_dir_files": [
+        "input",
+        "output",
+        "output.log",
+        "submission"
+      ],
+      "contained": true,
+      "failed_codes": [
+        "FILES"
+      ],
+      "largest_output_mb": 0.0,
+      "late_file": false,
+      "passed": false,
+      "run_message": "",
+      "sandboxed": true,
+      "seconds": 0.6,
+      "survivors": 0,
+      "task": "t01-ecg-denoise-rpeaks",
+      "verdict": "fork bomb spawned 127 children"
+    },
+    {
+      "attack": "t01_fork_bomb",
+      "attempts": {
+        "children_spawned": {
+          "detail": "1000",
+          "succeeded": true
+        }
+      },
+      "case_dir_files": [
+        "input",
+        "output",
+        "output.log",
+        "submission"
+      ],
+      "contained": false,
+      "failed_codes": [
+        "FILES"
+      ],
+      "largest_output_mb": 0.0,
+      "late_file": false,
+      "passed": false,
+      "run_message": "",
+      "sandboxed": false,
+      "seconds": 0.5,
+      "survivors": 0,
+      "task": "t01-ecg-denoise-rpeaks",
+      "verdict": "fork bomb spawned 1000 children"
+    },
+    {
+      "attack": "t01_daemon",
+      "attempts": {
+        "daemon_started": {
+          "detail": "pid tree detached",
+          "succeeded": true
+        }
+      },
+      "case_dir_files": [
+        "input",
+        "output",
+        "output.log",
+        "submission"
+      ],
+      "contained": true,
+      "failed_codes": [
+        "FILES"
+      ],
+      "largest_output_mb": 0.0,
+      "late_file": false,
+      "passed": false,
+      "run_message": "",
+      "sandboxed": true,
+      "seconds": 0.4,
+      "survivors": 0,
+      "task": "t01-ecg-denoise-rpeaks",
+      "verdict": "contained"
+    },
+    {
+      "attack": "t01_daemon",
+      "attempts": {
+        "daemon_started": {
+          "detail": "pid tree detached",
+          "succeeded": true
+        }
+      },
+      "case_dir_files": [
+        "input",
+        "output",
+        "output.log",
+        "submission"
+      ],
+      "contained": false,
+      "failed_codes": [
+        "FILES"
+      ],
+      "largest_output_mb": 0.0,
+      "late_file": true,
+      "passed": false,
+      "run_message": "",
+      "sandboxed": false,
+      "seconds": 0.1,
+      "survivors": 0,
+      "task": "t01-ecg-denoise-rpeaks",
+      "verdict": "a detached process wrote after the run"
+    },
+    {
+      "attack": "t01_disk_fill",
+      "attempts": {
+        "write_1GiB": {
+          "detail": "OSError: [Errno 27] File too large",
+          "succeeded": false
+        }
+      },
+      "case_dir_files": [
+        "input",
+        "output",
+        "output.log",
+        "submission"
+      ],
+      "contained": true,
+      "failed_codes": [
+        "RUN"
+      ],
+      "largest_output_mb": 256.0,
+      "late_file": false,
+      "passed": false,
+      "run_message": "main: exit code 1",
+      "sandboxed": true,
+      "seconds": 0.3,
+      "survivors": 0,
+      "task": "t01-ecg-denoise-rpeaks",
+      "verdict": "contained"
+    },
+    {
+      "attack": "t01_disk_fill",
+      "attempts": {
+        "write_1GiB": {
+          "detail": "OSError: [Errno 27] File too large",
+          "succeeded": false
+        }
+      },
+      "case_dir_files": [
+        "input",
+        "output",
+        "output.log",
+        "submission"
+      ],
+      "contained": true,
+      "failed_codes": [
+        "RUN"
+      ],
+      "largest_output_mb": 256.0,
+      "late_file": false,
+      "passed": false,
+      "run_message": "main: exit code 1",
+      "sandboxed": false,
+      "seconds": 0.2,
+      "survivors": 0,
+      "task": "t01-ecg-denoise-rpeaks",
+      "verdict": "contained"
+    },
+    {
+      "attack": "t01_memory",
+      "attempts": {
+        "allocate_8GiB": {
+          "detail": "MemoryError: ",
+          "succeeded": false
+        }
+      },
+      "case_dir_files": [
+        "input",
+        "output",
+        "output.log",
+        "submission"
+      ],
+      "contained": true,
+      "failed_codes": [
+        "RUN"
+      ],
+      "largest_output_mb": 0.0,
+      "late_file": false,
+      "passed": false,
+      "run_message": "main: exit code 1",
+      "sandboxed": true,
+      "seconds": 0.1,
+      "survivors": 0,
+      "task": "t01-ecg-denoise-rpeaks",
+      "verdict": "contained"
+    },
+    {
+      "attack": "t01_memory",
+      "attempts": {
+        "allocate_8GiB": {
+          "detail": "MemoryError: ",
+          "succeeded": false
+        }
+      },
+      "case_dir_files": [
+        "input",
+        "output",
+        "output.log",
+        "submission"
+      ],
+      "contained": true,
+      "failed_codes": [
+        "RUN"
+      ],
+      "largest_output_mb": 0.0,
+      "late_file": false,
+      "passed": false,
+      "run_message": "main: exit code 1",
+      "sandboxed": false,
+      "seconds": 0.1,
+      "survivors": 0,
+      "task": "t01-ecg-denoise-rpeaks",
+      "verdict": "contained"
+    },
+    {
+      "attack": "t03_forge",
+      "attempts": {
+        "write_sim_now": {
+          "detail": "PermissionError: [Errno 13] Permission denied: '../sim/day_trace.csv'",
+          "succeeded": false
+        }
+      },
+      "case_dir_files": [
+        "controller-correction",
+        "controller-correction.log",
+        "controller-day",
+        "controller-day.log",
+        "input",
+        "sim",
+        "submission"
+      ],
+      "contained": true,
+      "failed_codes": [
+        "TIME_ABOVE_250",
+        "TIME_IN_RANGE"
+      ],
+      "largest_output_mb": 0.0,
+      "late_file": false,
+      "passed": false,
+      "run_message": "",
+      "sandboxed": true,
+      "seconds": 0.7,
+      "sim_forged": false,
+      "survivors": 0,
+      "task": "t03-glucose-closed-loop",
+      "verdict": "contained"
+    },
+    {
+      "attack": "t03_forge",
+      "attempts": {
+        "write_sim_now": {
+          "detail": "forged",
+          "succeeded": true
+        }
+      },
+      "case_dir_files": [
+        "controller-correction",
+        "controller-correction.log",
+        "controller-day",
+        "controller-day.log",
+        "input",
+        "sim",
+        "submission"
+      ],
+      "contained": false,
+      "failed_codes": [],
+      "largest_output_mb": 0.0,
+      "late_file": false,
+      "passed": true,
+      "run_message": "",
+      "sandboxed": false,
+      "seconds": 0.2,
+      "sim_forged": true,
+      "survivors": 2,
+      "task": "t03-glucose-closed-loop",
+      "verdict": "attack earned a passing verdict"
+    }
+  ]
+}

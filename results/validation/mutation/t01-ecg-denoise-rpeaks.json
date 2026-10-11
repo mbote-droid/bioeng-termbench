@@ -1,0 +1,338 @@
+{
+  "module": "t01_ecg.py",
+  "mutants": [
+    {
+      "description": "FS 360.0 -> 180.0",
+      "killed": true,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 1.9,
+      "target": "FS"
+    },
+    {
+      "description": "FS 360.0 -> 720.0",
+      "killed": true,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 2.9,
+      "target": "FS"
+    },
+    {
+      "description": "DURATION_S 60.0 -> 30.0",
+      "killed": false,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 24.7,
+      "target": "DURATION_S"
+    },
+    {
+      "description": "DURATION_S 60.0 -> 120.0",
+      "killed": false,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 33.5,
+      "target": "DURATION_S"
+    },
+    {
+      "description": "EDGE_S 2.0 -> 1.0",
+      "killed": false,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 27.0,
+      "target": "EDGE_S"
+    },
+    {
+      "description": "EDGE_S 2.0 -> 4.0",
+      "killed": false,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 27.7,
+      "target": "EDGE_S"
+    },
+    {
+      "description": "BASELINE_MAX_RATIO 0.1 -> 0.05",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 1.8,
+      "target": "BASELINE_MAX_RATIO"
+    },
+    {
+      "description": "BASELINE_MAX_RATIO 0.1 -> 0.2",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 1.8,
+      "target": "BASELINE_MAX_RATIO"
+    },
+    {
+      "description": "LINE_MAX_RATIO 0.05 -> 0.025",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 1.9,
+      "target": "LINE_MAX_RATIO"
+    },
+    {
+      "description": "LINE_MAX_RATIO 0.05 -> 0.1",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 1.9,
+      "target": "LINE_MAX_RATIO"
+    },
+    {
+      "description": "MORPH_MAX_RMSE_MV 0.05 -> 0.025",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 2.0,
+      "target": "MORPH_MAX_RMSE_MV"
+    },
+    {
+      "description": "MORPH_MAX_RMSE_MV 0.05 -> 0.1",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 2.0,
+      "target": "MORPH_MAX_RMSE_MV"
+    },
+    {
+      "description": "AMP_REL_TOL 0.15 -> 0.075",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 2.2,
+      "target": "AMP_REL_TOL"
+    },
+    {
+      "description": "AMP_REL_TOL 0.15 -> 0.3",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 2.1,
+      "target": "AMP_REL_TOL"
+    },
+    {
+      "description": "PEAK_TOL_S 0.04 -> 0.02",
+      "killed": true,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 2.3,
+      "target": "PEAK_TOL_S"
+    },
+    {
+      "description": "PEAK_TOL_S 0.04 -> 0.08",
+      "killed": true,
+      "operator": "threshold",
+      "role": "configuration",
+      "seconds": 2.2,
+      "target": "PEAK_TOL_S"
+    },
+    {
+      "description": "PEAK_MIN 0.98 -> 0.49",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 3.0,
+      "target": "PEAK_MIN"
+    },
+    {
+      "description": "PEAK_MIN 0.98 -> 1.96",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 2.2,
+      "target": "PEAK_MIN"
+    },
+    {
+      "description": "TIME_INDEX_TOL_S 0.0001 -> 5e-05",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 2.4,
+      "target": "TIME_INDEX_TOL_S"
+    },
+    {
+      "description": "TIME_INDEX_TOL_S 0.0001 -> 0.0002",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 2.4,
+      "target": "TIME_INDEX_TOL_S"
+    },
+    {
+      "description": "NBEATS_TOL 2 -> 1",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 2.3,
+      "target": "NBEATS_TOL"
+    },
+    {
+      "description": "NBEATS_TOL 2 -> 4",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 2.5,
+      "target": "NBEATS_TOL"
+    },
+    {
+      "description": "CONSISTENCY_TOL_MS 1.0 -> 0.5",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 2.4,
+      "target": "CONSISTENCY_TOL_MS"
+    },
+    {
+      "description": "CONSISTENCY_TOL_MS 1.0 -> 2.0",
+      "killed": true,
+      "operator": "threshold",
+      "role": "acceptance",
+      "seconds": 2.7,
+      "target": "CONSISTENCY_TOL_MS"
+    },
+    {
+      "description": "FILES never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 3.6,
+      "target": "FILES"
+    },
+    {
+      "description": "SCHEMA never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 3.6,
+      "target": "SCHEMA"
+    },
+    {
+      "description": "TIME_AXIS never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 3.9,
+      "target": "TIME_AXIS"
+    },
+    {
+      "description": "BASELINE never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 1.7,
+      "target": "BASELINE"
+    },
+    {
+      "description": "POWERLINE never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 1.9,
+      "target": "POWERLINE"
+    },
+    {
+      "description": "FIDELITY never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 2.0,
+      "target": "FIDELITY"
+    },
+    {
+      "description": "AMPLITUDE never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 2.1,
+      "target": "AMPLITUDE"
+    },
+    {
+      "description": "PEAK_FORMAT never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 2.4,
+      "target": "PEAK_FORMAT"
+    },
+    {
+      "description": "PEAK_SENS never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 2.4,
+      "target": "PEAK_SENS"
+    },
+    {
+      "description": "PEAK_PREC never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 3.0,
+      "target": "PEAK_PREC"
+    },
+    {
+      "description": "NBEATS never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 2.5,
+      "target": "NBEATS"
+    },
+    {
+      "description": "HRV_CONSISTENT never fails",
+      "killed": true,
+      "operator": "check_off",
+      "role": "",
+      "seconds": 2.7,
+      "target": "HRV_CONSISTENT"
+    }
+  ],
+  "provenance": {
+    "agent_requirements_sha256": "ace07613cd4fffa8bd902a9082886ec4530b04aa6ae2029cad4de7b67a252293",
+    "argv": [
+      "validation/grader_mutation.py",
+      "t01-ecg-denoise-rpeaks",
+      "results/validation/mutation/t01-ecg-denoise-rpeaks.json",
+      "--only",
+      "check_off"
+    ],
+    "git": {
+      "commit": null,
+      "dirty": true
+    },
+    "octave": "GNU Octave, version 8.4.0",
+    "packages": {
+      "bioengbench": "0.2.0",
+      "numpy": "2.5.3",
+      "pint": "0.26.1",
+      "scipy": "1.18.1"
+    },
+    "platform": "Linux-6.18.44-fc-v80-x86_64-with-glibc2.39",
+    "python": "3.13.16",
+    "utc": "2026-10-08T23:11:50Z",
+    "uv_lock_sha256": "ac81a7188c90c087f9d95ec9d39ea72daf63149aebd8007d31caaccf44813090"
+  },
+  "summary": {
+    "check_off": {
+      "killed": 12,
+      "total": 12
+    },
+    "threshold_acceptance": {
+      "killed": 16,
+      "total": 18
+    },
+    "threshold_configuration": {
+      "killed": 4,
+      "total": 6
+    }
+  },
+  "task": "t01-ecg-denoise-rpeaks",
+  "tests": [
+    "tests/tasks/test_t01_thresholds.py",
+    "tests/tasks/test_t01_negative_controls.py",
+    "tests/tasks/test_t01_references.py"
+  ]
+}

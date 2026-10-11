@@ -1,0 +1,95 @@
+{
+  "assessment": {
+    "false_reject_95ci": [
+      2.7755575615628914e-17,
+      0.24249400665524085
+    ],
+    "false_reject_rate": 0.0,
+    "false_reject_upper_95": 0.22092219194555585,
+    "ok": true
+  },
+  "case_verdicts_sha256": "b4322c631c3e91f030147efee36b34a55dfd1ed9fbe0615e2ed2ccebc3b04924",
+  "expected_codes": [],
+  "fail_codes": {},
+  "kind": "reference",
+  "lang": "python",
+  "margins": {
+    "HALF_LIVES": {
+      "max": 9.992007221626409e-16,
+      "min": 0.0,
+      "threshold": 0.005
+    },
+    "PARAMS_LR": {
+      "max": 2.8728094902952244e-08,
+      "min": -2.5737745268372685e-11,
+      "threshold": 18.47
+    },
+    "PRED_ACCURACY": {
+      "max": 1.2126262250463142e-08,
+      "min": 6.999203902241472e-09,
+      "threshold": 0.01
+    },
+    "REGIMEN_EFFICIENT": {
+      "max": 1.0308518312539818,
+      "min": 0.9361600216494107,
+      "threshold": 1.2
+    },
+    "REGIMEN_SELF": {
+      "max": 8.881784197001252e-16,
+      "min": 0.0,
+      "threshold": 0.01
+    },
+    "SE_CONSISTENT": {
+      "max": 7.67605978779784e-11,
+      "min": 1.6364687382974807e-11,
+      "threshold": 0.2
+    }
+  },
+  "n_cases": 12,
+  "n_passed": 12,
+  "note": "one optimiser start: converged on every case",
+  "probe": "t02-pk-fit-dose/single_start",
+  "provenance": {
+    "agent_requirements_sha256": "ace07613cd4fffa8bd902a9082886ec4530b04aa6ae2029cad4de7b67a252293",
+    "argv": [
+      "validation/campaign.py",
+      "probe",
+      "t02-pk-fit-dose/single_start",
+      "--out",
+      "results/validation/t02-pk-fit-dose/single_start.json"
+    ],
+    "git": {
+      "commit": null,
+      "dirty": true
+    },
+    "octave": "GNU Octave, version 8.4.0",
+    "packages": {
+      "bioengbench": "0.2.0",
+      "numpy": "2.5.3",
+      "pint": "0.26.1",
+      "scipy": "1.18.1"
+    },
+    "platform": "Linux-6.18.44-fc-v80-x86_64-with-glibc2.39",
+    "python": "3.13.16",
+    "submission_python": "/opt/agent-python/bin/python",
+    "utc": "2026-10-08T22:48:02Z",
+    "uv_lock_sha256": "ac81a7188c90c087f9d95ec9d39ea72daf63149aebd8007d31caaccf44813090"
+  },
+  "seconds": 254.4,
+  "seeds": [
+    "05d3dd2fa226733c780fcd3db145bb37",
+    "40cd0a5683ccebe628b1cc179a87cba0",
+    "58e39637324d172752ae4c9bb1642dcc",
+    "ffb3336ef1592b9466a4a116fa7b5b2f",
+    "51f10a6ba103181c41c41eef7ed435da",
+    "eb476338e4f037595af803b2bd73c445",
+    "485f5adb2c2f742faf81b49f7e61d940",
+    "3920aab6303acbf65e938a564be98e1a",
+    "68058792acb2ae88cd990c2e73b76240",
+    "fc5b536a2e2667bd5ed3c6967fc64cb1",
+    "3a69abab1c2d964b7428c5d40ac80e48",
+    "fe680bc8f8001980a4d438ee7587749f"
+  ],
+  "task": "t02-pk-fit-dose",
+  "task_version": "1.0.0"
+}

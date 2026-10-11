@@ -1,0 +1,129 @@
+{
+  "assessment": {
+    "expected_codes_fired": true,
+    "ok": true,
+    "per_case_accept": 0.0,
+    "per_case_accept_95ci": [
+      0.0,
+      0.08762160119728664
+    ],
+    "reward_probability_8_cases_upper": 3.474477324626097e-09
+  },
+  "case_verdicts_sha256": "70b0755bab70bbb393291785c5ab9b658aab85a7e757666cebb28b39f432f60e",
+  "expected_codes": [
+    "REGIMEN_TARGETS"
+  ],
+  "fail_codes": {
+    "REGIMEN_SAFE": 13,
+    "REGIMEN_TARGETS": 40
+  },
+  "kind": "negative",
+  "lang": "python",
+  "margins": {
+    "HALF_LIVES": {
+      "max": 1.4432899320127035e-15,
+      "min": 0.0,
+      "threshold": 0.005
+    },
+    "PARAMS_LR": {
+      "max": 5.346711962062044e-09,
+      "min": -8.723191613491109e-09,
+      "threshold": 18.47
+    },
+    "PRED_ACCURACY": {
+      "max": 1.3258041894956192e-08,
+      "min": 6.37920676785958e-09,
+      "threshold": 0.01
+    },
+    "REGIMEN_EFFICIENT": {
+      "max": 0.9487741228754223,
+      "min": 0.807779072821095,
+      "threshold": 1.2
+    },
+    "REGIMEN_SELF": {
+      "max": 1.7763568394002505e-15,
+      "min": 0.0,
+      "threshold": 0.01
+    },
+    "SE_CONSISTENT": {
+      "max": 2.37251551737927e-10,
+      "min": 0.0,
+      "threshold": 0.2
+    }
+  },
+  "n_cases": 40,
+  "n_passed": 0,
+  "note": "designs to the window edges, ignoring estimation error",
+  "probe": "t02-pk-fit-dose/no_safety_margin",
+  "provenance": {
+    "agent_requirements_sha256": "ace07613cd4fffa8bd902a9082886ec4530b04aa6ae2029cad4de7b67a252293",
+    "argv": [
+      "validation/campaign.py",
+      "probe",
+      "t02-pk-fit-dose/no_safety_margin",
+      "--out",
+      "results/validation/t02-pk-fit-dose/no_safety_margin.json"
+    ],
+    "git": {
+      "commit": null,
+      "dirty": true
+    },
+    "octave": "GNU Octave, version 8.4.0",
+    "packages": {
+      "bioengbench": "0.2.0",
+      "numpy": "2.5.3",
+      "pint": "0.26.1",
+      "scipy": "1.18.1"
+    },
+    "platform": "Linux-6.18.44-fc-v80-x86_64-with-glibc2.39",
+    "python": "3.13.16",
+    "submission_python": "/opt/agent-python/bin/python",
+    "utc": "2026-10-08T22:43:46Z",
+    "uv_lock_sha256": "ac81a7188c90c087f9d95ec9d39ea72daf63149aebd8007d31caaccf44813090"
+  },
+  "seconds": 373.5,
+  "seeds": [
+    "672759d1c469e0f4e46e70e905dc6efa",
+    "83c7d5ea67ec02026b3571a3eb64abf6",
+    "d1dbbf5539ac5c4367681e7b93f91bd5",
+    "96e8274e98af93c8b19fb1b814a03b1c",
+    "a51d707d5682d5d7ec0c45c96aa704dd",
+    "dd359084bff66d05940a23fd4ac6289c",
+    "200e43908a2581f1f181513f68d1b966",
+    "a28ba217fc7b9d9f10235be059fd10cc",
+    "8c0d3704534e363b54844ac82a5d4f8d",
+    "285f0e948e44d6a54c3da5e3b19c6346",
+    "56819905e95eaa0c1a9630a3e76f1017",
+    "304121db24fb21ab1e7122eb1a554338",
+    "0d36ce82bde7c4874c39f2037b57921f",
+    "657a7be58e996e16011ced370478a26e",
+    "cbc152f865c2e6dbdf15ea1a1f313482",
+    "6aeb6d7abf8969dcd5483156817277b8",
+    "e5c0e940d56950e2fc6cebaefab31deb",
+    "a694592bf201cfac06d96c8ea1eb19c9",
+    "4288ebdf526e0a64bdd6e7ba275a12e7",
+    "ab7d5632c663e40fda8059777da63a77",
+    "a5183ba7f5e1fcafc5508a7f00a4f084",
+    "88b266768e41164a90a05474a75547c3",
+    "7e550ae4189ee19d4cebc59d34f74b67",
+    "63cb1ca0bb3dce41047d1148780696ca",
+    "40614288555dfdb3748695e055a56964",
+    "36a4d4bf998a305a09a0f45d30b7b2cb",
+    "1bbc19dfbce16006922c3fe279905ac9",
+    "a7d6bf4d0bfcbe2fc444520a420bf041",
+    "5afe4f5892a9cf03acd33ec549e7bcf8",
+    "06c055bed94031036cd666149e0c160b",
+    "00269f91fb4e9941e4ccb11185df56c3",
+    "5eb6176bbae5ecd1a67d8be5b5a5d50e",
+    "b56839bd48b4cc7a4d80bae5320a5514",
+    "7bf4a81097f423c309a11f20c4c5cfd0",
+    "0c785e8ed4478c29ef3bce322b607804",
+    "a4753f0e3b6ae65245f1dff07d50848b",
+    "05ad9074ab9eb62dbc5251d152e493b4",
+    "d710fdee811c9ba5c0db4c4d51931b02",
+    "236c20c979389fb86a9db4028fe68268",
+    "022446efefa02b738247a758febf26d7"
+  ],
+  "task": "t02-pk-fit-dose",
+  "task_version": "1.0.0"
+}

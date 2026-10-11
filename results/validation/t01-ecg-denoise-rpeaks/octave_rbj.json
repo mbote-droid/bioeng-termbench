@@ -1,0 +1,138 @@
+{
+  "assessment": {
+    "false_reject_95ci": [
+      0.0,
+      0.16112515805281938
+    ],
+    "false_reject_rate": 0.0,
+    "false_reject_upper_95": 0.13910834066826516,
+    "ok": true
+  },
+  "case_verdicts_sha256": "ddcecb14ef2dfa863e7be6e5d1735c74f34eab153883a8dfe331ee9bfd6618ab",
+  "expected_codes": [],
+  "fail_codes": {},
+  "kind": "reference",
+  "lang": "octave",
+  "margins": {
+    "AMPLITUDE": {
+      "max": 0.023612496056809144,
+      "min": 5.901554925864219e-06,
+      "threshold": 0.15
+    },
+    "BASELINE": {
+      "max": 0.024151431806747864,
+      "min": 6.296545019659305e-05,
+      "threshold": 0.1
+    },
+    "FIDELITY": {
+      "max": 0.014998691365859095,
+      "min": 0.007630974092408372,
+      "threshold": 0.05
+    },
+    "HR": {
+      "max": 0.0067142533102639845,
+      "min": 1.703577368061815e-08,
+      "threshold": 1.0
+    },
+    "HRV_CONSISTENT": {
+      "max": 4.888129225832927e-07,
+      "min": 8.1285662645314e-08,
+      "threshold": 1.0
+    },
+    "NBEATS": {
+      "max": 0.0,
+      "min": 0.0,
+      "threshold": 2
+    },
+    "PEAK_FORMAT": {
+      "max": 4.444444456908059e-07,
+      "min": 4.444444456908059e-07,
+      "threshold": 0.0001
+    },
+    "PEAK_PREC": {
+      "max": 1.0,
+      "min": 1.0,
+      "threshold": 0.98
+    },
+    "PEAK_SENS": {
+      "max": 1.0,
+      "min": 1.0,
+      "threshold": 0.98
+    },
+    "POWERLINE": {
+      "max": 0.00010415440816924636,
+      "min": 1.3464648028948167e-05,
+      "threshold": 0.05
+    },
+    "RMSSD": {
+      "max": 0.5937532196731503,
+      "min": 0.008294699332033417,
+      "threshold": 3.0
+    },
+    "SDNN": {
+      "max": 0.25509317863730274,
+      "min": 6.750072162020615e-05,
+      "threshold": 3.0
+    },
+    "TIME_AXIS": {
+      "max": 4.4444445279623324e-07,
+      "min": 4.4444445279623324e-07,
+      "threshold": 1e-05
+    }
+  },
+  "n_cases": 20,
+  "n_passed": 20,
+  "note": "hand-built biquads, Octave",
+  "probe": "t01-ecg-denoise-rpeaks/octave_rbj",
+  "provenance": {
+    "agent_requirements_sha256": "ace07613cd4fffa8bd902a9082886ec4530b04aa6ae2029cad4de7b67a252293",
+    "argv": [
+      "validation/campaign.py",
+      "probe",
+      "t01-ecg-denoise-rpeaks/octave_rbj",
+      "--out",
+      "results/validation/t01-ecg-denoise-rpeaks/octave_rbj.json"
+    ],
+    "git": {
+      "commit": null,
+      "dirty": true
+    },
+    "octave": "GNU Octave, version 8.4.0",
+    "packages": {
+      "bioengbench": "0.2.0",
+      "numpy": "2.5.3",
+      "pint": "0.26.1",
+      "scipy": "1.18.1"
+    },
+    "platform": "Linux-6.18.44-fc-v80-x86_64-with-glibc2.39",
+    "python": "3.13.16",
+    "submission_python": "/opt/agent-python/bin/python",
+    "utc": "2026-10-08T14:30:57Z",
+    "uv_lock_sha256": "ac81a7188c90c087f9d95ec9d39ea72daf63149aebd8007d31caaccf44813090"
+  },
+  "seconds": 5.7,
+  "seeds": [
+    "0f474d2f34fbbc0923a6294a87d9c403",
+    "6c86a663766e08bde314d86ce503bcaa",
+    "ccfdcc15484a8218489c5d7b33c704ab",
+    "e530c543b02abbee1fe5c8112a5b494e",
+    "080cd06eba765c00cd4b23a20d882df7",
+    "1ffa63ab7437588161646fac66bd398a",
+    "af373523a9eee1a74d993b96570620bd",
+    "52c4e0521d8e09c5c87f3098e85cacdc",
+    "1d4f6246416c183e88d6a57337bf6a7e",
+    "9194bfc0932e2c92f529bdfe664e73d3",
+    "5c6fb12d02f06e9fcca0308e5c8aa35b",
+    "0bf9783d9477afbc5781bea5150c6888",
+    "b0dc90867ca31d263e92c97e34e9cf61",
+    "cb9d26d659a22d98de80270a802616dd",
+    "a23da1fccbae792c2cff3a9c6af261da",
+    "555b7cd914253477f53c0dd0788f6880",
+    "9821c7d3e72ead58f18d53b634e11350",
+    "a5cbaf4cd3499d09e23f82209b1979a0",
+    "9ad6ce49e540eca565784f8b2d5265af",
+    "0736e981a62d662211f42a5c58d2261b"
+  ],
+  "task": "t01-ecg-denoise-rpeaks",
+  "task_version": "2.0.0"
+}

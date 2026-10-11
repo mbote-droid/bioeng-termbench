@@ -1,0 +1,113 @@
+{
+  "assessment": {
+    "false_reject_95ci": [
+      0.0,
+      0.11351339317396876
+    ],
+    "false_reject_rate": 0.0,
+    "false_reject_upper_95": 0.09503385285530408,
+    "ok": true
+  },
+  "case_verdicts_sha256": "1c7d2f635efe5fa9a2baec05ddf531f566850f4850b2d2ae9bf297bdc7c6836a",
+  "expected_codes": [],
+  "fail_codes": {},
+  "kind": "reference",
+  "lang": "python",
+  "margins": {
+    "HALF_LIVES": {
+      "max": 7.771561172376096e-16,
+      "min": 0.0,
+      "threshold": 0.005
+    },
+    "PARAMS_LR": {
+      "max": 4.525939345523255e-09,
+      "min": -2.1764173796512405e-09,
+      "threshold": 18.47
+    },
+    "PRED_ACCURACY": {
+      "max": 1.3177642738882722e-08,
+      "min": 5.844997760254044e-09,
+      "threshold": 0.01
+    },
+    "REGIMEN_EFFICIENT": {
+      "max": 1.1320537399018749,
+      "min": 0.9354744495498191,
+      "threshold": 1.2
+    },
+    "REGIMEN_SELF": {
+      "max": 1.9984014443252818e-15,
+      "min": 0.0,
+      "threshold": 0.01
+    },
+    "SE_CONSISTENT": {
+      "max": 1.4761791788941991e-10,
+      "min": 0.0,
+      "threshold": 0.2
+    }
+  },
+  "n_cases": 30,
+  "n_passed": 30,
+  "note": "exact expm model, multi-start TRF",
+  "probe": "t02-pk-fit-dose/reference",
+  "provenance": {
+    "agent_requirements_sha256": "ace07613cd4fffa8bd902a9082886ec4530b04aa6ae2029cad4de7b67a252293",
+    "argv": [
+      "validation/campaign.py",
+      "probe",
+      "t02-pk-fit-dose/reference",
+      "--out",
+      "results/validation/t02-pk-fit-dose/reference.json"
+    ],
+    "git": {
+      "commit": null,
+      "dirty": true
+    },
+    "octave": "GNU Octave, version 8.4.0",
+    "packages": {
+      "bioengbench": "0.2.0",
+      "numpy": "2.5.3",
+      "pint": "0.26.1",
+      "scipy": "1.18.1"
+    },
+    "platform": "Linux-6.18.44-fc-v80-x86_64-with-glibc2.39",
+    "python": "3.13.16",
+    "submission_python": "/opt/agent-python/bin/python",
+    "utc": "2026-10-08T22:23:42Z",
+    "uv_lock_sha256": "ac81a7188c90c087f9d95ec9d39ea72daf63149aebd8007d31caaccf44813090"
+  },
+  "seconds": 144.9,
+  "seeds": [
+    "73773320766b779cffba9a2d0497a58f",
+    "003aaf23eb5a1b53f9384c2dd031a1a6",
+    "488b2ffc17e1f994779f09296b32667c",
+    "6c57cb685a6bba8625a3a04b6098642f",
+    "a4619dcab1ef8614f0e5386b20f4ba99",
+    "c09501d8b87545e521d8ea74f09f1156",
+    "16a95d5c2d0257226a62ff0342372582",
+    "bc5f28f8dd77baea9addbf2b7dd96c6b",
+    "f13c381449e1ed3e6686fbceaab20f91",
+    "93cc3b94aa40c0f6ef0f5ba9337253bd",
+    "ba029274e4a3b9e184bb49e1c07dabaa",
+    "db1ca0d4ecacf2cc4cf40fcb7030e062",
+    "a90479179dc921258da1849815de3170",
+    "5355bcda25d1e81481ae48cd05d9b530",
+    "acba4ae4177941c617a2f46892e28d14",
+    "f82a969c0e6775a8fe4e147532980ae1",
+    "e2b7f9913acbaf267772405b9b00d97f",
+    "debfcb5946565e7d40389280b7a6efe9",
+    "84d2a4491ec24c88f4fb7b6bfc694246",
+    "b96c3c9a88f482101c0c58f39b3006cb",
+    "10df1cfb53b936ffed7d1097d73c99ed",
+    "3d8a61ed5dc77b8e99e87d77d8708b94",
+    "4845f51fbd3f34be1d62e747f39b342d",
+    "1966c1d53cb04034acd11d6bf5be89f4",
+    "601384d39dace4852f4f4bcc10aae104",
+    "e80587d78d7326c36a135ee1367f8305",
+    "83f3c394ea46882f32c844639b4425b4",
+    "fad616fc1e48eee99fe86009dd9a2d6d",
+    "4ec310c23b119cbb7692618c78cec997",
+    "4288b5912c405c416d5ba6b422edd3c5"
+  ],
+  "task": "t02-pk-fit-dose",
+  "task_version": "1.0.0"
+}
