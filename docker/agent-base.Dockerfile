@@ -3,7 +3,7 @@
 # Build from the repository root:
 #   docker build -f docker/agent-base.Dockerfile -t ghcr.io/mbote-droid/bioengbench-agent-base:0.2.0 .
 # scripts/pin_base_images.sh replaces the tag below with an immutable digest.
-FROM python:3.12.11-slim-bookworm
+FROM python:3.12.15-slim-bookworm
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONHASHSEED=0 \
