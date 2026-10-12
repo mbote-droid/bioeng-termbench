@@ -15,3 +15,4 @@ build/
 private_seeds.txt
 .envrc
 octave-workspace
+.env
