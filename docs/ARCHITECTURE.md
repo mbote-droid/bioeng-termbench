@@ -146,7 +146,7 @@ single-threaded BLAS, canonical verdict JSON; CI grades twice and compares
 bytes. Validation results carry provenance and a SHA-256 manifest.
 
 ### ADR-012 Multi-language references
-Python and Octave references (and an unverified Julia port of t02) show the
+Python and Octave references (and a Julia port of t02, graded in CI) show the
 contract is language-neutral and catch graders that accidentally depend on a
 Python idiom. The Octave closed-loop controller found a real pitfall:
 `fgetl(stdin)` blocks on an open pipe; `input('', 's')` does not.

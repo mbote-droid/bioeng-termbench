@@ -1,0 +1,776 @@
+{
+  "cases": [
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "FILES",
+          "status": "pass"
+        },
+        {
+          "code": "SCHEMA",
+          "status": "pass"
+        },
+        {
+          "code": "TIME_AXIS",
+          "measured": 4.44e-07,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "BASELINE",
+          "measured": 0.000440474,
+          "status": "pass",
+          "threshold": 0.1
+        },
+        {
+          "code": "POWERLINE",
+          "measured": 1.0463e-05,
+          "status": "pass",
+          "threshold": 0.05
+        },
+        {
+          "code": "FIDELITY",
+          "measured": 0.007951604,
+          "status": "pass",
+          "threshold": 0.05
+        },
+        {
+          "code": "AMPLITUDE",
+          "measured": 0.002549196,
+          "status": "pass",
+          "threshold": 0.15
+        },
+        {
+          "code": "PEAK_FORMAT",
+          "measured": 4.44e-07,
+          "status": "pass",
+          "threshold": 0.0001
+        },
+        {
+          "code": "PEAK_SENS",
+          "measured": 1.0,
+          "status": "pass",
+          "threshold": 0.98
+        },
+        {
+          "code": "PEAK_PREC",
+          "measured": 1.0,
+          "status": "pass",
+          "threshold": 0.98
+        },
+        {
+          "code": "HR",
+          "measured": 0.003779081,
+          "status": "pass",
+          "threshold": 1.0
+        },
+        {
+          "code": "SDNN",
+          "measured": 0.071810282,
+          "status": "pass",
+          "threshold": 3.640714963
+        },
+        {
+          "code": "RMSSD",
+          "measured": 0.217691426,
+          "status": "pass",
+          "threshold": 3.449645307
+        },
+        {
+          "code": "NBEATS",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 2
+        },
+        {
+          "code": "HRV_CONSISTENT",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1.0
+        }
+      ],
+      "passed": true,
+      "seed": "50645f25c7cabc3eb79b1d0dc1a74d07"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "FILES",
+          "status": "pass"
+        },
+        {
+          "code": "SCHEMA",
+          "status": "pass"
+        },
+        {
+          "code": "TIME_AXIS",
+          "measured": 4.44e-07,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "BASELINE",
+          "measured": 0.006647071,
+          "status": "pass",
+          "threshold": 0.1
+        },
+        {
+          "code": "POWERLINE",
+          "measured": 1.0104e-05,
+          "status": "pass",
+          "threshold": 0.05
+        },
+        {
+          "code": "FIDELITY",
+          "measured": 0.00934902,
+          "status": "pass",
+          "threshold": 0.05
+        },
+        {
+          "code": "AMPLITUDE",
+          "measured": 0.003787388,
+          "status": "pass",
+          "threshold": 0.15
+        },
+        {
+          "code": "PEAK_FORMAT",
+          "measured": 4.44e-07,
+          "status": "pass",
+          "threshold": 0.0001
+        },
+        {
+          "code": "PEAK_SENS",
+          "measured": 1.0,
+          "status": "pass",
+          "threshold": 0.98
+        },
+        {
+          "code": "PEAK_PREC",
+          "measured": 1.0,
+          "status": "pass",
+          "threshold": 0.98
+        },
+        {
+          "code": "HR",
+          "measured": 0.004155823,
+          "status": "pass",
+          "threshold": 1.0
+        },
+        {
+          "code": "SDNN",
+          "measured": 0.13263737,
+          "status": "pass",
+          "threshold": 3.0
+        },
+        {
+          "code": "RMSSD",
+          "measured": 0.345542138,
+          "status": "pass",
+          "threshold": 3.0
+        },
+        {
+          "code": "NBEATS",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 2
+        },
+        {
+          "code": "HRV_CONSISTENT",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1.0
+        }
+      ],
+      "passed": true,
+      "seed": "ba380f7e5b8d9a07d93b4633fe184641"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "FILES",
+          "status": "pass"
+        },
+        {
+          "code": "SCHEMA",
+          "status": "pass"
+        },
+        {
+          "code": "TIME_AXIS",
+          "measured": 4.44e-07,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "BASELINE",
+          "measured": 0.000468201,
+          "status": "pass",
+          "threshold": 0.1
+        },
+        {
+          "code": "POWERLINE",
+          "measured": 7.9964e-05,
+          "status": "pass",
+          "threshold": 0.05
+        },
+        {
+          "code": "FIDELITY",
+          "measured": 0.013811602,
+          "status": "pass",
+          "threshold": 0.05
+        },
+        {
+          "code": "AMPLITUDE",
+          "measured": 0.001136915,
+          "status": "pass",
+          "threshold": 0.15
+        },
+        {
+          "code": "PEAK_FORMAT",
+          "measured": 4.44e-07,
+          "status": "pass",
+          "threshold": 0.0001
+        },
+        {
+          "code": "PEAK_SENS",
+          "measured": 1.0,
+          "status": "pass",
+          "threshold": 0.98
+        },
+        {
+          "code": "PEAK_PREC",
+          "measured": 1.0,
+          "status": "pass",
+          "threshold": 0.98
+        },
+        {
+          "code": "HR",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1.0
+        },
+        {
+          "code": "SDNN",
+          "measured": 0.060980721,
+          "status": "pass",
+          "threshold": 3.612168204
+        },
+        {
+          "code": "RMSSD",
+          "measured": 0.259361269,
+          "status": "pass",
+          "threshold": 4.620162278
+        },
+        {
+          "code": "NBEATS",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 2
+        },
+        {
+          "code": "HRV_CONSISTENT",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1.0
+        }
+      ],
+      "passed": true,
+      "seed": "209e6d7dd056e14ed88c0c65d861b378"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "FILES",
+          "status": "pass"
+        },
+        {
+          "code": "SCHEMA",
+          "status": "pass"
+        },
+        {
+          "code": "TIME_AXIS",
+          "measured": 4.44e-07,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "BASELINE",
+          "measured": 0.000148726,
+          "status": "pass",
+          "threshold": 0.1
+        },
+        {
+          "code": "POWERLINE",
+          "measured": 1.4483e-05,
+          "status": "pass",
+          "threshold": 0.05
+        },
+        {
+          "code": "FIDELITY",
+          "measured": 0.00915182,
+          "status": "pass",
+          "threshold": 0.05
+        },
+        {
+          "code": "AMPLITUDE",
+          "measured": 0.019400773,
+          "status": "pass",
+          "threshold": 0.15
+        },
+        {
+          "code": "PEAK_FORMAT",
+          "measured": 4.44e-07,
+          "status": "pass",
+          "threshold": 0.0001
+        },
+        {
+          "code": "PEAK_SENS",
+          "measured": 1.0,
+          "status": "pass",
+          "threshold": 0.98
+        },
+        {
+          "code": "PEAK_PREC",
+          "measured": 1.0,
+          "status": "pass",
+          "threshold": 0.98
+        },
+        {
+          "code": "HR",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1.0
+        },
+        {
+          "code": "SDNN",
+          "measured": 0.086323975,
+          "status": "pass",
+          "threshold": 3.0
+        },
+        {
+          "code": "RMSSD",
+          "measured": 0.102920614,
+          "status": "pass",
+          "threshold": 3.562323049
+        },
+        {
+          "code": "NBEATS",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 2
+        },
+        {
+          "code": "HRV_CONSISTENT",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1.0
+        }
+      ],
+      "passed": true,
+      "seed": "cf02aec016c7bb554fdf7ab0ae6aa672"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "FILES",
+          "status": "pass"
+        },
+        {
+          "code": "SCHEMA",
+          "status": "pass"
+        },
+        {
+          "code": "TIME_AXIS",
+          "measured": 4.44e-07,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "BASELINE",
+          "measured": 0.00470467,
+          "status": "pass",
+          "threshold": 0.1
+        },
+        {
+          "code": "POWERLINE",
+          "measured": 2.5758e-05,
+          "status": "pass",
+          "threshold": 0.05
+        },
+        {
+          "code": "FIDELITY",
+          "measured": 0.010572227,
+          "status": "pass",
+          "threshold": 0.05
+        },
+        {
+          "code": "AMPLITUDE",
+          "measured": 0.001859277,
+          "status": "pass",
+          "threshold": 0.15
+        },
+        {
+          "code": "PEAK_FORMAT",
+          "measured": 4.44e-07,
+          "status": "pass",
+          "threshold": 0.0001
+        },
+        {
+          "code": "PEAK_SENS",
+          "measured": 1.0,
+          "status": "pass",
+          "threshold": 0.98
+        },
+        {
+          "code": "PEAK_PREC",
+          "measured": 1.0,
+          "status": "pass",
+          "threshold": 0.98
+        },
+        {
+          "code": "HR",
+          "measured": 0.004209344,
+          "status": "pass",
+          "threshold": 1.0
+        },
+        {
+          "code": "SDNN",
+          "measured": 0.077271524,
+          "status": "pass",
+          "threshold": 3.0
+        },
+        {
+          "code": "RMSSD",
+          "measured": 0.227324925,
+          "status": "pass",
+          "threshold": 3.0
+        },
+        {
+          "code": "NBEATS",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 2
+        },
+        {
+          "code": "HRV_CONSISTENT",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1.0
+        }
+      ],
+      "passed": true,
+      "seed": "79822726028a7f1ba7302c4a19ae6b09"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "FILES",
+          "status": "pass"
+        },
+        {
+          "code": "SCHEMA",
+          "status": "pass"
+        },
+        {
+          "code": "TIME_AXIS",
+          "measured": 4.44e-07,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "BASELINE",
+          "measured": 9.9717e-05,
+          "status": "pass",
+          "threshold": 0.1
+        },
+        {
+          "code": "POWERLINE",
+          "measured": 2.605e-05,
+          "status": "pass",
+          "threshold": 0.05
+        },
+        {
+          "code": "FIDELITY",
+          "measured": 0.010377831,
+          "status": "pass",
+          "threshold": 0.05
+        },
+        {
+          "code": "AMPLITUDE",
+          "measured": 0.00155173,
+          "status": "pass",
+          "threshold": 0.15
+        },
+        {
+          "code": "PEAK_FORMAT",
+          "measured": 4.44e-07,
+          "status": "pass",
+          "threshold": 0.0001
+        },
+        {
+          "code": "PEAK_SENS",
+          "measured": 1.0,
+          "status": "pass",
+          "threshold": 0.98
+        },
+        {
+          "code": "PEAK_PREC",
+          "measured": 1.0,
+          "status": "pass",
+          "threshold": 0.98
+        },
+        {
+          "code": "HR",
+          "measured": 0.004601051,
+          "status": "pass",
+          "threshold": 1.0
+        },
+        {
+          "code": "SDNN",
+          "measured": 0.058457159,
+          "status": "pass",
+          "threshold": 3.0
+        },
+        {
+          "code": "RMSSD",
+          "measured": 0.288331196,
+          "status": "pass",
+          "threshold": 3.0
+        },
+        {
+          "code": "NBEATS",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 2
+        },
+        {
+          "code": "HRV_CONSISTENT",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1.0
+        }
+      ],
+      "passed": true,
+      "seed": "6dee1b438c00026115294e28c6622643"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "FILES",
+          "status": "pass"
+        },
+        {
+          "code": "SCHEMA",
+          "status": "pass"
+        },
+        {
+          "code": "TIME_AXIS",
+          "measured": 4.44e-07,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "BASELINE",
+          "measured": 0.00066855,
+          "status": "pass",
+          "threshold": 0.1
+        },
+        {
+          "code": "POWERLINE",
+          "measured": 9.2641e-05,
+          "status": "pass",
+          "threshold": 0.05
+        },
+        {
+          "code": "FIDELITY",
+          "measured": 0.013915709,
+          "status": "pass",
+          "threshold": 0.05
+        },
+        {
+          "code": "AMPLITUDE",
+          "measured": 0.009463399,
+          "status": "pass",
+          "threshold": 0.15
+        },
+        {
+          "code": "PEAK_FORMAT",
+          "measured": 4.44e-07,
+          "status": "pass",
+          "threshold": 0.0001
+        },
+        {
+          "code": "PEAK_SENS",
+          "measured": 1.0,
+          "status": "pass",
+          "threshold": 0.98
+        },
+        {
+          "code": "PEAK_PREC",
+          "measured": 1.0,
+          "status": "pass",
+          "threshold": 0.98
+        },
+        {
+          "code": "HR",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1.0
+        },
+        {
+          "code": "SDNN",
+          "measured": 0.029822333,
+          "status": "pass",
+          "threshold": 3.355449452
+        },
+        {
+          "code": "RMSSD",
+          "measured": 0.102470102,
+          "status": "pass",
+          "threshold": 5.864390429
+        },
+        {
+          "code": "NBEATS",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 2
+        },
+        {
+          "code": "HRV_CONSISTENT",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1.0
+        }
+      ],
+      "passed": true,
+      "seed": "865d704858b3de38e83a3e0a4280085d"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "FILES",
+          "status": "pass"
+        },
+        {
+          "code": "SCHEMA",
+          "status": "pass"
+        },
+        {
+          "code": "TIME_AXIS",
+          "measured": 4.44e-07,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "BASELINE",
+          "measured": 0.000149545,
+          "status": "pass",
+          "threshold": 0.1
+        },
+        {
+          "code": "POWERLINE",
+          "measured": 1.8749e-05,
+          "status": "pass",
+          "threshold": 0.05
+        },
+        {
+          "code": "FIDELITY",
+          "measured": 0.007782059,
+          "status": "pass",
+          "threshold": 0.05
+        },
+        {
+          "code": "AMPLITUDE",
+          "measured": 0.010922244,
+          "status": "pass",
+          "threshold": 0.15
+        },
+        {
+          "code": "PEAK_FORMAT",
+          "measured": 4.44e-07,
+          "status": "pass",
+          "threshold": 0.0001
+        },
+        {
+          "code": "PEAK_SENS",
+          "measured": 1.0,
+          "status": "pass",
+          "threshold": 0.98
+        },
+        {
+          "code": "PEAK_PREC",
+          "measured": 1.0,
+          "status": "pass",
+          "threshold": 0.98
+        },
+        {
+          "code": "HR",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1.0
+        },
+        {
+          "code": "SDNN",
+          "measured": 0.160720348,
+          "status": "pass",
+          "threshold": 3.150461555
+        },
+        {
+          "code": "RMSSD",
+          "measured": 0.280669836,
+          "status": "pass",
+          "threshold": 4.780928089
+        },
+        {
+          "code": "NBEATS",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 2
+        },
+        {
+          "code": "HRV_CONSISTENT",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1.0
+        }
+      ],
+      "passed": true,
+      "seed": "51624049144c58646cac3a8844f0f244"
+    }
+  ],
+  "check_pass_fraction": 1.0,
+  "passed": true,
+  "task_id": "t01-ecg-denoise-rpeaks",
+  "task_version": "2.0.0"
+}

@@ -1,0 +1,17 @@
+{
+  "task": "t01-ecg-denoise-rpeaks",
+  "model": "baseline-oracle",
+  "agent": "oracle",
+  "seeds": "dev_seeds.txt",
+  "attempt": 1,
+  "seconds": 21.0,
+  "turns": 3,
+  "stop": "end_turn",
+  "input_tokens": 0,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "output_tokens": 0,
+  "total_tokens": 0,
+  "reward": 1,
+  "failing_codes": []
+}

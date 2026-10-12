@@ -1,0 +1,23 @@
+{
+  "task": "t05-pk-debug",
+  "model": "baseline-noop",
+  "agent": "noop",
+  "seeds": "dev_seeds.txt",
+  "attempt": 1,
+  "seconds": 51.6,
+  "turns": 1,
+  "stop": "end_turn",
+  "input_tokens": 0,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "output_tokens": 0,
+  "total_tokens": 0,
+  "reward": 0,
+  "failing_codes": [
+    "BOLUS",
+    "COINCIDENT_DOSES",
+    "LONG_HORIZON",
+    "SHORT_INFUSION",
+    "STANDARD"
+  ]
+}

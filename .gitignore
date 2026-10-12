@@ -10,6 +10,7 @@ build/
 *.egg-info/
 /results/*
 !/results/validation/
+!/results/agent_eval/
 /results/validation/logs/
 private_seeds.txt
 .envrc

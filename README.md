@@ -1,8 +1,22 @@
 # BioEng-TermBench
 [![CI](https://github.com/mbote-droid/bioeng-termbench/actions/workflows/ci.yml/badge.svg)](https://github.com/mbote-droid/bioeng-termbench/actions/workflows/ci.yml)
-[![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/)
-[![uv](https://img.shields.io/badge/deps-uv-purple.svg)](https://github.com/astral-sh/uv)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Python 3.12](https://img.shields.io/badge/python-3.12-3776AB?logo=python&logoColor=white)](pyproject.toml)
+[![uv](https://img.shields.io/badge/deps-uv%20locked-DE5FE9?logo=uv&logoColor=white)](uv.lock)
+[![Ruff](https://img.shields.io/badge/lint-ruff-D7FF64?logo=ruff&logoColor=black)](pyproject.toml)
+[![mypy strict](https://img.shields.io/badge/types-mypy%20strict-2A6DB2)](pyproject.toml)
+[![Dependabot](https://img.shields.io/badge/Dependabot-enabled-025E8C?logo=dependabot&logoColor=white)](.github/dependabot.yml)
+
+[![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)](docs/WORKFLOWS.md)
+[![Shell](https://img.shields.io/badge/Shell-Bash-4EAA25?logo=gnubash&logoColor=white)](scripts)
+[![Make](https://img.shields.io/badge/Make-GNU-A42E2B?logo=gnu&logoColor=white)](Makefile)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)](docker)
+[![Snakemake](https://img.shields.io/badge/workflow-Snakemake-039475)](workflow/Snakefile)
+[![GNU Octave](https://img.shields.io/badge/GNU%20Octave-0790C0?logo=octave&logoColor=white)](tasks/t03-glucose-closed-loop/references)
+[![Julia](https://img.shields.io/badge/Julia-9558B2?logo=julia&logoColor=white)](tasks/t02-pk-fit-dose/references/julia)
+[![Jupyter](https://img.shields.io/badge/Jupyter-F37626?logo=jupyter&logoColor=white)](gpu/BioEng_GPU_Benchmark.ipynb)
+[![CUDA](https://img.shields.io/badge/CUDA-CuPy-76B900?logo=nvidia&logoColor=white)](gpu)
+[![Harbor](https://img.shields.io/badge/tasks-Harbor%20format-555555)](https://harborframework.com)
 
 
 Terminal-based **biomedical engineering tasks with physics-aware graders**, built
@@ -26,7 +40,7 @@ necessary, and the sandbox must hold against attacks.
 | task | workflow | the decision the maths drives | references |
 |---|---|---|---|
 | `t01-ecg-denoise-rpeaks` | denoise an ambulatory ECG, detect beats, HRV | filter design: suppression vs morphology fidelity | Python x2, Octave |
-| `t02-pk-fit-dose` | fit a two-compartment PK model to 14 noisy samples | a dosing regimen that is safe for the *true* patient | Python, Octave (Julia port, unverified) |
+| `t02-pk-fit-dose` | fit a two-compartment PK model to 14 noisy samples | a dosing regimen that is safe for the *true* patient | Python, Octave, Julia (graded in CI) |
 | `t03-glucose-closed-loop` | write an insulin pump controller, tested in the loop | insulin every 5 min through meals, exercise and sensor faults | Python, Octave |
 | `t04-bioheat-ablation` | verified bioheat solver + thermal ablation plan | heating time and power, robust to +-20 % perfusion | finite volumes, finite elements, Octave |
 | `t05-pk-debug` | find and fix five defects in a PK package | what is wrong, judged against a specification | fixed package |
@@ -115,9 +129,17 @@ of the T4's peak memory bandwidth. In float64 it reaches only about
 
 `agent_eval/harness.py` runs a tool-use agent loop against the Anthropic API
 (your key, from the environment, never written to disk), grades the result
-with the real, sandboxed grader and keeps the full transcript. Harbor is the
-faithful path when Docker is available
-(`harbor run -p tasks/<id> -a <agent> -m <model>`).
+with the real, sandboxed grader and keeps the full transcript. Prompt caching
+and a per-attempt token budget keep the cost down. Harbor is the faithful
+path when Docker is available (`harbor run -p tasks/<id> -a <agent> -m <model>`).
+
+    make agent-baselines                                  # scripted oracle and no-op agents, no API key
+    make agent-eval MODEL=<model-id> TASKS="t05-pk-debug" ATTEMPTS=3
+
+The scripted baselines check the pipeline before any money is spent: the
+oracle earns reward 1 on every task, the no-op agent 0
+([results/agent_eval/SUMMARY.md](results/agent_eval/SUMMARY.md)). Protocol,
+metrics and failure taxonomy: [docs/AGENT_EVAL.md](docs/AGENT_EVAL.md).
 
 ## Layout
 
@@ -134,15 +156,18 @@ faithful path when Docker is available
     validation/  probes, campaign, grader mutation, red team, report
     workflow/    Snakefile for the campaign
     gpu/         3D solver, CPU/GPU benchmark, Colab notebook
-    agent_eval/  agent harness
+    agent_eval/  agent harness, scripted baselines
     docker/      agent and grader base images, hash-pinned requirements
-    docs/        requirements, architecture (ADRs), design, ICD, equations,
-                 diagrams, threat model, FMEA, data, workflows, validation report
+    docs/        technical report, requirements, architecture (ADRs), design, ICD,
+                 equations, diagrams, threat model, FMEA, data, workflows,
+                 validation report, agent evaluation
+    results/     validation campaign and agent evaluation result files
 
 ## Documentation
 
 | document | contents |
 |---|---|
+| [TECHNICAL_REPORT](docs/TECHNICAL_REPORT.md) | problem, approach, validation results, limitations: start here |
 | [REQUIREMENTS](docs/REQUIREMENTS.md) | requirement IDs with traceability to tests |
 | [ARCHITECTURE](docs/ARCHITECTURE.md) | components, lifecycle, 12 architecture decision records |
 | [DESIGN](docs/DESIGN.md) | each task's decision, checks and the mistakes they catch |
@@ -154,6 +179,7 @@ faithful path when Docker is available
 | [DATA](docs/DATA.md) | synthetic data generation and distributions |
 | [WORKFLOWS](docs/WORKFLOWS.md) | every terminal workflow |
 | [VALIDATION_REPORT](docs/VALIDATION_REPORT.md) | generated evidence |
+| [AGENT_EVAL](docs/AGENT_EVAL.md) | agent evaluation protocol, metrics, failure taxonomy, cost control |
 
 ## Reproducibility
 
@@ -172,12 +198,17 @@ faithful path when Docker is available
   in the build environment used so far (no Docker Hub access). Everything else
   (tests, grading, privilege drop, limits, red team, determinism) has been run,
   with a local interpreter that mirrors the agent image.
-* The t02 Julia port has not been run (Julia could not be installed here); CI
-  has a job for it.
+* The t02 Julia port runs only in CI (job `julia`, graded on the dev seeds),
+  not in the local validation campaign.
 * GPU numbers are from one Colab T4 session; other GPUs and CPUs will
   differ.
 * Public `dev_seeds.txt` splits are not held out; use `private_seeds.txt`.
 * Not a medical device. Not for clinical use.
+
+## Citation
+
+If you use BioEng-TermBench, please cite it: GitHub's "Cite this repository"
+button reads [CITATION.cff](CITATION.cff).
 
 ## License
 

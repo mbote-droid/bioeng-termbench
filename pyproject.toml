@@ -1,6 +1,6 @@
 [project]
 name = "bioengbench"
-version = "0.2.0"
+version = "1.0.0"
 description = "Terminal-based biomedical engineering tasks with physics-aware graders for training and evaluating AI agents."
 readme = "README.md"
 license = { text = "MIT" }

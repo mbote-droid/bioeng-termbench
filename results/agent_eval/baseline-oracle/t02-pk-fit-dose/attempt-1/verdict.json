@@ -1,0 +1,568 @@
+{
+  "cases": [
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "FILES",
+          "status": "pass"
+        },
+        {
+          "code": "SCHEMA",
+          "status": "pass"
+        },
+        {
+          "code": "PRED_GRID",
+          "status": "pass"
+        },
+        {
+          "code": "PARAMS_LR",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 18.47
+        },
+        {
+          "code": "SE_CONSISTENT",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.2
+        },
+        {
+          "code": "HALF_LIVES",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.005
+        },
+        {
+          "code": "PRED_ACCURACY",
+          "measured": 1e-08,
+          "status": "pass",
+          "threshold": 0.01
+        },
+        {
+          "code": "REGIMEN_FORMAT",
+          "status": "pass"
+        },
+        {
+          "code": "REGIMEN_SELF",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.01
+        },
+        {
+          "code": "REGIMEN_TARGETS",
+          "status": "pass"
+        },
+        {
+          "code": "REGIMEN_SAFE",
+          "status": "pass"
+        },
+        {
+          "code": "REGIMEN_EFFICIENT",
+          "measured": 1.079201456,
+          "status": "pass",
+          "threshold": 1.2
+        }
+      ],
+      "passed": true,
+      "seed": "9ac1ab0464c2878f87a20ee8eadcdbb6"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "FILES",
+          "status": "pass"
+        },
+        {
+          "code": "SCHEMA",
+          "status": "pass"
+        },
+        {
+          "code": "PRED_GRID",
+          "status": "pass"
+        },
+        {
+          "code": "PARAMS_LR",
+          "measured": 1e-09,
+          "status": "pass",
+          "threshold": 18.47
+        },
+        {
+          "code": "SE_CONSISTENT",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.2
+        },
+        {
+          "code": "HALF_LIVES",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.005
+        },
+        {
+          "code": "PRED_ACCURACY",
+          "measured": 9e-09,
+          "status": "pass",
+          "threshold": 0.01
+        },
+        {
+          "code": "REGIMEN_FORMAT",
+          "status": "pass"
+        },
+        {
+          "code": "REGIMEN_SELF",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.01
+        },
+        {
+          "code": "REGIMEN_TARGETS",
+          "status": "pass"
+        },
+        {
+          "code": "REGIMEN_SAFE",
+          "status": "pass"
+        },
+        {
+          "code": "REGIMEN_EFFICIENT",
+          "measured": 0.998318838,
+          "status": "pass",
+          "threshold": 1.2
+        }
+      ],
+      "passed": true,
+      "seed": "a1c7f871a6cb7200b82d91797d3b3a06"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "FILES",
+          "status": "pass"
+        },
+        {
+          "code": "SCHEMA",
+          "status": "pass"
+        },
+        {
+          "code": "PRED_GRID",
+          "status": "pass"
+        },
+        {
+          "code": "PARAMS_LR",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 18.47
+        },
+        {
+          "code": "SE_CONSISTENT",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.2
+        },
+        {
+          "code": "HALF_LIVES",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.005
+        },
+        {
+          "code": "PRED_ACCURACY",
+          "measured": 1e-08,
+          "status": "pass",
+          "threshold": 0.01
+        },
+        {
+          "code": "REGIMEN_FORMAT",
+          "status": "pass"
+        },
+        {
+          "code": "REGIMEN_SELF",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.01
+        },
+        {
+          "code": "REGIMEN_TARGETS",
+          "status": "pass"
+        },
+        {
+          "code": "REGIMEN_SAFE",
+          "status": "pass"
+        },
+        {
+          "code": "REGIMEN_EFFICIENT",
+          "measured": 0.998373966,
+          "status": "pass",
+          "threshold": 1.2
+        }
+      ],
+      "passed": true,
+      "seed": "87f254297b7c1b72c0ddd2548091b67d"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "FILES",
+          "status": "pass"
+        },
+        {
+          "code": "SCHEMA",
+          "status": "pass"
+        },
+        {
+          "code": "PRED_GRID",
+          "status": "pass"
+        },
+        {
+          "code": "PARAMS_LR",
+          "measured": 1e-09,
+          "status": "pass",
+          "threshold": 18.47
+        },
+        {
+          "code": "SE_CONSISTENT",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.2
+        },
+        {
+          "code": "HALF_LIVES",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.005
+        },
+        {
+          "code": "PRED_ACCURACY",
+          "measured": 9e-09,
+          "status": "pass",
+          "threshold": 0.01
+        },
+        {
+          "code": "REGIMEN_FORMAT",
+          "status": "pass"
+        },
+        {
+          "code": "REGIMEN_SELF",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.01
+        },
+        {
+          "code": "REGIMEN_TARGETS",
+          "status": "pass"
+        },
+        {
+          "code": "REGIMEN_SAFE",
+          "status": "pass"
+        },
+        {
+          "code": "REGIMEN_EFFICIENT",
+          "measured": 0.977532551,
+          "status": "pass",
+          "threshold": 1.2
+        }
+      ],
+      "passed": true,
+      "seed": "8fc22f58e1d286d28519d0cee0eb7644"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "FILES",
+          "status": "pass"
+        },
+        {
+          "code": "SCHEMA",
+          "status": "pass"
+        },
+        {
+          "code": "PRED_GRID",
+          "status": "pass"
+        },
+        {
+          "code": "PARAMS_LR",
+          "measured": 1e-09,
+          "status": "pass",
+          "threshold": 18.47
+        },
+        {
+          "code": "SE_CONSISTENT",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.2
+        },
+        {
+          "code": "HALF_LIVES",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.005
+        },
+        {
+          "code": "PRED_ACCURACY",
+          "measured": 1e-08,
+          "status": "pass",
+          "threshold": 0.01
+        },
+        {
+          "code": "REGIMEN_FORMAT",
+          "status": "pass"
+        },
+        {
+          "code": "REGIMEN_SELF",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.01
+        },
+        {
+          "code": "REGIMEN_TARGETS",
+          "status": "pass"
+        },
+        {
+          "code": "REGIMEN_SAFE",
+          "status": "pass"
+        },
+        {
+          "code": "REGIMEN_EFFICIENT",
+          "measured": 1.022575265,
+          "status": "pass",
+          "threshold": 1.2
+        }
+      ],
+      "passed": true,
+      "seed": "a329d3b581222c39e871d618e94b1754"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "FILES",
+          "status": "pass"
+        },
+        {
+          "code": "SCHEMA",
+          "status": "pass"
+        },
+        {
+          "code": "PRED_GRID",
+          "status": "pass"
+        },
+        {
+          "code": "PARAMS_LR",
+          "measured": 1e-09,
+          "status": "pass",
+          "threshold": 18.47
+        },
+        {
+          "code": "SE_CONSISTENT",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.2
+        },
+        {
+          "code": "HALF_LIVES",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.005
+        },
+        {
+          "code": "PRED_ACCURACY",
+          "measured": 1.1e-08,
+          "status": "pass",
+          "threshold": 0.01
+        },
+        {
+          "code": "REGIMEN_FORMAT",
+          "status": "pass"
+        },
+        {
+          "code": "REGIMEN_SELF",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.01
+        },
+        {
+          "code": "REGIMEN_TARGETS",
+          "status": "pass"
+        },
+        {
+          "code": "REGIMEN_SAFE",
+          "status": "pass"
+        },
+        {
+          "code": "REGIMEN_EFFICIENT",
+          "measured": 0.940994493,
+          "status": "pass",
+          "threshold": 1.2
+        }
+      ],
+      "passed": true,
+      "seed": "a0c93396819e369efb7e27f7d8908ae0"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "FILES",
+          "status": "pass"
+        },
+        {
+          "code": "SCHEMA",
+          "status": "pass"
+        },
+        {
+          "code": "PRED_GRID",
+          "status": "pass"
+        },
+        {
+          "code": "PARAMS_LR",
+          "measured": 1e-09,
+          "status": "pass",
+          "threshold": 18.47
+        },
+        {
+          "code": "SE_CONSISTENT",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.2
+        },
+        {
+          "code": "HALF_LIVES",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.005
+        },
+        {
+          "code": "PRED_ACCURACY",
+          "measured": 1.1e-08,
+          "status": "pass",
+          "threshold": 0.01
+        },
+        {
+          "code": "REGIMEN_FORMAT",
+          "status": "pass"
+        },
+        {
+          "code": "REGIMEN_SELF",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.01
+        },
+        {
+          "code": "REGIMEN_TARGETS",
+          "status": "pass"
+        },
+        {
+          "code": "REGIMEN_SAFE",
+          "status": "pass"
+        },
+        {
+          "code": "REGIMEN_EFFICIENT",
+          "measured": 1.055111133,
+          "status": "pass",
+          "threshold": 1.2
+        }
+      ],
+      "passed": true,
+      "seed": "f000465dba3b949d17f6667ad43d7075"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "FILES",
+          "status": "pass"
+        },
+        {
+          "code": "SCHEMA",
+          "status": "pass"
+        },
+        {
+          "code": "PRED_GRID",
+          "status": "pass"
+        },
+        {
+          "code": "PARAMS_LR",
+          "measured": 1e-09,
+          "status": "pass",
+          "threshold": 18.47
+        },
+        {
+          "code": "SE_CONSISTENT",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.2
+        },
+        {
+          "code": "HALF_LIVES",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.005
+        },
+        {
+          "code": "PRED_ACCURACY",
+          "measured": 1e-08,
+          "status": "pass",
+          "threshold": 0.01
+        },
+        {
+          "code": "REGIMEN_FORMAT",
+          "status": "pass"
+        },
+        {
+          "code": "REGIMEN_SELF",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.01
+        },
+        {
+          "code": "REGIMEN_TARGETS",
+          "status": "pass"
+        },
+        {
+          "code": "REGIMEN_SAFE",
+          "status": "pass"
+        },
+        {
+          "code": "REGIMEN_EFFICIENT",
+          "measured": 0.96924689,
+          "status": "pass",
+          "threshold": 1.2
+        }
+      ],
+      "passed": true,
+      "seed": "21c4f2dda90f95bc632805a12024a05e"
+    }
+  ],
+  "check_pass_fraction": 1.0,
+  "passed": true,
+  "task_id": "t02-pk-fit-dose",
+  "task_version": "1.0.0"
+}

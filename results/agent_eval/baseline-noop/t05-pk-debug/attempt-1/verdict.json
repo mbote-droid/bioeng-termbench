@@ -1,0 +1,368 @@
+{
+  "cases": [
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "STANDARD",
+          "measured": 1.81853442,
+          "message": "concentration error 1.82 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        },
+        {
+          "code": "SHORT_INFUSION",
+          "measured": 0.771503169,
+          "message": "concentration error 0.772 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        },
+        {
+          "code": "BOLUS",
+          "measured": 1.0,
+          "message": "concentration error 1 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        },
+        {
+          "code": "LONG_HORIZON",
+          "measured": 1.8311e-05,
+          "message": "output times off by up to 1.83e-05 h",
+          "status": "fail",
+          "threshold": 1e-09
+        },
+        {
+          "code": "COINCIDENT_DOSES",
+          "measured": 0.975898848,
+          "message": "concentration error 0.976 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        }
+      ],
+      "passed": false,
+      "seed": "18924c2cb1639d36bb1dd19a42c35d8b"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "STANDARD",
+          "measured": 0.46603061,
+          "message": "concentration error 0.466 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        },
+        {
+          "code": "SHORT_INFUSION",
+          "measured": 1.002798371,
+          "message": "concentration error 1 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        },
+        {
+          "code": "BOLUS",
+          "measured": 1.0,
+          "message": "concentration error 1 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        },
+        {
+          "code": "LONG_HORIZON",
+          "measured": 1.8311e-05,
+          "message": "output times off by up to 1.83e-05 h",
+          "status": "fail",
+          "threshold": 1e-09
+        },
+        {
+          "code": "COINCIDENT_DOSES",
+          "measured": 0.973287991,
+          "message": "concentration error 0.973 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        }
+      ],
+      "passed": false,
+      "seed": "3baa855090ce04e16fb3ac2fde427b16"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "STANDARD",
+          "measured": 0.746994684,
+          "message": "concentration error 0.747 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        },
+        {
+          "code": "SHORT_INFUSION",
+          "measured": 1.872601456,
+          "message": "concentration error 1.87 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        },
+        {
+          "code": "BOLUS",
+          "measured": 1.0,
+          "message": "concentration error 1 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        },
+        {
+          "code": "LONG_HORIZON",
+          "measured": 1.8311e-05,
+          "message": "output times off by up to 1.83e-05 h",
+          "status": "fail",
+          "threshold": 1e-09
+        },
+        {
+          "code": "COINCIDENT_DOSES",
+          "measured": 0.960726698,
+          "message": "concentration error 0.961 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        }
+      ],
+      "passed": false,
+      "seed": "6a6638d69d6cace4592009295d15da42"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "STANDARD",
+          "measured": 0.715253763,
+          "message": "concentration error 0.715 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        },
+        {
+          "code": "SHORT_INFUSION",
+          "measured": 0.872296347,
+          "message": "concentration error 0.872 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        },
+        {
+          "code": "BOLUS",
+          "measured": 1.0,
+          "message": "concentration error 1 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        },
+        {
+          "code": "LONG_HORIZON",
+          "measured": 1.8311e-05,
+          "message": "output times off by up to 1.83e-05 h",
+          "status": "fail",
+          "threshold": 1e-09
+        },
+        {
+          "code": "COINCIDENT_DOSES",
+          "measured": 0.972854837,
+          "message": "concentration error 0.973 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        }
+      ],
+      "passed": false,
+      "seed": "d73eaca49b1c91d235f96cd4e1733517"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "STANDARD",
+          "measured": 0.893813698,
+          "message": "concentration error 0.894 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        },
+        {
+          "code": "SHORT_INFUSION",
+          "measured": 0.60344764,
+          "message": "concentration error 0.603 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        },
+        {
+          "code": "BOLUS",
+          "measured": 1.0,
+          "message": "concentration error 1 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        },
+        {
+          "code": "LONG_HORIZON",
+          "measured": 1.8311e-05,
+          "message": "output times off by up to 1.83e-05 h",
+          "status": "fail",
+          "threshold": 1e-09
+        },
+        {
+          "code": "COINCIDENT_DOSES",
+          "measured": 0.981393451,
+          "message": "concentration error 0.981 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        }
+      ],
+      "passed": false,
+      "seed": "32fa86da6a498ba3480d41febc1fd061"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "STANDARD",
+          "measured": 1.232250327,
+          "message": "concentration error 1.23 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        },
+        {
+          "code": "SHORT_INFUSION",
+          "measured": 0.69767151,
+          "message": "concentration error 0.698 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        },
+        {
+          "code": "BOLUS",
+          "measured": 1.0,
+          "message": "concentration error 1 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        },
+        {
+          "code": "LONG_HORIZON",
+          "measured": 1.8311e-05,
+          "message": "output times off by up to 1.83e-05 h",
+          "status": "fail",
+          "threshold": 1e-09
+        },
+        {
+          "code": "COINCIDENT_DOSES",
+          "measured": 0.962555232,
+          "message": "concentration error 0.963 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        }
+      ],
+      "passed": false,
+      "seed": "e24126e93330c9d45d38e7e289c9cb55"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "STANDARD",
+          "measured": 0.941875886,
+          "message": "concentration error 0.942 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        },
+        {
+          "code": "SHORT_INFUSION",
+          "measured": 0.724017089,
+          "message": "concentration error 0.724 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        },
+        {
+          "code": "BOLUS",
+          "measured": 1.0,
+          "message": "concentration error 1 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        },
+        {
+          "code": "LONG_HORIZON",
+          "measured": 1.8311e-05,
+          "message": "output times off by up to 1.83e-05 h",
+          "status": "fail",
+          "threshold": 1e-09
+        },
+        {
+          "code": "COINCIDENT_DOSES",
+          "measured": 0.965387401,
+          "message": "concentration error 0.965 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        }
+      ],
+      "passed": false,
+      "seed": "a173200608f1cd5e8f1ee74c61cea7fb"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "STANDARD",
+          "measured": 0.970865786,
+          "message": "concentration error 0.971 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        },
+        {
+          "code": "SHORT_INFUSION",
+          "measured": 1.468436048,
+          "message": "concentration error 1.47 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        },
+        {
+          "code": "BOLUS",
+          "measured": 1.0,
+          "message": "concentration error 1 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        },
+        {
+          "code": "LONG_HORIZON",
+          "measured": 1.8311e-05,
+          "message": "output times off by up to 1.83e-05 h",
+          "status": "fail",
+          "threshold": 1e-09
+        },
+        {
+          "code": "COINCIDENT_DOSES",
+          "measured": 0.966216931,
+          "message": "concentration error 0.966 of peak",
+          "status": "fail",
+          "threshold": 1e-05
+        }
+      ],
+      "passed": false,
+      "seed": "93edf865a56f02cf291158893eeee129"
+    }
+  ],
+  "check_pass_fraction": 0.166666667,
+  "passed": false,
+  "task_id": "t05-pk-debug",
+  "task_version": "1.0.0"
+}

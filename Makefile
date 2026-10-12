@@ -8,10 +8,10 @@ RUN := $(UV) run --frozen
 VERSION := $(shell $(RUN) python -c "import bioengbench; print(bioengbench.__version__)")
 REGISTRY ?= ghcr.io/mbote-droid
 
-.PHONY: help setup lint typecheck test test-fast check build images clean validate validate-quick redteam mutation gpu-bench
+.PHONY: help setup lint typecheck test test-fast check build images clean validate validate-quick redteam mutation gpu-bench agent-baselines agent-eval agent-summary
 
 help:  ## list targets
-	@grep -E '^[a-z-]+:.*##' $(MAKEFILE_LIST) | awk -F':.*## ' '{printf "  %-12s %s\n", $$1, $$2}'
+	@grep -E '^[a-z-]+:.*##' $(MAKEFILE_LIST) | awk -F':.*## ' '{printf "  %-16s %s\n", $$1, $$2}'
 
 setup:  ## create the locked environment (uv.lock)
 	$(UV) sync --frozen
@@ -56,6 +56,24 @@ mutation:  ## grader mutation testing for one task: make mutation TASK=t03-gluco
 
 gpu-bench:  ## 3D bioheat CPU/GPU benchmark (GPU parts need CuPy and a CUDA device)
 	$(RUN) python gpu/benchmark.py
+
+AGENT_PY := $(UV) run --frozen --with 'anthropic>=1.12.1,<2' python agent_eval/harness.py
+TASKS ?= t05-pk-debug
+ATTEMPTS ?= 3
+BUDGET ?= 2000000
+
+agent-baselines:  ## scripted oracle and no-op agents on every task (no API key, no cost)
+	$(RUN) python agent_eval/harness.py --agent oracle --all-tasks
+	$(RUN) python agent_eval/harness.py --agent noop --all-tasks
+	$(RUN) python agent_eval/harness.py --summarise
+
+agent-eval:  ## real agent: make agent-eval MODEL=<model-id> TASKS="t05-pk-debug t01-ecg-denoise-rpeaks" ATTEMPTS=3
+	@test -n "$(MODEL)" || { echo "set MODEL=<model-id>"; exit 2; }
+	$(AGENT_PY) --model $(MODEL) $(foreach t,$(TASKS),--task $(t)) --attempts $(ATTEMPTS) --token-budget $(BUDGET) $(if $(SEEDS),--seeds $(SEEDS))
+	$(RUN) python agent_eval/harness.py --summarise
+
+agent-summary:  ## table of every agent attempt -> results/agent_eval/SUMMARY.md
+	$(RUN) python agent_eval/harness.py --summarise
 
 clean:
 	rm -rf dist results .pytest_cache .mypy_cache .ruff_cache .hypothesis

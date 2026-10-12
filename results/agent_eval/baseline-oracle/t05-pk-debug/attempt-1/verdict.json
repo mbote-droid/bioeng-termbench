@@ -1,0 +1,328 @@
+{
+  "cases": [
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "STANDARD",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "SHORT_INFUSION",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "BOLUS",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "LONG_HORIZON",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "COINCIDENT_DOSES",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        }
+      ],
+      "passed": true,
+      "seed": "18924c2cb1639d36bb1dd19a42c35d8b"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "STANDARD",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "SHORT_INFUSION",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "BOLUS",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "LONG_HORIZON",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "COINCIDENT_DOSES",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        }
+      ],
+      "passed": true,
+      "seed": "3baa855090ce04e16fb3ac2fde427b16"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "STANDARD",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "SHORT_INFUSION",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "BOLUS",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "LONG_HORIZON",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "COINCIDENT_DOSES",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        }
+      ],
+      "passed": true,
+      "seed": "6a6638d69d6cace4592009295d15da42"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "STANDARD",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "SHORT_INFUSION",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "BOLUS",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "LONG_HORIZON",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "COINCIDENT_DOSES",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        }
+      ],
+      "passed": true,
+      "seed": "d73eaca49b1c91d235f96cd4e1733517"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "STANDARD",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "SHORT_INFUSION",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "BOLUS",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "LONG_HORIZON",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "COINCIDENT_DOSES",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        }
+      ],
+      "passed": true,
+      "seed": "32fa86da6a498ba3480d41febc1fd061"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "STANDARD",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "SHORT_INFUSION",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "BOLUS",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "LONG_HORIZON",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "COINCIDENT_DOSES",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        }
+      ],
+      "passed": true,
+      "seed": "e24126e93330c9d45d38e7e289c9cb55"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "STANDARD",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "SHORT_INFUSION",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "BOLUS",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "LONG_HORIZON",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "COINCIDENT_DOSES",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        }
+      ],
+      "passed": true,
+      "seed": "a173200608f1cd5e8f1ee74c61cea7fb"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "STANDARD",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "SHORT_INFUSION",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "BOLUS",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "LONG_HORIZON",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        },
+        {
+          "code": "COINCIDENT_DOSES",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 1e-05
+        }
+      ],
+      "passed": true,
+      "seed": "93edf865a56f02cf291158893eeee129"
+    }
+  ],
+  "check_pass_fraction": 1.0,
+  "passed": true,
+  "task_id": "t05-pk-debug",
+  "task_version": "1.0.0"
+}

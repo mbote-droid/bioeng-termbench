@@ -19,11 +19,11 @@ spec.loader.exec_module(harness)
 
 
 class Block(SimpleNamespace):
-    def model_dump(self):
+    def model_dump(self, **_):
         return {k: v for k, v in vars(self).items()}
 
 
-class ScriptedClient:
+class ScriptedClient:  # the harness has its own; this one records usage
     """Plays back a fixed list of bash commands, then ends the turn."""
 
     def __init__(self, commands):
@@ -95,3 +95,55 @@ def test_command_timeout_is_enforced(tmp_path) -> None:
 def test_long_output_is_truncated(tmp_path, n) -> None:
     out = harness.run_bash(f"python3 -c \"print('x' * {n})\"", tmp_path, 30)
     assert len(out) <= harness.OUTPUT_LIMIT + 100
+
+
+def test_cache_breakpoint_marks_only_the_last_block_and_copies() -> None:
+    history = [
+        {"role": "user", "content": "task"},
+        {"role": "assistant", "content": [{"type": "text", "text": "ok"}]},
+        {"role": "user", "content": [{"type": "tool_result", "tool_use_id": "a", "content": "x"}]},
+    ]
+    sent = harness.with_cache_breakpoint(history)
+    assert sent[-1]["content"][-1]["cache_control"] == {"type": "ephemeral"}
+    assert "cache_control" not in history[-1]["content"][-1]  # history untouched
+    assert sum("cache_control" in str(m) for m in sent) == 1
+    first = harness.with_cache_breakpoint(history[:1])
+    assert first[0]["content"] == [
+        {"type": "text", "text": "task", "cache_control": {"type": "ephemeral"}}
+    ]
+
+
+class CountingClient(ScriptedClient):
+    def create(self, **kw):
+        resp = super().create(**kw)
+        resp.usage = SimpleNamespace(input_tokens=600, output_tokens=0)
+        return resp
+
+
+def test_token_budget_stops_the_attempt(tmp_path) -> None:
+    client = CountingClient(["true"] * 20)
+    with (tmp_path / "t.jsonl").open("w") as log:
+        stats = harness.agent_loop(
+            client, "scripted", "task", tmp_path, log, _args(token_budget=1000)
+        )
+    assert stats["stop"] == "token_budget" and stats["turns"] == 2
+    assert stats["total_tokens"] == 1200
+
+
+@pytest.mark.parametrize(("agent", "reward"), [("oracle", 1), ("noop", 0)])
+def test_scripted_baselines_on_t05(tmp_path, monkeypatch, agent, reward) -> None:
+    """oracle writes the fixed package through the tool and passes; noop
+    submits the shipped buggy package, which the grader must reject."""
+    monkeypatch.setattr(harness, "RESULTS", tmp_path / "results")
+    seeds = tmp_path / "seeds.txt"
+    seeds.write_text(
+        "\n".join((ROOT / "tasks/t05-pk-debug/tests/dev_seeds.txt").read_text().splitlines()[:2])
+    )
+    s = harness.attempt(
+        "t05-pk-debug", f"baseline-{agent}", 1, _args(agent=agent, seeds=str(seeds))
+    )
+    assert s["reward"] == reward, s
+    assert (tmp_path / "results" / f"baseline-{agent}" / "t05-pk-debug" / "attempt-1").is_dir()
+    if agent == "noop":
+        assert s["failing_codes"] and s["turns"] == 1
+    assert "| baseline-" in harness.summarise()

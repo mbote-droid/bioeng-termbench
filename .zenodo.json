@@ -1,0 +1,25 @@
+{
+  "title": "BioEng-TermBench: physics-aware graders for AI agents on biomedical engineering tasks",
+  "upload_type": "software",
+  "description": "Five terminal tasks from biomedical engineering in the Harbor format, with graders that check engineering correctness (units, conservation, order of accuracy, safety at the true parameters, robustness under uncertainty). The graders are validated with independent reference solutions (0 false rejects on 820 hidden cases), realistic wrong solutions (33 of 33 rejected), grader mutation testing and a red team against the grading sandbox. Includes a verified 3D GPU bioheat benchmark and an agent evaluation harness. Technical report: docs/TECHNICAL_REPORT.md.",
+  "creators": [
+    {
+      "name": "Mbote, Samuel Ngigi",
+      "orcid": "0009-0003-2319-8873"
+    }
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "keywords": [
+    "AI agents",
+    "benchmark",
+    "reward hacking",
+    "grader validation",
+    "biomedical engineering",
+    "pharmacokinetics",
+    "closed-loop control",
+    "bioheat transfer",
+    "scientific computing",
+    "GPU"
+  ]
+}

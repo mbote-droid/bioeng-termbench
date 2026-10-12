@@ -1,0 +1,19 @@
+{
+  "task": "t02-pk-fit-dose",
+  "model": "baseline-noop",
+  "agent": "noop",
+  "seeds": "dev_seeds.txt",
+  "attempt": 1,
+  "seconds": 0.0,
+  "turns": 1,
+  "stop": "end_turn",
+  "input_tokens": 0,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "output_tokens": 0,
+  "total_tokens": 0,
+  "reward": 0,
+  "failing_codes": [
+    "NO_SUBMISSION"
+  ]
+}

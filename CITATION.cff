@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use BioEng-TermBench, please cite it as below."
+title: "BioEng-TermBench: physics-aware graders for AI agents on biomedical engineering tasks"
+type: software
+authors:
+  - family-names: Mbote
+    given-names: Samuel Ngigi
+    email: mbotesamuel9@gmail.com
+    orcid: "https://orcid.org/0009-0003-2319-8873"
+version: 1.0.0
+date-released: "2026-10-12"
+license: MIT
+repository-code: "https://github.com/mbote-droid/bioeng-termbench"
+abstract: >-
+  Five terminal tasks from biomedical engineering (ECG signal processing,
+  pharmacokinetic fitting and dosing, closed-loop insulin delivery, thermal
+  ablation planning, debugging a pharmacokinetics package) in the Harbor
+  format, with graders that check engineering correctness: units,
+  conservation, order of accuracy, safety at the true parameters and
+  robustness under uncertainty. The graders are validated with independent
+  reference solutions, realistic wrong solutions, grader mutation testing and
+  a red team against the grading sandbox.
+keywords:
+  - AI agents
+  - benchmark
+  - reward hacking
+  - grader validation
+  - biomedical engineering
+  - pharmacokinetics
+  - closed-loop control
+  - bioheat transfer
+  - scientific computing
+  - GPU

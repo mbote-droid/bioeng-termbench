@@ -100,3 +100,26 @@ harbor run -p tasks/t03-glucose-closed-loop -a oracle     # oracle must score 1
 
 The oracle (`solution/solve.sh`) must earn reward 1 and an empty submission
 reward 0; `tests/test.sh` writes reward 0 first, so any crash fails closed.
+
+## 9. Agent evaluation
+
+```
+make agent-baselines                                           # scripted oracle and no-op agents; no API key
+export ANTHROPIC_API_KEY=...                                   # environment only, never written to disk
+make agent-eval MODEL=<model-id> TASKS="t05-pk-debug" ATTEMPTS=1       # check token use first
+make agent-eval MODEL=<model-id> TASKS="t01-ecg-denoise-rpeaks t05-pk-debug" ATTEMPTS=3 SEEDS=private_seeds.txt
+make agent-summary                                             # -> results/agent_eval/SUMMARY.md
+```
+
+`BUDGET=` sets the per-attempt token budget (default 2,000,000). Protocol and
+reporting: `docs/AGENT_EVAL.md`.
+
+## 10. Releasing
+
+1. Update `CHANGELOG.md` and the version in `pyproject.toml`,
+   `src/bioengbench/__init__.py`, `CITATION.cff` and `uv.lock`
+   (`uv lock` after editing `pyproject.toml`).
+2. `make check`, then commit and push; wait for CI to pass.
+3. Tag and publish: `gh release create v1.0.0 --title "v1.0.0" --notes-file CHANGELOG.md`.
+   With the Zenodo GitHub integration switched on, Zenodo archives the release
+   and mints a DOI (metadata from `.zenodo.json`).

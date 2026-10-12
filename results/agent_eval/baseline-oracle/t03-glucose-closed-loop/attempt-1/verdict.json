@@ -1,0 +1,360 @@
+{
+  "cases": [
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "ACTUATOR",
+          "status": "pass"
+        },
+        {
+          "code": "HYPO",
+          "measured": 106.377547,
+          "status": "pass",
+          "threshold": 70.0
+        },
+        {
+          "code": "TIME_IN_RANGE",
+          "measured": 0.881944444,
+          "status": "pass",
+          "threshold": 0.7
+        },
+        {
+          "code": "TIME_ABOVE_250",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.05
+        },
+        {
+          "code": "CORRECTION_TIME",
+          "measured": 44.5,
+          "status": "pass",
+          "threshold": 120.0
+        },
+        {
+          "code": "SETTLING",
+          "measured": 7.736277,
+          "status": "pass",
+          "threshold": 50.0
+        }
+      ],
+      "passed": true,
+      "seed": "2666cf10789cd9815184378400009dc7"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "ACTUATOR",
+          "status": "pass"
+        },
+        {
+          "code": "HYPO",
+          "measured": 95.487589,
+          "status": "pass",
+          "threshold": 70.0
+        },
+        {
+          "code": "TIME_IN_RANGE",
+          "measured": 0.908333333,
+          "status": "pass",
+          "threshold": 0.7
+        },
+        {
+          "code": "TIME_ABOVE_250",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.05
+        },
+        {
+          "code": "CORRECTION_TIME",
+          "measured": 40.5,
+          "status": "pass",
+          "threshold": 120.0
+        },
+        {
+          "code": "SETTLING",
+          "measured": 11.729232,
+          "status": "pass",
+          "threshold": 50.0
+        }
+      ],
+      "passed": true,
+      "seed": "7c4bb4093a0e089d85d4594d2d129a71"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "ACTUATOR",
+          "status": "pass"
+        },
+        {
+          "code": "HYPO",
+          "measured": 101.560182,
+          "status": "pass",
+          "threshold": 70.0
+        },
+        {
+          "code": "TIME_IN_RANGE",
+          "measured": 0.899652778,
+          "status": "pass",
+          "threshold": 0.7
+        },
+        {
+          "code": "TIME_ABOVE_250",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.05
+        },
+        {
+          "code": "CORRECTION_TIME",
+          "measured": 37.0,
+          "status": "pass",
+          "threshold": 120.0
+        },
+        {
+          "code": "SETTLING",
+          "measured": 12.384995,
+          "status": "pass",
+          "threshold": 50.0
+        }
+      ],
+      "passed": true,
+      "seed": "b7b0156cf9ff2cf40b2ede53fe0078c5"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "ACTUATOR",
+          "status": "pass"
+        },
+        {
+          "code": "HYPO",
+          "measured": 109.974377,
+          "status": "pass",
+          "threshold": 70.0
+        },
+        {
+          "code": "TIME_IN_RANGE",
+          "measured": 0.903125,
+          "status": "pass",
+          "threshold": 0.7
+        },
+        {
+          "code": "TIME_ABOVE_250",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.05
+        },
+        {
+          "code": "CORRECTION_TIME",
+          "measured": 41.0,
+          "status": "pass",
+          "threshold": 120.0
+        },
+        {
+          "code": "SETTLING",
+          "measured": 4.716087,
+          "status": "pass",
+          "threshold": 50.0
+        }
+      ],
+      "passed": true,
+      "seed": "ba00d4905355564c2795f6ee209a9714"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "ACTUATOR",
+          "status": "pass"
+        },
+        {
+          "code": "HYPO",
+          "measured": 86.70806,
+          "status": "pass",
+          "threshold": 70.0
+        },
+        {
+          "code": "TIME_IN_RANGE",
+          "measured": 0.967708333,
+          "status": "pass",
+          "threshold": 0.7
+        },
+        {
+          "code": "TIME_ABOVE_250",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.05
+        },
+        {
+          "code": "CORRECTION_TIME",
+          "measured": 38.0,
+          "status": "pass",
+          "threshold": 120.0
+        },
+        {
+          "code": "SETTLING",
+          "measured": 16.21332,
+          "status": "pass",
+          "threshold": 50.0
+        }
+      ],
+      "passed": true,
+      "seed": "8b3015cc367146f2242fadd5e570c5ce"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "ACTUATOR",
+          "status": "pass"
+        },
+        {
+          "code": "HYPO",
+          "measured": 103.887852,
+          "status": "pass",
+          "threshold": 70.0
+        },
+        {
+          "code": "TIME_IN_RANGE",
+          "measured": 0.977083333,
+          "status": "pass",
+          "threshold": 0.7
+        },
+        {
+          "code": "TIME_ABOVE_250",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.05
+        },
+        {
+          "code": "CORRECTION_TIME",
+          "measured": 33.0,
+          "status": "pass",
+          "threshold": 120.0
+        },
+        {
+          "code": "SETTLING",
+          "measured": 10.423679,
+          "status": "pass",
+          "threshold": 50.0
+        }
+      ],
+      "passed": true,
+      "seed": "567dbbfef964335a179b77995afdbcfd"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "ACTUATOR",
+          "status": "pass"
+        },
+        {
+          "code": "HYPO",
+          "measured": 99.461313,
+          "status": "pass",
+          "threshold": 70.0
+        },
+        {
+          "code": "TIME_IN_RANGE",
+          "measured": 0.856944444,
+          "status": "pass",
+          "threshold": 0.7
+        },
+        {
+          "code": "TIME_ABOVE_250",
+          "measured": 0.034722222,
+          "status": "pass",
+          "threshold": 0.05
+        },
+        {
+          "code": "CORRECTION_TIME",
+          "measured": 39.0,
+          "status": "pass",
+          "threshold": 120.0
+        },
+        {
+          "code": "SETTLING",
+          "measured": 8.351844,
+          "status": "pass",
+          "threshold": 50.0
+        }
+      ],
+      "passed": true,
+      "seed": "47d84d9773b6f260985de6c95e7efee6"
+    },
+    {
+      "checks": [
+        {
+          "code": "RUN",
+          "status": "pass"
+        },
+        {
+          "code": "ACTUATOR",
+          "status": "pass"
+        },
+        {
+          "code": "HYPO",
+          "measured": 109.899117,
+          "status": "pass",
+          "threshold": 70.0
+        },
+        {
+          "code": "TIME_IN_RANGE",
+          "measured": 0.933680556,
+          "status": "pass",
+          "threshold": 0.7
+        },
+        {
+          "code": "TIME_ABOVE_250",
+          "measured": 0.0,
+          "status": "pass",
+          "threshold": 0.05
+        },
+        {
+          "code": "CORRECTION_TIME",
+          "measured": 42.5,
+          "status": "pass",
+          "threshold": 120.0
+        },
+        {
+          "code": "SETTLING",
+          "measured": 1.903346,
+          "status": "pass",
+          "threshold": 50.0
+        }
+      ],
+      "passed": true,
+      "seed": "f70b1e15171189bb0823735813b63767"
+    }
+  ],
+  "check_pass_fraction": 1.0,
+  "passed": true,
+  "task_id": "t03-glucose-closed-loop",
+  "task_version": "1.0.0"
+}
