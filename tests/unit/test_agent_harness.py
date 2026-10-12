@@ -147,3 +147,8 @@ def test_scripted_baselines_on_t05(tmp_path, monkeypatch, agent, reward) -> None
     if agent == "noop":
         assert s["failing_codes"] and s["turns"] == 1
     assert "| baseline-" in harness.summarise()
+
+
+def test_output_limit_is_configurable(tmp_path) -> None:
+    out = harness.run_bash("python3 -c \"print('x' * 5000)\"", tmp_path, 30, limit=1000)
+    assert len(out) <= 1100 and "[truncated]" in out

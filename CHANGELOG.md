@@ -4,6 +4,15 @@ Versions follow semantic versioning. Each task also carries its own
 `task_version` in `task.toml`, bumped whenever its grader changes, so a
 reward is always tied to the grader that gave it.
 
+## Unreleased
+
+* Agent harness: OpenAI-compatible providers with free tiers (Groq, Gemini,
+  OpenRouter, Cerebras) through `--provider` / `PROVIDER=`, standard library
+  only, with request spacing and retries for rate limits. Attempts stopped by
+  a provider error are recorded as `api_error` and left out of pass rates.
+* `--output-limit` / `OUTPUT_LIMIT=` caps each command's output shown to the
+  agent, to save tokens on free tiers.
+
 ## 1.0.0 (2026-10-12)
 
 First public release.

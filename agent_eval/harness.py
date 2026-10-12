@@ -17,6 +17,15 @@ Two ways to run agents:
            --task t05-pk-debug --model <model-id> --attempts 3
        uv run python agent_eval/harness.py --summarise
 
+Free providers: `--provider groq|gemini|openrouter|cerebras` uses an
+OpenAI-compatible endpoint instead (agent_eval/openai_compat.py, standard
+library only), with the key from GROQ_API_KEY, GEMINI_API_KEY,
+OPENROUTER_API_KEY or CEREBRAS_API_KEY:
+
+       export GEMINI_API_KEY=...
+       uv run python agent_eval/harness.py --provider gemini \
+           --model gemini-flash-latest --task t05-pk-debug
+
 Two scripted baselines run the same pipeline without an API key, so the
 harness itself is checked before any money is spent:
 
@@ -93,6 +102,19 @@ BASH_TOOL = {
 OUTPUT_LIMIT = 20_000
 CACHE = {"type": "ephemeral"}
 BASELINES = ("oracle", "noop")
+# Exceptions that mean the provider failed (rate limit, outage, auth), so the
+# attempt says nothing about the agent: recorded as `api_error`, left out of
+# pass rates. Matched by name so neither SDK has to be importable.
+API_ERRORS = {
+    "ProviderError",
+    "APIError",
+    "APIStatusError",
+    "APIConnectionError",
+    "APITimeoutError",
+    "RateLimitError",
+    "InternalServerError",
+    "OverloadedError",
+}
 
 
 class _Block(SimpleNamespace):
@@ -140,14 +162,29 @@ def oracle_commands(task: str) -> list[str]:
     return [f"rm -rf {name} && echo {payload} | base64 -d | tar xzf -", f"ls -lR {name}"]
 
 
-def make_client(agent: str, task: str) -> Any:
+def make_client(agent: str, task: str, a: argparse.Namespace | None = None) -> Any:
     if agent == "oracle":
         return ScriptedClient(oracle_commands(task))
     if agent == "noop":
         return ScriptedClient([])
+    provider = getattr(a, "provider", "anthropic")
+    if provider != "anthropic":
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        from openai_compat import OpenAIChatClient
+
+        return OpenAIChatClient.from_env(
+            provider, min_interval_s=getattr(a, "request_interval", None)
+        )
     import anthropic
 
     return anthropic.Anthropic()
+
+
+def result_label(provider: str, model: str) -> str:
+    """Directory name for a model's results: safe on Windows checkouts too
+    (no / or :), prefixed by the provider unless it is Anthropic."""
+    safe = "".join(c if c.isalnum() or c in "-_." else "_" for c in model)
+    return safe if provider == "anthropic" else f"{provider}-{safe}"
 
 
 def with_cache_breakpoint(messages: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -192,7 +229,7 @@ def _limits() -> None:
     resource.setrlimit(resource.RLIMIT_FSIZE, (256 << 20, 256 << 20))
 
 
-def run_bash(command: str, cwd: Path, timeout_s: float) -> str:
+def run_bash(command: str, cwd: Path, timeout_s: float, limit: int = OUTPUT_LIMIT) -> str:
     user = SANDBOX if os.geteuid() == 0 else None
     path = os.environ.get("PATH", "/usr/bin:/bin")
     if AGENT_PYTHON.exists():
@@ -216,8 +253,8 @@ def run_bash(command: str, cwd: Path, timeout_s: float) -> str:
         out += f"\n[exit {proc.returncode}]"
     except subprocess.TimeoutExpired:
         out = f"[timed out after {timeout_s:g} s]"
-    if len(out) > OUTPUT_LIMIT:
-        half = OUTPUT_LIMIT // 2
+    if len(out) > limit:
+        half = limit // 2
         out = out[:half] + "\n...[truncated]...\n" + out[-half:]
     return out
 
@@ -240,13 +277,20 @@ def agent_loop(
             stop = "token_budget"
             break
         turns += 1
-        resp = client.messages.create(
-            model=model,
-            max_tokens=a.max_tokens,
-            system=[{"type": "text", "text": SYSTEM, "cache_control": CACHE}],
-            tools=[BASH_TOOL],
-            messages=with_cache_breakpoint(messages),
-        )
+        try:
+            resp = client.messages.create(
+                model=model,
+                max_tokens=a.max_tokens,
+                system=[{"type": "text", "text": SYSTEM, "cache_control": CACHE}],
+                tools=[BASH_TOOL],
+                messages=with_cache_breakpoint(messages),
+            )
+        except Exception as e:  # provider failure, not agent behaviour
+            if type(e).__name__ not in API_ERRORS:
+                raise
+            stop = f"api_error: {str(e)[:300]}"
+            log.write(json.dumps({"turn": turns, "role": "error", "error": stop}) + "\n")
+            break
         for key in keys:
             usage[key] += getattr(resp.usage, key, 0) or 0
         content = [block.model_dump(exclude_none=True) for block in resp.content]
@@ -258,7 +302,12 @@ def agent_loop(
             break
         results = []
         for call in calls:
-            output = run_bash(str(call.input.get("command", "")), app, a.command_timeout)
+            output = run_bash(
+                str(call.input.get("command", "")),
+                app,
+                a.command_timeout,
+                getattr(a, "output_limit", OUTPUT_LIMIT),
+            )
             results.append({"type": "tool_result", "tool_use_id": call.id, "content": output})
             log.write(
                 json.dumps({"turn": turns, "role": "tool", "input": call.input, "output": output})
@@ -309,7 +358,8 @@ def attempt(task: str, model: str, k: int, a: argparse.Namespace) -> dict:
     t0 = time.time()
     with (out / "transcript.jsonl").open("w") as log:
         log.write(json.dumps({"role": "user", "content": instruction}) + "\n")
-        stats = agent_loop(make_client(agent, task), model, instruction, app, log, a)
+        api_model = a.model if agent == "api" else model
+        stats = agent_loop(make_client(agent, task, a), api_model, instruction, app, log, a)
     sub = app / SUBMISSION[task]
     if sub.exists():
         dest = out / "submission" / sub.name
@@ -328,6 +378,8 @@ def attempt(task: str, model: str, k: int, a: argparse.Namespace) -> dict:
         "task": task,
         "model": model,
         "agent": agent,
+        "provider": getattr(a, "provider", "anthropic") if agent == "api" else "scripted",
+        "api_model": a.model if agent == "api" else None,
         "seeds": str(Path(a.seeds).name) if a.seeds else "dev_seeds.txt",
         "attempt": k,
         "seconds": round(time.time() - t0, 1),
@@ -356,10 +408,15 @@ def summarise() -> str:
         r = json.loads(p.read_text())
         by.setdefault((r["model"], r["task"]), []).append(r)
     lines = [
-        "| model | task | attempts | pass rate (95 % CI) | pass@k | most common failing codes | mean turns | mean tokens | mean minutes |",
-        "|---|---|---|---|---|---|---|---|---|",
+        "| model | task | attempts | pass rate (95 % CI) | pass@k | most common failing codes | mean turns | mean tokens | mean minutes | api errors (excluded) |",
+        "|---|---|---|---|---|---|---|---|---|---|",
     ]
-    for (model, task), rs in sorted(by.items()):
+    for (model, task), every in sorted(by.items()):
+        rs = [r for r in every if not str(r.get("stop", "")).startswith("api_error")]
+        errors = len(every) - len(rs)
+        if not rs:
+            lines.append(f"| {model} | {task} | 0 | - | - | - | - | - | - | {errors} |")
+            continue
         counts: dict[str, int] = {}
         for r in rs:
             for c in r["failing_codes"]:
@@ -377,15 +434,26 @@ def summarise() -> str:
         minutes = sum(r["seconds"] for r in rs) / n / 60
         lines.append(
             f"| {model} | {task} | {n} | {k / n:.0%} ({lo:.0%}-{hi:.0%}) | {int(k > 0)} | {top} "
-            f"| {turns:.0f} | {tokens:,.0f} | {minutes:.1f} |"
+            f"| {turns:.0f} | {tokens:,.0f} | {minutes:.1f} | {errors} |"
         )
     table = "\n".join(lines) + "\n"
     RESULTS.mkdir(parents=True, exist_ok=True)
     (RESULTS / "SUMMARY.md").write_text(
         "# Agent evaluation results\n\nGenerated by `agent_eval/harness.py --summarise`; "
-        "protocol in docs/AGENT_EVAL.md. pass@k is 1 if any attempt earned reward.\n\n" + table
+        "protocol in docs/AGENT_EVAL.md. pass@k is 1 if any attempt earned reward. "
+        "Attempts stopped by a provider error (rate limit, outage) say nothing about the agent "
+        "and are left out of the rates; rerun them.\n\n" + table
     )
     return table
+
+
+PROVIDER_NAMES = ("groq", "gemini", "openrouter", "cerebras")  # presets in openai_compat.py
+KEY_ENV = {
+    "groq": "GROQ_API_KEY",
+    "gemini": "GEMINI_API_KEY",
+    "openrouter": "OPENROUTER_API_KEY",
+    "cerebras": "CEREBRAS_API_KEY",
+}
 
 
 def main() -> int:
@@ -394,12 +462,29 @@ def main() -> int:
     ap.add_argument("--all-tasks", action="store_true", help="every task")
     ap.add_argument("--agent", choices=("api", *BASELINES), default="api")
     ap.add_argument("--model", help="API model id (required for --agent api)")
+    ap.add_argument(
+        "--provider",
+        choices=("anthropic", *PROVIDER_NAMES),
+        default="anthropic",
+        help="API to call; all but anthropic are OpenAI-compatible (agent_eval/openai_compat.py)",
+    )
+    ap.add_argument(
+        "--request-interval",
+        type=float,
+        help="seconds between requests (default: the provider's free-tier spacing)",
+    )
     ap.add_argument("--attempts", type=int, default=1)
     ap.add_argument("--seeds", help="seed file (default: the task's dev seeds)")
     ap.add_argument("--max-turns", type=int, default=60)
     ap.add_argument("--max-tokens", type=int, default=8000)
     ap.add_argument("--token-budget", type=int, default=2_000_000, help="per attempt; 0 = none")
     ap.add_argument("--command-timeout", type=float, default=600.0)
+    ap.add_argument(
+        "--output-limit",
+        type=int,
+        default=OUTPUT_LIMIT,
+        help="characters of each command's output shown to the agent (smaller saves tokens)",
+    )
     ap.add_argument("--summarise", action="store_true")
     a = ap.parse_args()
     if a.summarise:
@@ -411,9 +496,10 @@ def main() -> int:
     if a.agent == "api":
         if not a.model:
             ap.error("--model is required for --agent api")
-        if not os.environ.get("ANTHROPIC_API_KEY"):
-            ap.error("set ANTHROPIC_API_KEY in the environment (it is never written to disk)")
-        label = a.model
+        key = KEY_ENV.get(a.provider, "ANTHROPIC_API_KEY")
+        if not os.environ.get(key):
+            ap.error(f"set {key} in the environment (it is never written to disk)")
+        label = result_label(a.provider, a.model)
     else:
         label = f"baseline-{a.agent}"
     for task in tasks:

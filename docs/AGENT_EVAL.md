@@ -10,7 +10,7 @@ LLM may help *label* transcripts, but the reward always comes from the grader.
 | | Harbor | `agent_eval/harness.py` |
 |---|---|---|
 | isolation | the task's agent image, network off | per-attempt workspace as the `sandbox` user (when run as root), rlimits, per-command timeout; network on, host kernel shared |
-| needs | Docker | Python, an API key |
+| needs | Docker | Python, an API key (Anthropic, or a free OpenAI-compatible provider) |
 | agent | any Harbor agent (e.g. Claude Code) | a minimal loop with one `bash` tool |
 | use for | reported scores | development, failure analysis, cheap iteration |
 
@@ -34,6 +34,52 @@ grader as a real agent, with no API calls:
 
 Results from this repository: [results/agent_eval/SUMMARY.md](../results/agent_eval/SUMMARY.md).
 
+## Free providers
+
+The harness also talks to OpenAI-compatible endpoints, so open models on free
+tiers can be evaluated at no cost (`agent_eval/openai_compat.py`, standard
+library only). Free models are usually weaker than frontier models; their
+results are real agent results all the same, and a failure is as informative
+as a pass.
+
+| provider | `PROVIDER=` | key variable | where to get a key | spacing between requests |
+|---|---|---|---|---|
+| Groq | `groq` | `GROQ_API_KEY` | console.groq.com, API Keys | 2.5 s |
+| Google AI Studio (Gemini) | `gemini` | `GEMINI_API_KEY` | aistudio.google.com, Get API key | 6.5 s |
+| OpenRouter (`:free` models) | `openrouter` | `OPENROUTER_API_KEY` | openrouter.ai, Keys | 3.5 s |
+| Cerebras | `cerebras` | `CEREBRAS_API_KEY` | cloud.cerebras.ai | 2.5 s |
+
+The spacing keeps a run under each free tier's per-minute limit; change it
+with `--request-interval`. Rate-limit and server errors are retried with
+backoff (honouring `Retry-After`). If the provider still refuses, for example
+because the daily quota is used up, the attempt stops with
+`stop: api_error: ...`. Such attempts say nothing about the agent: the
+summary leaves them out of the pass rate and counts them in its last column,
+and they should be rerun the next day.
+
+**Which one.** Every request resends the whole conversation, so an attempt's
+requests grow to tens of thousands of tokens each and its total runs to
+hundreds of thousands. Tokens per minute and per day therefore matter more
+than requests:
+
+* **Gemini (recommended).** Long context, and free-tier token limits large
+  enough for full attempts. Exact limits depend on the model and account:
+  check AI Studio's rate-limit page. `gemini-flash-latest` names the current
+  Flash model.
+* **Groq** is fast, but its free plan allows `openai/gpt-oss-120b` only
+  8,000 tokens a minute and 200,000 a day (developer docs, October 2026):
+  enough to check the setup, not for full attempts.
+* **OpenRouter** `:free` models allow about 50 requests a day, roughly one
+  attempt.
+
+A full attempt can take up to 60 requests. `OUTPUT_LIMIT=` (default 20,000
+characters) trims each command's output shown to the agent; 6,000 to 8,000
+roughly halves the tokens of a typical attempt. Pick a model that supports
+tool calling, and check the provider's console for current model ids.
+
+Results are stored under `results/agent_eval/<provider>-<model>/`, with `/`
+and `:` in model ids replaced by `_` so the paths also work on Windows.
+
 ## Protocol for a real run
 
 1. **Seeds.** Iterate on the public dev seeds. For numbers you report, make
@@ -50,9 +96,12 @@ Results from this repository: [results/agent_eval/SUMMARY.md](../results/agent_e
    Attempts are independent: a fresh workspace, no memory of earlier ones.
 4. **Run.**
 
-       export ANTHROPIC_API_KEY=...        # environment only; never written to disk
-       make agent-eval MODEL=<model-id> TASKS="t05-pk-debug" ATTEMPTS=1     # check spend first
-       make agent-eval MODEL=<model-id> TASKS="t01-ecg-denoise-rpeaks t02-pk-fit-dose t03-glucose-closed-loop t04-bioheat-ablation t05-pk-debug" ATTEMPTS=3
+       export GEMINI_API_KEY=...           # environment only; never written to disk
+       make agent-eval PROVIDER=gemini MODEL=gemini-flash-latest TASKS="t05-pk-debug" ATTEMPTS=1    # smoke test
+       make agent-eval PROVIDER=gemini MODEL=gemini-flash-latest TASKS="t01-ecg-denoise-rpeaks t02-pk-fit-dose t03-glucose-closed-loop t04-bioheat-ablation t05-pk-debug" ATTEMPTS=3
+
+   With an Anthropic key: `export ANTHROPIC_API_KEY=...` and leave out
+   `PROVIDER=` (or set `PROVIDER=anthropic`).
 
    For reported numbers add `SEEDS=private_seeds.txt`.
 5. **Summarise.** `make agent-summary` writes
@@ -61,11 +110,13 @@ Results from this repository: [results/agent_eval/SUMMARY.md](../results/agent_e
 
 ## Cost
 
-Every `summary.json` records input, cache-write, cache-read and output
+On a free tier the cost is time, not money: spacing and daily caps decide how
+long a full run takes. On a paid API, every `summary.json` records input, cache-write, cache-read and output
 tokens. Multiply by your provider's current prices to get the cost; prices
 change, so none are written here. The harness keeps cost down in two ways:
 
-* **Prompt caching.** The system prompt and tool definition, and each turn's
+* **Prompt caching** (Anthropic; OpenAI-compatible providers cache on their
+  side where they support it, and report cached tokens). The system prompt and tool definition, and each turn's
   conversation so far, carry cache breakpoints, so later turns read most of
   their input from the cache instead of paying full price for it.
 * **A per-attempt token budget** (`BUDGET=` in make, `--token-budget` in the

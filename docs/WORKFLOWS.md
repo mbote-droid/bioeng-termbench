@@ -105,13 +105,16 @@ reward 0; `tests/test.sh` writes reward 0 first, so any crash fails closed.
 
 ```
 make agent-baselines                                           # scripted oracle and no-op agents; no API key
-export ANTHROPIC_API_KEY=...                                   # environment only, never written to disk
-make agent-eval MODEL=<model-id> TASKS="t05-pk-debug" ATTEMPTS=1       # check token use first
-make agent-eval MODEL=<model-id> TASKS="t01-ecg-denoise-rpeaks t05-pk-debug" ATTEMPTS=3 SEEDS=private_seeds.txt
+export GEMINI_API_KEY=...                                      # environment only, never written to disk
+make agent-eval PROVIDER=gemini MODEL=gemini-flash-latest TASKS="t05-pk-debug" ATTEMPTS=1      # smoke test
+make agent-eval PROVIDER=gemini MODEL=gemini-flash-latest TASKS="t01-ecg-denoise-rpeaks t05-pk-debug" ATTEMPTS=3 SEEDS=private_seeds.txt
+make agent-eval MODEL=<anthropic-model-id> TASKS="t05-pk-debug"       # with ANTHROPIC_API_KEY instead
 make agent-summary                                             # -> results/agent_eval/SUMMARY.md
 ```
 
-`BUDGET=` sets the per-attempt token budget (default 2,000,000). Protocol and
+`PROVIDER=` is `anthropic` (default), `groq`, `gemini`, `openrouter` or
+`cerebras`; `OUTPUT_LIMIT=` caps each command's output shown to the agent
+(characters, default 20000); `BUDGET=` sets the per-attempt token budget (default 2,000,000). Protocol and
 reporting: `docs/AGENT_EVAL.md`.
 
 ## 10. Releasing

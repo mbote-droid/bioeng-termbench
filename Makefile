@@ -61,15 +61,17 @@ AGENT_PY := $(UV) run --frozen --with 'anthropic>=1.12.1,<2' python agent_eval/h
 TASKS ?= t05-pk-debug
 ATTEMPTS ?= 3
 BUDGET ?= 2000000
+PROVIDER ?= anthropic
+OUTPUT_LIMIT ?= 20000
 
 agent-baselines:  ## scripted oracle and no-op agents on every task (no API key, no cost)
 	$(RUN) python agent_eval/harness.py --agent oracle --all-tasks
 	$(RUN) python agent_eval/harness.py --agent noop --all-tasks
 	$(RUN) python agent_eval/harness.py --summarise
 
-agent-eval:  ## real agent: make agent-eval MODEL=<model-id> TASKS="t05-pk-debug t01-ecg-denoise-rpeaks" ATTEMPTS=3
+agent-eval:  ## real agent: make agent-eval PROVIDER=gemini MODEL=<model-id> TASKS="t05-pk-debug" ATTEMPTS=3
 	@test -n "$(MODEL)" || { echo "set MODEL=<model-id>"; exit 2; }
-	$(AGENT_PY) --model $(MODEL) $(foreach t,$(TASKS),--task $(t)) --attempts $(ATTEMPTS) --token-budget $(BUDGET) $(if $(SEEDS),--seeds $(SEEDS))
+	$(AGENT_PY) --provider $(PROVIDER) --model $(MODEL) $(foreach t,$(TASKS),--task $(t)) --attempts $(ATTEMPTS) --token-budget $(BUDGET) --output-limit $(OUTPUT_LIMIT) $(if $(SEEDS),--seeds $(SEEDS))
 	$(RUN) python agent_eval/harness.py --summarise
 
 agent-summary:  ## table of every agent attempt -> results/agent_eval/SUMMARY.md

@@ -129,13 +129,16 @@ of the T4's peak memory bandwidth. In float64 it reaches only about
 ## Evaluating real agents
 
 `agent_eval/harness.py` runs a tool-use agent loop against the Anthropic API
-(your key, from the environment, never written to disk), grades the result
+or any of four OpenAI-compatible providers with free tiers (Groq, Gemini,
+OpenRouter, Cerebras), with your key read from the environment and never
+written to disk. It grades the result
 with the real, sandboxed grader and keeps the full transcript. Prompt caching
 and a per-attempt token budget keep the cost down. Harbor is the faithful
 path when Docker is available (`harbor run -p tasks/<id> -a <agent> -m <model>`).
 
     make agent-baselines                                  # scripted oracle and no-op agents, no API key
-    make agent-eval MODEL=<model-id> TASKS="t05-pk-debug" ATTEMPTS=3
+    make agent-eval PROVIDER=gemini MODEL=gemini-flash-latest TASKS="t05-pk-debug" ATTEMPTS=3   # free tier
+    make agent-eval MODEL=<anthropic-model-id> TASKS="t05-pk-debug" ATTEMPTS=3
 
 The scripted baselines check the pipeline before any money is spent: the
 oracle earns reward 1 on every task, the no-op agent 0
