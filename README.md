@@ -1,6 +1,7 @@
 # BioEng-TermBench
 [![CI](https://github.com/mbote-droid/bioeng-termbench/actions/workflows/ci.yml/badge.svg)](https://github.com/mbote-droid/bioeng-termbench/actions/workflows/ci.yml)
 [![DOI](https://zenodo.org/badge/1412561947.svg)](https://doi.org/10.5281/zenodo.23308638)
+[![Preprint](https://img.shields.io/badge/preprint-10.5281%2Fzenodo.23309911-1682D4)](https://doi.org/10.5281/zenodo.23309911)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Python 3.12](https://img.shields.io/badge/python-3.12-3776AB?logo=python&logoColor=white)](pyproject.toml)
 [![uv](https://img.shields.io/badge/deps-uv%20locked-DE5FE9?logo=uv&logoColor=white)](uv.lock)
@@ -35,6 +36,8 @@ training loop and is itself validated like an instrument: correct solutions
 written with different methods and languages must pass, realistic wrong
 solutions must fail with the right diagnostic code, every check must be
 necessary, and the sandbox must hold against attacks.
+
+**Paper.** Mbote S. *Validating the graders: physics-aware rewards for AI agents on biomedical engineering tasks.* Preprint, Zenodo, 2026. [doi:10.5281/zenodo.23309911](https://doi.org/10.5281/zenodo.23309911)
 
 ## Tasks
 
