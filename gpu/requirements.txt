@@ -1,4 +1,4 @@
 # GPU benchmark only (not needed for grading). On Colab, cupy and matplotlib
 # are preinstalled; elsewhere pick the wheel matching your CUDA version.
 cupy-cuda12x>=13.0
-matplotlib>=3.8
+matplotlib>=3.11.2
