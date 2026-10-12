@@ -1,5 +1,6 @@
 # BioEng-TermBench
 [![CI](https://github.com/mbote-droid/bioeng-termbench/actions/workflows/ci.yml/badge.svg)](https://github.com/mbote-droid/bioeng-termbench/actions/workflows/ci.yml)
+[![DOI](https://zenodo.org/badge/1412561947.svg)](https://doi.org/10.5281/zenodo.23308638)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Python 3.12](https://img.shields.io/badge/python-3.12-3776AB?logo=python&logoColor=white)](pyproject.toml)
 [![uv](https://img.shields.io/badge/deps-uv%20locked-DE5FE9?logo=uv&logoColor=white)](uv.lock)

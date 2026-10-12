@@ -8,6 +8,7 @@ authors:
     email: mbotesamuel9@gmail.com
     orcid: "https://orcid.org/0009-0003-2319-8873"
 version: 1.0.0
+doi: 10.5281/zenodo.23308638
 date-released: "2026-10-12"
 license: MIT
 repository-code: "https://github.com/mbote-droid/bioeng-termbench"
