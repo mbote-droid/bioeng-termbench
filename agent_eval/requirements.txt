@@ -1,2 +1,2 @@
 # Agent evaluation only (not needed for grading). Tested with anthropic 1.12.1.
-anthropic>=1.11.0,<2
+anthropic>=1.12.1,<2
