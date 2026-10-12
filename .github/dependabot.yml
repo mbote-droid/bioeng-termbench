@@ -4,11 +4,19 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    ignore:
+      - dependency-name: "pytest"
+        update-types: ["version-update:semver-major"]
+
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+
   - package-ecosystem: "docker"
     directory: "/docker"
     schedule:
-      interval: "monthly"
+      interval: "weekly"
+    ignore:
+      - dependency-name: "python"
+        update-types: ["version-update:semver-minor"]

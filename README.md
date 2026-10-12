@@ -1,4 +1,9 @@
 # BioEng-TermBench
+[![CI](https://github.com/mbote-droid/bioeng-termbench/actions/workflows/ci.yml/badge.svg)](https://github.com/mbote-droid/bioeng-termbench/actions/workflows/ci.yml)
+[![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/)
+[![uv](https://img.shields.io/badge/deps-uv-purple.svg)](https://github.com/astral-sh/uv)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
 
 Terminal-based **biomedical engineering tasks with physics-aware graders**, built
 to train and evaluate AI agents. Each task turns a real engineering workflow into
