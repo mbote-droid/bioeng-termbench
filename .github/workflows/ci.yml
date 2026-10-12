@@ -12,8 +12,8 @@ jobs:
   check:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v6
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v7
         with:
           python-version: "3.12"
       - name: Octave (cross-language references)
@@ -29,8 +29,8 @@ jobs:
     # privilege-dropping tests and the red team.
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v6
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v7
         with:
           python-version: "3.12"
       - run: uv sync --frozen
@@ -45,7 +45,7 @@ jobs:
         run: sudo -E "$(command -v uv)" run --frozen pytest -q tests/unit/test_runner.py tests/unit/test_cli_isolation.py
       - name: red team
         run: sudo -E "$(command -v uv)" run --frozen python validation/campaign.py redteam --out redteam.json
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         if: always()
         with:
           name: redteam
@@ -65,8 +65,8 @@ jobs:
           - task: t05-pk-debug
             submission: tasks/t05-pk-debug/solution/pkmodel
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v6
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v7
         with:
           python-version: "3.12"
       - run: uv sync --frozen
@@ -85,11 +85,11 @@ jobs:
     # Third-language reference for t02, graded through `bioeng check-outputs`.
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v6
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v7
         with:
           python-version: "3.12"
-      - uses: julia-actions/setup-julia@v2
+      - uses: julia-actions/setup-julia@v3
         with:
           version: "1.11"
       - run: uv sync --frozen
@@ -112,15 +112,15 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 300
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v6
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v7
         with:
           python-version: "3.12"
       - run: sudo apt-get update && sudo apt-get install -y --no-install-recommends octave
       - run: uv sync --frozen
       - name: campaign (without the red team, which runs in the sandbox job)
         run: make validate-quick JOBS=4
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: validation
           path: |
