@@ -217,5 +217,8 @@ Found by bracketing root finding (Brent) on the reference solver.
 
 `gpu/bioheat3d.py`. Same physics on a (n+1)^3 vertex grid over [-L, L]^3,
 7-point Laplacian (second order), Heun's method (explicit RK2) at 90 % of the
-stability limit dt <= 2 / (12 alpha / h^2 + w / rho c). Memory-bandwidth
-bound: about 15 flops per node per stage against at least 16 bytes moved.
+stability limit dt <= 2 / (12 alpha / h^2 + w / rho c). The fused kernel
+moves 15 arrays per cell update (two stages). In float32 that is
+bandwidth bound: about 75 % of peak on a T4. In float64 the T4's slow
+double-precision exponentials and divisions dominate, at about 22 % of
+peak bandwidth (`gpu/README.md`).

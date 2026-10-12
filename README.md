@@ -94,6 +94,23 @@ measured order 2.0, and the fused kernel was compiled as C++ and matched the
 NumPy implementation bit for bit. Run it on a free Colab T4 with
 [gpu/BioEng_GPU_Benchmark.ipynb](gpu/BioEng_GPU_Benchmark.ipynb).
 
+Measured on a Tesla T4 (Colab; full table in
+[gpu/results/results.md](gpu/results/results.md)):
+
+| | float64 | float32 |
+|---|---|---|
+| GPU agrees with NumPy (max difference) | 7e-15 K | n/a |
+| observed order, 3D vs 1D reference (on the GPU) | 2.02, 2.01, 2.00 | n/a |
+| fused kernel vs NumPy, 7.2 M nodes | 112x | 231x |
+| fused kernel vs CuPy array code, 17 M nodes | 3.1x | 9.1x |
+| full 4-minute treatment, 17 M nodes, 2233 steps | n/a | 12 s fused, 90 s CuPy |
+
+The NumPy baseline is plain array code on one Colab CPU core, so the
+NumPy speed-ups overstate what an optimised multi-core CPU code would
+lose. In float32 the fused kernel moves about 240 GB/s, three quarters
+of the T4's peak memory bandwidth. In float64 it reaches only about
+70 GB/s: the T4's slow double-precision arithmetic, not memory, limits it.
+
 ## Evaluating real agents
 
 `agent_eval/harness.py` runs a tool-use agent loop against the Anthropic API
@@ -157,7 +174,8 @@ faithful path when Docker is available
   with a local interpreter that mirrors the agent image.
 * The t02 Julia port has not been run (Julia could not be installed here); CI
   has a job for it.
-* GPU numbers come from running the notebook; none are claimed until then.
+* GPU numbers are from one Colab T4 session; other GPUs and CPUs will
+  differ.
 * Public `dev_seeds.txt` splits are not held out; use `private_seeds.txt`.
 * Not a medical device. Not for clinical use.
 
